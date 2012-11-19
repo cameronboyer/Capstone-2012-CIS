@@ -20,6 +20,8 @@ namespace DTI_Schedule
             addOrStatusMV.SetActiveView(add);
             scanJob.SetActiveView(clientInfo);
             hideButtons();
+            //hello
+
         }
 
         protected void statusButton_Click(object sender, EventArgs e)
