@@ -58,5 +58,35 @@ namespace DTI_Schedule
         {
             scanJob.SetActiveView(documentLevel);
         }
+
+        protected void goToGrouping_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(grouping);
+        }
+
+        protected void documentLevelCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (documentLevelCheckBoxList.SelectedValue == "Other")
+            {
+                otherDocumentLevelTextBox.Visible = true;
+            }
+            else
+                otherDocumentLevelTextBox.Visible = false;
+        }
+
+        protected void groupingCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (groupingCheckBoxList.SelectedValue == "Other")
+            {
+                otherGroupingTextBox.Visible = true;
+            }
+            else
+                otherGroupingTextBox.Visible = false;
+        }
+
+        protected void goToScanning_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(scanning);
+        }
     }
 }

@@ -346,40 +346,76 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View documentLevel;
         
         /// <summary>
-        /// lowestChecKBox control.
+        /// documentLevelCheckBoxList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox lowestChecKBox;
+        protected global::System.Web.UI.WebControls.CheckBoxList documentLevelCheckBoxList;
         
         /// <summary>
-        /// otherCheckBox control.
+        /// otherDocumentLevelTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox otherCheckBox;
+        protected global::System.Web.UI.WebControls.TextBox otherDocumentLevelTextBox;
         
         /// <summary>
-        /// lddCheckBox control.
+        /// goToGrouping control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox lddCheckBox;
+        protected global::System.Web.UI.WebControls.Button goToGrouping;
         
         /// <summary>
-        /// otherTextBox control.
+        /// grouping control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox otherTextBox;
+        protected global::System.Web.UI.WebControls.View grouping;
+        
+        /// <summary>
+        /// groupingCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList groupingCheckBoxList;
+        
+        /// <summary>
+        /// otherGroupingTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox otherGroupingTextBox;
+        
+        /// <summary>
+        /// goToScanning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button goToScanning;
+        
+        /// <summary>
+        /// scanning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View scanning;
         
         /// <summary>
         /// status control.
