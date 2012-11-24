@@ -20,7 +20,6 @@ namespace DTI_Schedule
             addOrStatusMV.SetActiveView(add);
             scanJob.SetActiveView(clientInfo);
             hideButtons();
-            //hello
 
         }
 
@@ -87,6 +86,11 @@ namespace DTI_Schedule
         protected void goToScanning_Click(object sender, EventArgs e)
         {
             scanJob.SetActiveView(scanning);
+        }
+
+        protected void goToMedia_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(mediaView);
         }
     }
 }
