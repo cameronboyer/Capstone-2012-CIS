@@ -108,7 +108,7 @@
                             <asp:ListItem Value="no" Text="Divider Tabs" />
                         </asp:RadioButtonList>
                     
-                        <asp:RadioButtonList ID="postitNotes" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 21px; top: 221px; position: absolute; height: 26px; " AutoPostBack="True">
+                        <asp:RadioButtonList ID="postitNotes" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 21px; top: 221px; position: absolute; height: 26px; " AutoPostBack="True" onselectedindexchanged="postitNotes_SelectedIndexChanged">
                             <asp:ListItem Value="yes" Text="" />
                             <asp:ListItem Value="no" Text="Post It Notes" />
                         </asp:RadioButtonList>
@@ -148,16 +148,13 @@
 
                         <div style="width:0px; height:166px; background-color:black;float:left; z-index: 1; left: 482px; top: 92px; position: absolute; bottom: 369px;"></div>
 
-                        <asp:CheckBox ID="reduceToCheckBox" runat="server" Text="Reduce To:" style="z-index: 1; left: 500px; top: 92px; position: absolute" />
+                        <asp:CheckBox ID="reduceToCheckBox" runat="server" Text="Reduce To:" style="z-index: 1; left: 500px; top: 92px; position: absolute" AutoPostBack="True" oncheckedchanged="reduceToCheckBox_CheckedChanged" />
                     
-                        <asp:RadioButtonList ID="reduceToRadioButtonList" runat="server" 
-                        RepeatDirection="Horizontal" 
-                        style="z-index: 1; left: 593px; top: 92px; position: absolute; height: 26px; width: 140px">
+                        <asp:RadioButtonList ID="reduceToRadioButtonList" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 593px; top: 92px; position: absolute; height: 26px; width: 140px" AutoPostBack="True" onselectedindexchanged="reduceToRadioButtonList_SelectedIndexChanged" Visible="False">
                             <asp:ListItem Value="11 X 17" Text="11 X 17" />
-                            <asp:ListItem Value="Other" Text="Other" />
+                            <asp:ListItem Value="other" Text="Other" />
                         </asp:RadioButtonList>
-                        <asp:TextBox ID="reduceToOtherTextBox" runat="server" 
-                        style="z-index: 1; left: 736px; top: 92px; position: absolute" />
+                        <asp:TextBox ID="reduceToOtherTextBox" runat="server" style="z-index: 1; left: 736px; top: 92px; position: absolute" Visible="False" />
 
                         <asp:CheckBox ID="sizeForSizeCheckBox" runat="server" Text="Size for Size" style="z-index:1; left:500px; top:112px; position: absolute" />
 
@@ -219,11 +216,35 @@
                             <asp:ListItem Value="no" Text="Oversized(Create Tag)" />
                         </asp:RadioButtonList>
 
-                        <asp:Button ID="goToMedia" runat="server" style="z-index: 1; left: 897px; top: 243px; position: absolute; width: 56px" Text="Go to Media" onclick="goToMedia_Click" />
+                        <asp:Button ID="goToMedia" runat="server" style="z-index: 1; left: 897px; top: 243px; position: absolute; width: 97px" Text="Go to Media" onclick="goToMedia_Click" />
                 </asp:View>
                 <asp:View ID="mediaView" runat="server">
                 <h1>Media</h1>
+                    <asp:Label ID="yesCol" runat="server" Text="Yes" style="z-index: 1; left: 21px; top: 93px; position: absolute" />
+                    <asp:Label ID="noCol" runat="server" Text="No" style="z-index: 1; left: 52px; top: 93px; position: absolute" />
+
+                    <asp:RadioButtonList ID="scanAndTagMedia" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 20px; top: 113px; position: absolute; height: 26px; width: 224px">
+                        <asp:ListItem Value="yes" Text="" />
+                        <asp:ListItem Value="no" Text="Scan and Tag as MEDIA" />
+                    </asp:RadioButtonList>
+                    <asp:RadioButtonList ID="duplicateAndTagMedia" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 20px; top: 133px; position: absolute; height: 26px; width: 250px" AutoPostBack="True" onselectedindexchanged="duplicateAndTagMedia_SelectedIndexChanged">
+                        <asp:ListItem Value="yes" Text="" />
+                        <asp:ListItem Value="no" Text="Duplicate and tag as MEDIA" />
+                    </asp:RadioButtonList>
+                    <asp:TextBox ID="numberOfDuplicatesTextBox" runat="server" Text="Enter Number of Duplicates" Visible="false" style="z-index: 1; left: 66px; top: 156px; position: absolute" Width="170px"/>
+                    <asp:RadioButtonList ID="bateLabelAndTagMedia" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 20px; top: 185px; position: absolute; height: 26px; width: 256px">
+                        <asp:ListItem Value="yes"  Text="" />
+                        <asp:ListItem Value="no" Text="Bate Label and tag as MEDIA" />
+                    </asp:RadioButtonList>
+
+                    <asp:Button ID="goToDeliverable" runat="server" 
+                        style="z-index: 1; left: 191px; top: 236px; position: absolute" 
+                        Text="Go to Deliverable" onclick="goToDeliverable_Click" />
                 </asp:View> 
+                <asp:View ID="deliverable" runat=server>
+                <h1>Deliverable</h1>
+
+                </asp:View>
             </asp:MultiView>
         </asp:View>
         <asp:View ID="status" runat="server">

@@ -92,5 +92,50 @@ namespace DTI_Schedule
         {
             scanJob.SetActiveView(mediaView);
         }
+
+        protected void postitNotes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (postitNotes.SelectedValue == "yes")
+            {
+                postItNoteInstruction.Visible = true;
+            }
+            else
+                postItNoteInstruction.Visible = false;
+        }
+
+        protected void reduceToCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (reduceToCheckBox.Checked)
+            {
+                reduceToRadioButtonList.Visible = true;
+            }
+            else
+                reduceToRadioButtonList.Visible = false;
+        }
+
+        protected void reduceToRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (reduceToRadioButtonList.SelectedValue == "other")
+            {
+                reduceToOtherTextBox.Visible = true;
+            }
+            else
+                reduceToOtherTextBox.Visible = false;
+        }
+
+        protected void duplicateAndTagMedia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (duplicateAndTagMedia.SelectedValue == "yes")
+            {
+                numberOfDuplicatesTextBox.Visible = true;
+            }
+            else
+                numberOfDuplicatesTextBox.Visible = false;
+        }
+
+        protected void goToDeliverable_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(deliverable);
+        }
     }
 }

@@ -760,6 +760,78 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View mediaView;
         
         /// <summary>
+        /// yesCol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label yesCol;
+        
+        /// <summary>
+        /// noCol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label noCol;
+        
+        /// <summary>
+        /// scanAndTagMedia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList scanAndTagMedia;
+        
+        /// <summary>
+        /// duplicateAndTagMedia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList duplicateAndTagMedia;
+        
+        /// <summary>
+        /// numberOfDuplicatesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox numberOfDuplicatesTextBox;
+        
+        /// <summary>
+        /// bateLabelAndTagMedia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList bateLabelAndTagMedia;
+        
+        /// <summary>
+        /// goToDeliverable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button goToDeliverable;
+        
+        /// <summary>
+        /// deliverable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View deliverable;
+        
+        /// <summary>
         /// status control.
         /// </summary>
         /// <remarks>
