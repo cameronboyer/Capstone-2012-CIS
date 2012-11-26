@@ -589,13 +589,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.CheckBox reduceToCheckBox;
         
         /// <summary>
-        /// reduceToRadioButtonList0 control.
+        /// reduceToRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList reduceToRadioButtonList0;
+        protected global::System.Web.UI.WebControls.RadioButtonList reduceToRadioButtonList;
         
         /// <summary>
         /// reduceToOtherTextBox control.

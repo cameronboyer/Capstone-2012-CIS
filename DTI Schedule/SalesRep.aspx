@@ -192,7 +192,7 @@
                 </asp:View>
                 <asp:View ID="documentLevel" runat="server">
                     <h1>Document Level</h1>
-                    <table id"documentLevelTable" style="width: 100%;">
+                    <table id="documentLevelTable" style="width: 100%;">
                         <tr>
                             <td rowspan="5">
                       <asp:CheckBoxList ID="documentLevelCheckBoxList" runat="server" AutoPostBack="True" onselectedindexchanged="documentLevelCheckBoxList_SelectedIndexChanged">
@@ -395,7 +395,7 @@
                         <tr>
                             <td>
                                 <asp:CheckBox ID="reduceToCheckBox" runat="server" Text="Reduce To:" AutoPostBack="True" oncheckedchanged="reduceToCheckBox_CheckedChanged" />
-                                <asp:RadioButtonList ID="reduceToRadioButtonList0" runat="server" 
+                                <asp:RadioButtonList ID="reduceToRadioButtonList" runat="server" 
                                     AutoPostBack="True" 
                                     onselectedindexchanged="reduceToRadioButtonList_SelectedIndexChanged" 
                                     RepeatDirection="Horizontal" Visible="False">
