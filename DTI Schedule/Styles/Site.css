@@ -3,7 +3,7 @@
 
 body   
 {
-<<<<<<< HEAD
+
     text-align:center;
     width:100%;
     background: #b6b7bc;
@@ -16,7 +16,7 @@ body
     position: absolute;
     height: 180px;
 
-=======
+
     background: #b6b7bc;
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
@@ -29,7 +29,7 @@ body
     position: absolute;
     height: 98px;
     width: 1849px;
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
 }
 
 a:link, a:visited
@@ -60,10 +60,10 @@ p
 
 h1, h2, h3, h4, h5, h6
 {
-<<<<<<< HEAD
+
     text-align:left;
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
+
     font-size: 1.5em;
     color: #666666;
     font-variant: small-caps;
@@ -113,7 +113,7 @@ first child of the left and right table columns */
 
 .page
 {
-<<<<<<< HEAD
+
     
     width: 700px;
     margin: 0 auto;
@@ -124,7 +124,7 @@ first child of the left and right table columns */
     /*position: absolute;*/
     min-height: 450px;
     height: 87px;
-=======
+
     width: 960px;
     background-color: #fff;
     margin: 20px auto 0px auto;
@@ -134,13 +134,13 @@ first child of the left and right table columns */
     top: 1px;
     position: absolute;
     height: 73px;
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
 }
 
 .header
 {
     position: relative;
-<<<<<<< HEAD
+
     padding-right:2px;
     background: #4b6c9e;
     width: 100%;
@@ -152,12 +152,12 @@ first child of the left and right table columns */
     color:Black;
 }
 
-=======
+
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
     width: 100%;
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
 }
 
 .header h1
@@ -172,7 +172,7 @@ first child of the left and right table columns */
 }
 
 .main
-<<<<<<< HEAD
+
     
 {
     margin-right:auto;
@@ -191,11 +191,11 @@ padding: 6px 0px;
     margin: 12px 8pxn-hexghtx;
     width: 200px;
     min-height:8px 8px;
-=======
+
 {
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
     min-height: 420px;
 }
 

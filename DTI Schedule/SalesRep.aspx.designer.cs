@@ -13,7 +13,6 @@ namespace DTI_Schedule {
     public partial class SalesRep {
         
         /// <summary>
-
         /// navButtonsTable control.
         /// </summary>
         /// <remarks>
@@ -23,7 +22,6 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.HtmlControls.HtmlTable navButtonsTable;
         
         /// <summary>
-
         /// addScanButton control.
         /// </summary>
         /// <remarks>
@@ -33,65 +31,40 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.Button addScanButton;
         
         /// <summary>
-
         /// statusButton control.
-
-        /// addCopyButton control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.Button statusButton;
         
         /// <summary>
         /// addCopyButton control.
-
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.Button addCopyButton;
         
         /// <summary>
         /// addDataButton control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
-
-
         protected global::System.Web.UI.WebControls.Button addDataButton;
         
         /// <summary>
         /// addPrintButton control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
-
-        
-        /// <summary>
-        /// addPrintButton control.
-
         protected global::System.Web.UI.WebControls.Button addPrintButton;
-        
-        /// <summary>
-        /// statusButton control.
-
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-
-  
-
-
         
         /// <summary>
         /// addOrStatusMV control.
@@ -238,7 +211,6 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View naming;
         
         /// <summary>
-
         /// controlNumberPrefixLbl control.
         /// </summary>
         /// <remarks>
@@ -249,67 +221,39 @@ namespace DTI_Schedule {
         
         /// <summary>
         /// controlNumberPrefixTxt control.
-
-        /// controlNumberLbl control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.TextBox controlNumberPrefixTxt;
         
         /// <summary>
         /// reincrementingLbl control.
-
-        protected global::System.Web.UI.WebControls.Label controlNumberLbl;
-        
-        /// <summary>
-        /// controlNumberTxt control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.Label reincrementingLbl;
         
         /// <summary>
         /// reincrementingCheckBox control.
-
-        protected global::System.Web.UI.WebControls.TextBox controlNumberTxt;
-        
-        /// <summary>
-        /// controlNumberPrefixLbl control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.CheckBox reincrementingCheckBox;
         
         /// <summary>
         /// reincrementingRadioList control.
-
-        
-        
-        /// <summary>
-        /// controlNumberPrefixTxt control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.RadioButtonList reincrementingRadioList;
-
-       
-
         
         /// <summary>
         /// controlNumberBoxLbl control.
@@ -348,44 +292,22 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox conrolNumberIncrementingNumberTxt;
         
         /// <summary>
-
         /// controlNumberLbl0 control.
-
-        /// reincrementingLbl control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.Label controlNumberLbl0;
         
         /// <summary>
         /// controlNumberTxt control.
-
-       
-        
-        /// <summary>
-        /// reincrementingCheckBox control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
-  
-        
-        /// <summary>
-        /// reincrementingRadioList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-
-
+        protected global::System.Web.UI.WebControls.TextBox controlNumberTxt;
         
         /// <summary>
         /// spaceInControlNumberLbl control.
@@ -433,7 +355,6 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View documentLevel;
         
         /// <summary>
-
         /// documentLevelCheckBoxList control.
         /// </summary>
         /// <remarks>
@@ -885,67 +806,39 @@ namespace DTI_Schedule {
         
         /// <summary>
         /// numberOfDuplicatesTextBox control.
-
-        /// lowestChecKBox control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.TextBox numberOfDuplicatesTextBox;
         
         /// <summary>
         /// bateLabelAndTagMedia control.
-
-        protected global::System.Web.UI.WebControls.CheckBox lowestChecKBox;
-        
-        /// <summary>
-        /// otherCheckBox control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.RadioButtonList bateLabelAndTagMedia;
         
         /// <summary>
         /// goToDeliverable control.
-
-        protected global::System.Web.UI.WebControls.CheckBox otherCheckBox;
-        
-        /// <summary>
-        /// lddCheckBox control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.Button goToDeliverable;
         
         /// <summary>
         /// deliverable control.
-
-        protected global::System.Web.UI.WebControls.CheckBox lddCheckBox;
-        
-        /// <summary>
-        /// otherTextBox control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-
         protected global::System.Web.UI.WebControls.View deliverable;
-
-        protected global::System.Web.UI.WebControls.TextBox otherTextBox;
-
         
         /// <summary>
         /// status control.
