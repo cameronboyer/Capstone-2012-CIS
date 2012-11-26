@@ -895,20 +895,36 @@
                             </table>
                 </asp:View>
                 <asp:View ID="ebsInstructions" runat="server">
+                <h1>EBS Instructions</h1>
                     <table style="width: 100%;">
                         <tr>
                             <td>
-                                <asp:RadioButtonList ID="ebsOptionsRadioButtonList" runat="server" 
-                                    RepeatDirection="Horizontal" AutoPostBack="True" 
-                                    onselectedindexchanged="ebsOptionsRadioButtonList_SelectedIndexChanged">
+                                <asp:RadioButtonList ID="S_ebsOptionsRadioButtonList" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" onselectedindexchanged="S_ebsOptionsRadioButtonList_SelectedIndexChanged">
                                     <asp:ListItem Value="no" Text="No" Selected="True" />
                                     <asp:ListItem Value="yes" Text="Yes" />                                    
                                 </asp:RadioButtonList>
                             </td>
                             <td>
-                                EBS Location
-                                <asp:RadioButtonList ID="ebsLocationsRadioButtonList" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Table" Visible="false">
-                                    <asp:ListItem Value="lowerRight" Text="Lower Right(Default" Selected="True" />
+                                <asp:RadioButtonList ID="S_ebsNumberingRadioButtonList" runat="server" Visible="false" AutoPostBack="True" onselectedindexchanged="S_ebsNumberingRadioButtonList_SelectedIndexChanged">
+                                    <asp:ListItem Value="ebsControlNumber" Text="EBS Control Number" Selected="True" />
+                                    <asp:ListItem Value="ebsOther" Text="EBS Other" />
+                                </asp:RadioButtonList><br />
+                                <asp:TextBox ID="S_ebsOtherPrefixTextBox" runat="server" Text="Prefix for EBS" 
+                                    Width="165px" Visible="false" 
+                                    ontextchanged="S_ebsOtherPrefixTextBox_TextChanged" AutoPostBack="True" /><br />
+                                <asp:TextBox ID="S_ebsOtherStartNumberTextBox" runat="server" 
+                                    Text="Starting Number for EBS" Width="165px" Visible="false" 
+                                    ontextchanged="S_ebsOtherStartNumberTextBox_TextChanged" AutoPostBack="True" /><br />
+                                <asp:TextBox ID="S_ebsOtherSuffixTextBox" runat="server" Text="Suffix for EBS" 
+                                    Width="165px" Visible="false" 
+                                    ontextchanged="S_ebsOtherSuffixTextBox_TextChanged" AutoPostBack="True" /><br />
+                                <asp:Label ID="S_ebsOtherNewControlNumberLabel" runat="server" Text="New Control Number for EBS:" Visible="false" /><br />
+                                <asp:TextBox ID="S_ebsOtherControlNumberTextBox" runat="server" ReadOnly="true" Visible="false" />
+                            </td>
+                            <td>
+                                <asp:Label ID="S_ebsLocationLabel" runat="server" Text="EBS Location" Visible="false" />
+                                <asp:RadioButtonList ID="S_ebsLocationsRadioButtonList" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Table" Visible="false">
+                                    <asp:ListItem Value="lowerRight" Text="Lower Right(Default)" Selected="True" />
                                     <asp:ListItem Value="lowerLeft" Text="Lower Left" />
                                     <asp:ListItem Value="lowerCenter" Text="Lower Center" />
                                     <asp:ListItem Value="upperRight" Text="Upper Right" />
@@ -916,16 +932,36 @@
                                     <asp:ListItem Value="upperCenter" Text="Upper Center" />
                                 </asp:RadioButtonList>
                             </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="S_ebsAdditionalLines" runat="server" Text="Addtional Lines" Visible="false" />
+                                <asp:RadioButtonList ID="S_ebsAddtionalLinesRadioButtonList" runat="server" Visible="false">
+                                    <asp:ListItem Value="no" Text="No" Selected="True" />
+                                    <asp:ListItem Value="yes" Text="Yes" />
+                                </asp:RadioButtonList>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
                             <td>
                                 &nbsp;
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:CheckBoxList ID="ebsNumberingCheckBoxList" runat="server" Visible="false">
-                                    <asp:ListItem Value="ebsControlNumber" Text="EBS Control Number" />
-                                    <asp:ListItem Value="ebsOther" Text="EBS Other" />
-                                </asp:CheckBoxList>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
                             </td>
                             <td>
                                 &nbsp;

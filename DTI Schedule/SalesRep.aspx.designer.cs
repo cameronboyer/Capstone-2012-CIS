@@ -1057,31 +1057,103 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View ebsInstructions;
         
         /// <summary>
-        /// ebsOptionsRadioButtonList control.
+        /// S_ebsOptionsRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList ebsOptionsRadioButtonList;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsOptionsRadioButtonList;
         
         /// <summary>
-        /// ebsLocationsRadioButtonList control.
+        /// S_ebsNumberingRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList ebsLocationsRadioButtonList;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsNumberingRadioButtonList;
         
         /// <summary>
-        /// ebsNumberingCheckBoxList control.
+        /// S_ebsOtherPrefixTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ebsNumberingCheckBoxList;
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherPrefixTextBox;
+        
+        /// <summary>
+        /// S_ebsOtherStartNumberTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherStartNumberTextBox;
+        
+        /// <summary>
+        /// S_ebsOtherSuffixTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherSuffixTextBox;
+        
+        /// <summary>
+        /// S_ebsOtherNewControlNumberLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_ebsOtherNewControlNumberLabel;
+        
+        /// <summary>
+        /// S_ebsOtherControlNumberTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherControlNumberTextBox;
+        
+        /// <summary>
+        /// S_ebsLocationLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_ebsLocationLabel;
+        
+        /// <summary>
+        /// S_ebsLocationsRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsLocationsRadioButtonList;
+        
+        /// <summary>
+        /// S_ebsAdditionalLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_ebsAdditionalLines;
+        
+        /// <summary>
+        /// S_ebsAddtionalLinesRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsAddtionalLinesRadioButtonList;
         
         /// <summary>
         /// cdBurning control.

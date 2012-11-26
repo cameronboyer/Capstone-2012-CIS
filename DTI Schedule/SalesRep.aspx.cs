@@ -175,12 +175,67 @@ namespace DTI_Schedule
                 pdfPerTextBox.Visible = false;
         }
 
-        protected void ebsOptionsRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_ebsOptionsRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ebsOptionsRadioButtonList.SelectedValue == "yes")
+            if (S_ebsOptionsRadioButtonList.SelectedValue == "yes")
             {
-                ebsNumberingCheckBoxList.Visible = true;
-                ebsLocationsRadioButtonList.Visible = true;
+                S_ebsNumberingRadioButtonList.Visible = true;
+                S_ebsLocationLabel.Visible = true;
+                S_ebsLocationsRadioButtonList.Visible = true;
+                S_ebsAdditionalLines.Visible = true;
+                S_ebsAddtionalLinesRadioButtonList.Visible = true;
+            }
+            else
+            {
+                S_ebsNumberingRadioButtonList.Visible = false;
+                S_ebsLocationLabel.Visible = false;
+                S_ebsLocationsRadioButtonList.Visible = false;
+                S_ebsAdditionalLines.Visible = false;
+                S_ebsAddtionalLinesRadioButtonList.Visible = false;
+            }
+        }
+
+        protected void S_ebsNumberingRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (S_ebsNumberingRadioButtonList.SelectedValue == "ebsOther")
+            {
+                S_ebsOtherPrefixTextBox.Visible = true;
+                S_ebsOtherStartNumberTextBox.Visible = true;
+                S_ebsOtherSuffixTextBox.Visible = true;
+                S_ebsOtherNewControlNumberLabel.Visible = true;
+                S_ebsOtherControlNumberTextBox.Visible = true;
+            }
+            else
+            {
+                S_ebsOtherPrefixTextBox.Visible = false;
+                S_ebsOtherStartNumberTextBox.Visible = false;
+                S_ebsOtherSuffixTextBox.Visible = false;
+                S_ebsOtherNewControlNumberLabel.Visible = false;
+                S_ebsOtherControlNumberTextBox.Visible = false;
+            }
+        }
+
+        protected void S_ebsOtherPrefixTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (S_ebsOtherPrefixTextBox.Text != null || S_ebsOtherPrefixTextBox.Text != "" || S_ebsOtherPrefixTextBox.Text != "Prefix for EBS" )
+            {
+                S_ebsOtherControlNumberTextBox.Text = S_ebsOtherPrefixTextBox.Text;
+            }
+        }
+
+        protected void S_ebsOtherStartNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (S_ebsOtherPrefixTextBox.Text != null || S_ebsOtherPrefixTextBox.Text != "" || S_ebsOtherPrefixTextBox.Text != "Prefix for EBS" || S_ebsOtherStartNumberTextBox.Text != null || S_ebsOtherStartNumberTextBox.Text != "" || S_ebsOtherStartNumberTextBox.Text != "Starting Number for EBS")
+            {
+                S_ebsOtherControlNumberTextBox.Text = S_ebsOtherPrefixTextBox.Text + S_ebsOtherStartNumberTextBox.Text;
+            }
+        }
+
+        protected void S_ebsOtherSuffixTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (S_ebsOtherPrefixTextBox.Text != null || S_ebsOtherPrefixTextBox.Text != "" || S_ebsOtherPrefixTextBox.Text != "Prefix for EBS" || S_ebsOtherStartNumberTextBox.Text != null || S_ebsOtherStartNumberTextBox.Text != "" || S_ebsOtherStartNumberTextBox.Text != "Starting Number for EBS" || S_ebsOtherSuffixTextBox.Text != null || S_ebsOtherSuffixTextBox.Text != "" || S_ebsOtherSuffixTextBox.Text != "Suffix for EBS")
+            {
+                S_ebsOtherControlNumberTextBox.Text = S_ebsOtherPrefixTextBox.Text + S_ebsOtherStartNumberTextBox.Text + S_ebsOtherSuffixTextBox.Text;
             }
         }
 
