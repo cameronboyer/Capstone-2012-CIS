@@ -120,7 +120,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesRep.aspx.cs">
       <DependentUpon>SalesRep.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SalesRep.aspx.designer.cs">
       <DependentUpon>SalesRep.aspx</DependentUpon>
