@@ -305,16 +305,12 @@
                             <td>
                                <asp:CheckBox ID="pickAndChoose" Text="Pick and Choose(See Special Instructions)" runat="server"/></td>
                             <td>
-                                &nbsp;</td>
-                            <td>
                                  <asp:CheckBox ID="scanAllPortrait" Text="Scan All Paper Portrait" runat="server"/></td>
                         </tr>
                         <tr>
                             <td>
                                <asp:Label ID="yesColOne" runat="server" Text="Yes" />
                         <asp:Label ID="noColOne" runat="server" Text="No"/></td>
-                            <td>
-                                &nbsp;</td>
                             <td>
                                <asp:Label ID="yesColTwo" runat="server" Text="Yes"/>
                         <asp:Label ID="noColTwo" runat="server" Text="No"/></td>
@@ -353,8 +349,6 @@
                                 &nbsp;
                             </td>
                             <td>
-                                &nbsp;</td>
-                            <td>
                                 <asp:RadioButtonList ID="coloredSheets" runat="server" RepeatDirection="Horizontal">
                             <asp:ListItem Value="yes" Text="" />
                             <asp:ListItem Value="no" Text="Colored Sheets" />
@@ -384,8 +378,6 @@
                                 &nbsp;&nbsp;</td>
                             <td>
                                 &nbsp;</td>
-                            <td>
-                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td>
@@ -398,8 +390,6 @@
                                     <asp:ListItem Text="Other" Value="other" />
                                 </asp:RadioButtonList>
                                 <asp:TextBox ID="reduceToOtherTextBox" runat="server" Visible="False" />
-                            </td>
-                            <td>
                                 <asp:CheckBox ID="sizeForSizeCheckBox" runat="server" Text="Size for Size" />
                             </td>
                         </tr>
@@ -410,13 +400,9 @@
                             </td>
                             <td>
                                 &nbsp;</td>
-                            <td>
-                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td >
-                                &nbsp;</td>
-                            <td>
                                 &nbsp;</td>
                             <td>
                                 &nbsp;</td>
@@ -426,8 +412,6 @@
                                 <asp:Label ID="colorColOne" runat="server" Text="Color" />
                                 <asp:Label ID="B_WColOne" runat="server" Text="B&amp;W" />
                             </td>
-                            <td>
-                                &nbsp;</td>
                             <td>
                                <asp:Label ID="colorColTwo" runat="server" Text="Color"/>
                         <asp:Label ID="B_WColTwo" runat="server" Text="B&W"/></td>
@@ -459,8 +443,6 @@
                             <asp:ListItem Value="no" Text="Color Copies" />
                         </asp:RadioButtonList></td>
                             <td>
-                                &nbsp;</td>
-                            <td>
                                 <asp:RadioButtonList ID="handwrittenColor" runat="server" RepeatDirection="Horizontal">
                             <asp:ListItem Value="yes" Text="" />
                             <asp:ListItem Value="no" Text="Handwritten Color" />
@@ -491,12 +473,8 @@
                                 &nbsp;</td>
                             <td>
                                 &nbsp;</td>
-                            <td>
-                                &nbsp;</td>
                         </tr>
                         <tr>
-                            <td>
-                                &nbsp;</td>
                             <td>
                                 &nbsp;</td>
                             <td>
