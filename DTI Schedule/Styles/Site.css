@@ -15,21 +15,6 @@ body
     top: 0px;
     position: absolute;
     height: 180px;
-
-
-    background: #b6b7bc;
-    font-size: .80em;
-    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
-    margin: 0px;
-    padding: 0px;
-    color: #696969;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    height: 98px;
-    width: 1849px;
-
 }
 
 a:link, a:visited
@@ -118,21 +103,21 @@ first child of the left and right table columns */
     width: 700px;
     margin: 0 auto;
     
-    background-color: #fff;
+   
     
     top: 1px;
     /*position: absolute;*/
     min-height: 450px;
     height: 87px;
 
-    width: 960px;
+    
     background-color: #fff;
-    margin: 20px auto 0px auto;
+    
     border: 1px solid #496077;
     z-index: 1;
     left: 4px;
     top: 1px;
-    position: absolute;
+    
     height: 73px;
 
 }
@@ -140,23 +125,19 @@ first child of the left and right table columns */
 .header
 {
     position: relative;
-
     padding-right:2px;
-    background: #4b6c9e;
-    width: 100%;
     text-align:left;
-    margin-right:auto;
-    margin-left:auto;
-    
     font-size:x-large;
     color:Black;
-}
-
-
+    
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
     width: 100%;
+}
+
+
+    
 
 }
 

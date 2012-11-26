@@ -13,10 +13,7 @@
     <RootNamespace>DTI_Schedule</RootNamespace>
     <AssemblyName>DTI Schedule</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-<<<<<<< HEAD
     <UseIISExpress>false</UseIISExpress>
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,10 +70,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-<<<<<<< HEAD
-    <Content Include="WebForm1.aspx" />
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -139,16 +132,6 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -165,11 +148,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-<<<<<<< HEAD
           <DevelopmentServerPort>11809</DevelopmentServerPort>
-=======
-          <DevelopmentServerPort>50525</DevelopmentServerPort>
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
