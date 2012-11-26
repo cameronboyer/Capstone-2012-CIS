@@ -3,7 +3,6 @@
 
 body   
 {
-
     text-align:center;
     width:100%;
     background: #b6b7bc;
@@ -45,10 +44,7 @@ p
 
 h1, h2, h3, h4, h5, h6
 {
-
     text-align:left;
-
-
     font-size: 1.5em;
     color: #666666;
     font-variant: small-caps;
@@ -97,13 +93,9 @@ first child of the left and right table columns */
 ----------------------------------------------------------*/
 
 .page
-{
-
-    
+{   
     width: 700px;
     margin: 0 auto;
-
-
 }
 
 .header
@@ -113,17 +105,11 @@ first child of the left and right table columns */
     text-align:left;
     font-size:x-large;
     color:Black;
-    
     margin: 0px;
     padding: 0px;
     background: #4b6c9e;
     width: 100%;
 }
-
-
-    
-
-
 
 .header h1
 {
@@ -136,9 +122,7 @@ first child of the left and right table columns */
     font-size: 2em;
 }
 
-.main
-
-    
+.main   
 {
     margin-right:auto;
     margin-left:auto;
@@ -149,17 +133,14 @@ first child of the left and right table columns */
     z-index: 1;
     left: 4px;
     top: 1px;
-
 }
 
 .leftCol
 {
-padding: 6px 0px;
+    padding: 6px 0px;
     margin: 12px 8pxn-hexghtx;
     width: 200px;
     min-height:8px 8px;
-
-{
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
 
