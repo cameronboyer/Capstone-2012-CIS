@@ -102,23 +102,7 @@ first child of the left and right table columns */
     
     width: 700px;
     margin: 0 auto;
-    
-   
-    
-    top: 1px;
-    /*position: absolute;*/
-    min-height: 450px;
-    height: 87px;
 
-    
-    background-color: #fff;
-    
-    border: 1px solid #496077;
-    z-index: 1;
-    left: 4px;
-    top: 1px;
-    
-    height: 73px;
 
 }
 
@@ -159,11 +143,13 @@ first child of the left and right table columns */
     margin-right:auto;
     margin-left:auto;
     text-align:left;
-    /* width:500px;    
-    margin: 0 auto;
-    padding: 0px 12px;
-   margin: 20% 20% 8px 8px;
-    min-height: 420px;*/
+    height: 625px;
+    background-color: #fff;
+    border: 1px solid #496077;
+    z-index: 1;
+    left: 4px;
+    top: 1px;
+
 }
 
 .leftCol

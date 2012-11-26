@@ -42,11 +42,6 @@
             </td>
         </tr>
     </table>
-    
-    
-    
-    
-    
 
     <asp:MultiView ID="addOrStatusMV" runat="server" Visible="False" >
         <asp:View ID="add" runat="server">
@@ -510,37 +505,6 @@
                             </td>
                         </tr>
                     </table>
-                        
-                       
-                    
-                        
-
-                    
-                        
-
-                        
-                    
-                        
-
-                        <div style="width:0px; height:166px; background-color:black;float:left; z-index: 1; left: 482px; top: 92px; position: absolute; bottom: 369px;"></div>
-
-                        
-                    
-                        
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-
                 </asp:View>
                 <asp:View ID="mediaView" runat="server">
                 <h1>Media</h1>
