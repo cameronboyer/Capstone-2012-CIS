@@ -16,20 +16,17 @@ namespace DTI_Schedule
 
         protected void addButton_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             //hide navbuttons
             navButtonsTable.Visible = false;
 
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
             addOrStatusMV.Visible = true;
             addOrStatusMV.SetActiveView(add);
             scanJob.SetActiveView(clientInfo);
             hideButtons();
-<<<<<<< HEAD
 
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
         }
 
         protected void statusButton_Click(object sender, EventArgs e)
@@ -66,7 +63,7 @@ namespace DTI_Schedule
         {
             scanJob.SetActiveView(documentLevel);
         }
-<<<<<<< HEAD
+
 
         protected void goToGrouping_Click(object sender, EventArgs e)
         {
@@ -147,7 +144,6 @@ namespace DTI_Schedule
         {
             scanJob.SetActiveView(deliverable);
         }
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
+
     }
 }
