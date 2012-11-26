@@ -9,10 +9,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<<<<<<< HEAD
-
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
     <form runat="server">
     <div class="page" >
         <div class="header">
@@ -28,9 +24,6 @@
         
     </div>
     </form>
-<<<<<<< HEAD
 
-=======
->>>>>>> 19cb90a7f030c2d0b05f2fc418f3b9925cba15f5
 </body>
 </html>

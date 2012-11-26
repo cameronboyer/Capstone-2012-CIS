@@ -2,10 +2,6 @@
 
 <asp:Content ContentPlaceHolderID="HeadContent" runat="server" >
     <style type="text/css"> 
-        #TESTCSS
-        {
-            font-size:40px;
-        }
     </style>
 </asp:Content>
 
