@@ -182,16 +182,16 @@ namespace DTI_Schedule
                 S_ebsNumberingRadioButtonList.Visible = true;
                 S_ebsLocationLabel.Visible = true;
                 S_ebsLocationsRadioButtonList.Visible = true;
-                S_ebsAdditionalLines.Visible = true;
-                S_ebsAddtionalLinesRadioButtonList.Visible = true;
+                //S_ebsAdditionalLines.Visible = true;
+                //S_ebsAddtionalLinesRadioButtonList.Visible = true;
             }
             else
             {
                 S_ebsNumberingRadioButtonList.Visible = false;
                 S_ebsLocationLabel.Visible = false;
                 S_ebsLocationsRadioButtonList.Visible = false;
-                S_ebsAdditionalLines.Visible = false;
-                S_ebsAddtionalLinesRadioButtonList.Visible = false;
+                //S_ebsAdditionalLines.Visible = false;
+                //S_ebsAddtionalLinesRadioButtonList.Visible = false;
             }
         }
 
@@ -238,6 +238,28 @@ namespace DTI_Schedule
                 S_ebsOtherControlNumberTextBox.Text = S_ebsOtherPrefixTextBox.Text + S_ebsOtherStartNumberTextBox.Text + S_ebsOtherSuffixTextBox.Text;
             }
         }
+
+        protected void S_goToCdBurningButton_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(cdBurning);
+        }
+
+        protected void S_cdBurnCopiesDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (S_cdBurnCopiesFirmOneDropDown.SelectedIndex > 0 || S_cdBurnCopiesFirmTwoDropDown.SelectedIndex > 0 || S_cdBurnCopiesFirmThreeDropDown.SelectedIndex > 0)
+            {
+                cdLabel.Visible = true;
+                S_goToPrinting.Visible = false;
+                S_goToPrinting2.Visible = true;
+            }
+            else
+            {
+                cdLabel.Visible = false;
+                S_goToPrinting.Visible = true;
+                S_goToPrinting2.Visible = false;
+            }
+        }
+
 
     }
 }

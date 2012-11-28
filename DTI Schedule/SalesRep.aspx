@@ -36,6 +36,61 @@
         {
             width: 48px;
         }
+        .style18
+        {
+            height: 14px;
+        }
+        .style21
+        {
+            text-align: center;
+            width: 60px;
+        }
+        .style24
+        {
+            height: 14px;
+            width: 120px;
+        }
+        .style27
+        {
+            width: 28px;
+            text-align: center;
+        }
+        .style30
+        {
+            text-align: center;
+            width: 30px;
+        }
+        .style32
+        {
+            text-align: center;
+            width: 24px;
+        }
+        .style36
+        {
+            width: 73px;
+            text-align: center;
+        }
+        .style37
+        {
+            text-align: center;
+            width: 42px;
+        }
+        .style38
+        {
+            width: 120px;
+        }
+        .style39
+        {
+            text-align: right;
+        }
+        .style40
+        {
+            width: 571px;
+        }
+        .style41
+        {
+            width: 600px;
+        }
     </style>
 </asp:Content>
 
@@ -979,11 +1034,288 @@
                             </td>
                             <td>
                                 &nbsp;
+                                <asp:Button ID="S_goToCdBurningButton" runat="server" 
+                                    onclick="S_goToCdBurningButton_Click" Text="Go To CD Burining" />
                             </td>
                         </tr>
                     </table>
                 </asp:View>
                 <asp:View ID="cdBurning" runat="server">
+                    <h1>CD Burn</h1>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td class="style24">
+                                    DVD Disc<br />
+                                    <asp:RadioButtonList ID="S_dvdOptionRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                        <asp:ListItem Value="yes" Text="Yes" Selected="True" />
+                                        <asp:ListItem Value="no" Text="No" />
+                                    </asp:RadioButtonList>
+                                </td>
+                                <td class="style18" colspan="6">
+                                    <asp:Label ID="S_duplicateExhisitingLabel" runat="server" Text="Duplicate Existing Client Label" Visible="false" />
+                                    <asp:RadioButtonList ID="S_duplicateExhisitingClientLabelRadioButtonList" runat="server" Visible="false" RepeatDirection="Horizontal">
+                                        <asp:ListItem Value="yes" Text="Yes" Selected="True" />
+                                        <asp:ListItem Value="no" Text="No" />
+                                    </asp:RadioButtonList>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    Firm
+                                </td>
+                                <td class="style27">
+                                    # of Copies<br />
+                                    
+                                </td>
+                                <td class="style30">
+                                    Tiff
+                                </td>
+                                <td class="style21">
+                                    Multipage Tiff
+                                </td>
+                                <td class="style30">
+                                    OCR
+                                </td>
+                                <td class="style32">
+                                    PDF
+                                </td>
+                                <td class="style37">
+                                    Seachable PDF
+                                </td>
+                                <td class="style36">
+                                    PDF w/Bookmarks
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    <asp:TextBox ID="S_cdBurnInfoFirmOneTextBox" runat="server" ReadOnly="true" 
+                                        Width="238px" />
+                                </td>
+                                <td class="style27">
+                                    <asp:DropDownList ID="S_cdBurnCopiesFirmOneDropDown" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="S_cdBurnCopiesDropDown_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Text="0" Selected="True" />
+                                        <asp:ListItem Value="1" Text="1" />
+                                        <asp:ListItem Value="2" Text="2" />
+                                        <asp:ListItem Value="3" Text="3" />
+                                        <asp:ListItem Value="4" Text="4" />
+                                        <asp:ListItem Value="5" Text="5" />
+                                        <asp:ListItem Value="6" Text="6" />
+                                        <asp:ListItem Value="7" Text="7" />
+                                        <asp:ListItem Value="8" Text="8" />
+                                        <asp:ListItem Value="9" Text="9" />
+                                        <asp:ListItem Value="10" Text="10" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnTiffFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style21">
+                                    <asp:CheckBox ID="S_cdBurnMTiffFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnOCRFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style32">
+                                    <asp:CheckBox ID="S_cdBurnPDFFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style37">
+                                    <asp:CheckBox ID="S_cdBurnSeachablePDFFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style36">
+                                    <asp:CheckBox ID="S_cdBurnPDF_w_BookmarksFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    <asp:TextBox ID="S_cdBurnInfoFirmTwoTextBox" runat="server" ReadOnly="true" 
+                                        Width="238px" />
+                                </td>
+                                <td class="style27">
+                                    <asp:DropDownList ID="S_cdBurnCopiesFirmTwoDropDown" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="S_cdBurnCopiesDropDown_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Text="0" Selected="True" />
+                                        <asp:ListItem Value="1" Text="1" />
+                                        <asp:ListItem Value="2" Text="2" />
+                                        <asp:ListItem Value="3" Text="3" />
+                                        <asp:ListItem Value="4" Text="4" />
+                                        <asp:ListItem Value="5" Text="5" />
+                                        <asp:ListItem Value="6" Text="6" />
+                                        <asp:ListItem Value="7" Text="7" />
+                                        <asp:ListItem Value="8" Text="8" />
+                                        <asp:ListItem Value="9" Text="9" />
+                                        <asp:ListItem Value="10" Text="10" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnTiffFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style21">
+                                    <asp:CheckBox ID="S_cdBurnMTiffFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnOCRFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style32">
+                                    <asp:CheckBox ID="S_cdBurnPDFFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style37">
+                                    <asp:CheckBox ID="S_cdBurnSeachablePDFFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style36">
+                                    <asp:CheckBox ID="S_cdBurnPDF_w_BookmarksFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    <asp:TextBox ID="TextBox2" runat="server" ReadOnly="true" 
+                                        Width="238px" />
+                                </td>
+                                <td class="style27">
+                                    <asp:DropDownList ID="S_cdBurnCopiesFirmThreeDropDown" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="S_cdBurnCopiesDropDown_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Text="0" Selected="True" />
+                                        <asp:ListItem Value="1" Text="1" />
+                                        <asp:ListItem Value="2" Text="2" />
+                                        <asp:ListItem Value="3" Text="3" />
+                                        <asp:ListItem Value="4" Text="4" />
+                                        <asp:ListItem Value="5" Text="5" />
+                                        <asp:ListItem Value="6" Text="6" />
+                                        <asp:ListItem Value="7" Text="7" />
+                                        <asp:ListItem Value="8" Text="8" />
+                                        <asp:ListItem Value="9" Text="9" />
+                                        <asp:ListItem Value="10" Text="10" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnTiffFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style21">
+                                    <asp:CheckBox ID="S_cdBurnMTiffFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnOCRFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style32">
+                                    <asp:CheckBox ID="S_cdBurnPDFFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style37">
+                                    <asp:CheckBox ID="S_cdBurnSeachablePDFFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style36">
+                                    <asp:CheckBox ID="S_cdBurnPDF_w_BookmarksFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                            </tr>
+                        </table>
+                        <br /><br />
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td class="style41">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                   <asp:Button ID="S_goToPrinting" runat="server" Text="Go To Printing" />
+                                </td>
+                            </tr>
+                        </table>                    
+                    <table id="cdLabel" style="width: 100%;" runat="server" visible="false">
+                        <tr>
+                            <td>
+                                <h1>CD Label</h1>
+                            </td>
+                            <td>
+                                (will appear in this order on disk)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Firm Name
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Case
+                            </td>
+                            <td>
+                                <asp:TextBox ID="S_cdLabelCaseNameTextBox" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Volume
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Bates Range
+                            </td>
+                            <td>
+                                <asp:RadioButtonList ID="S_cdLabelBatesRangeRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                    <asp:ListItem Value="yes" Text="Yes" Selected="True" />
+                                    <asp:ListItem Value="no" Text="No" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Number Of Images
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Client Matter
+                            </td>
+                            <td>
+                                <asp:TextBox ID="S_cdLabelClientMatterTextBox" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Notes
+                            </td>
+                            <td>
+                                <asp:TextBox ID="S_cdLabelNotesTextBox" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style39">
+                                Date Burned
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td class="style40">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                   <asp:Button ID="S_goToPrinting2" runat="server" Text="Go To Printing" Visible="false" />
+                                </td>
+                            </tr>
+                        </table>
+                    
                 </asp:View>
                 <asp:View ID="printing" runat="server">
                 </asp:View>
