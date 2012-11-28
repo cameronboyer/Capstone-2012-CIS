@@ -841,6 +841,645 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View deliverable;
         
         /// <summary>
+        /// deliverables control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList deliverables;
+        
+        /// <summary>
+        /// pdfPer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList pdfPer;
+        
+        /// <summary>
+        /// pdfPerTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pdfPerTextBox;
+        
+        /// <summary>
+        /// deliverablesOtherTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox deliverablesOtherTextBox;
+        
+        /// <summary>
+        /// viewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList viewer;
+        
+        /// <summary>
+        /// gotoIndexingInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button gotoIndexingInstructions;
+        
+        /// <summary>
+        /// indexingInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View indexingInstructions;
+        
+        /// <summary>
+        /// textOneTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textOneTextBox;
+        
+        /// <summary>
+        /// textTwoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textTwoTextBox;
+        
+        /// <summary>
+        /// textThreeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textThreeTextBox;
+        
+        /// <summary>
+        /// textFourTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textFourTextBox;
+        
+        /// <summary>
+        /// textFiveTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textFiveTextBox;
+        
+        /// <summary>
+        /// textSixTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textSixTextBox;
+        
+        /// <summary>
+        /// textSevenTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textSevenTextBox;
+        
+        /// <summary>
+        /// textEightTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textEightTextBox;
+        
+        /// <summary>
+        /// tagOneRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tagOneRadioButtonList;
+        
+        /// <summary>
+        /// tag2RadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tag2RadioButtonList;
+        
+        /// <summary>
+        /// tagThreeRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tagThreeRadioButtonList;
+        
+        /// <summary>
+        /// tagFourRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tagFourRadioButtonList;
+        
+        /// <summary>
+        /// tagColorRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tagColorRadioButtonList;
+        
+        /// <summary>
+        /// tagOversizeRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tagOversizeRadioButtonList;
+        
+        /// <summary>
+        /// tagMediaRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList tagMediaRadioButtonList;
+        
+        /// <summary>
+        /// goToEBS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button goToEBS;
+        
+        /// <summary>
+        /// ebsInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View ebsInstructions;
+        
+        /// <summary>
+        /// S_ebsNumberingRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsNumberingRadioButtonList;
+        
+        /// <summary>
+        /// S_ebsOtherPrefixTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherPrefixTextBox;
+        
+        /// <summary>
+        /// S_ebsOtherStartNumberTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherStartNumberTextBox;
+        
+        /// <summary>
+        /// S_ebsOtherSuffixTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherSuffixTextBox;
+        
+        /// <summary>
+        /// S_ebsOtherNewControlNumberLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_ebsOtherNewControlNumberLabel;
+        
+        /// <summary>
+        /// S_ebsOtherControlNumberTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_ebsOtherControlNumberTextBox;
+        
+        /// <summary>
+        /// S_ebsLocationLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_ebsLocationLabel;
+        
+        /// <summary>
+        /// S_ebsLocationsRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsLocationsRadioButtonList;
+        
+        /// <summary>
+        /// S_ebsOptionsRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsOptionsRadioButtonList;
+        
+        /// <summary>
+        /// S_ebsAdditionalLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_ebsAdditionalLines;
+        
+        /// <summary>
+        /// S_ebsAddtionalLinesRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_ebsAddtionalLinesRadioButtonList;
+        
+        /// <summary>
+        /// S_goToCdBurningButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button S_goToCdBurningButton;
+        
+        /// <summary>
+        /// cdBurning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View cdBurning;
+        
+        /// <summary>
+        /// S_dvdOptionRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_dvdOptionRadioButtonList;
+        
+        /// <summary>
+        /// S_duplicateExhisitingLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_duplicateExhisitingLabel;
+        
+        /// <summary>
+        /// S_duplicateExhisitingClientLabelRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_duplicateExhisitingClientLabelRadioButtonList;
+        
+        /// <summary>
+        /// S_cdBurnInfoFirmOneTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_cdBurnInfoFirmOneTextBox;
+        
+        /// <summary>
+        /// S_cdBurnCopiesFirmOneDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList S_cdBurnCopiesFirmOneDropDown;
+        
+        /// <summary>
+        /// S_cdBurnTiffFirmOneCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnTiffFirmOneCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnMTiffFirmOneCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnMTiffFirmOneCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnOCRFirmOneCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnOCRFirmOneCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnPDFFirmOneCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDFFirmOneCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnSeachablePDFFirmOneCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnSeachablePDFFirmOneCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnPDF_w_BookmarksFirmOneCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDF_w_BookmarksFirmOneCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnInfoFirmTwoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_cdBurnInfoFirmTwoTextBox;
+        
+        /// <summary>
+        /// S_cdBurnCopiesFirmTwoDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList S_cdBurnCopiesFirmTwoDropDown;
+        
+        /// <summary>
+        /// S_cdBurnTiffFirmTwoCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnTiffFirmTwoCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnMTiffFirmTwoCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnMTiffFirmTwoCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnOCRFirmTwoCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnOCRFirmTwoCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnPDFFirmTwoCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDFFirmTwoCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnSeachablePDFFirmTwoCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnSeachablePDFFirmTwoCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnPDF_w_BookmarksFirmTwoCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDF_w_BookmarksFirmTwoCheckBox;
+        
+        /// <summary>
+        /// TextBox2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        
+        /// <summary>
+        /// S_cdBurnCopiesFirmThreeDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList S_cdBurnCopiesFirmThreeDropDown;
+        
+        /// <summary>
+        /// S_cdBurnTiffFirmThreeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnTiffFirmThreeCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnMTiffFirmThreeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnMTiffFirmThreeCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnOCRFirmThreeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnOCRFirmThreeCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnPDFFirmThreeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDFFirmThreeCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnSeachablePDFFirmThreeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnSeachablePDFFirmThreeCheckBox;
+        
+        /// <summary>
+        /// S_cdBurnPDF_w_BookmarksFirmThreeCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDF_w_BookmarksFirmThreeCheckBox;
+        
+        /// <summary>
+        /// S_goToPrinting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button S_goToPrinting;
+        
+        /// <summary>
+        /// cdLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable cdLabel;
+        
+        /// <summary>
+        /// S_cdLabelCaseNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_cdLabelCaseNameTextBox;
+        
+        /// <summary>
+        /// S_cdLabelBatesRangeRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_cdLabelBatesRangeRadioButtonList;
+        
+        /// <summary>
+        /// S_cdLabelClientMatterTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_cdLabelClientMatterTextBox;
+        
+        /// <summary>
+        /// S_cdLabelNotesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_cdLabelNotesTextBox;
+        
+        /// <summary>
+        /// S_goToPrinting2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button S_goToPrinting2;
+        
+        /// <summary>
         /// status control.
         /// </summary>
         /// <remarks>

@@ -2,6 +2,26 @@
 
 <asp:Content ContentPlaceHolderID="HeadContent" runat="server" >
     <style type="text/css"> 
+        .style1
+        {
+            width: 36px;
+        }
+        .style3
+        {
+            width: 554px;
+        }
+        .style4
+        {
+            width: 161px;
+        }
+        .style5
+        {
+            text-align: right;
+        }
+        .style6
+        {
+            width: 547px;
+        }
     </style>
 </asp:Content>
 
@@ -485,38 +505,139 @@
                     </table>
                 </asp:View>
                 <asp:View ID="mediaView" runat="server">
-                <h1>Media</h1><table style="width: 100%;">
+                    <h1>Media</h1>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <asp:Label ID="yesCol" runat="server" Text="Yes" />
+                                <asp:Label ID="noCol" runat="server" Text="No" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:RadioButtonList ID="scanAndTagMedia" runat="server" 
+                                    RepeatDirection="Horizontal">
+                                    <asp:ListItem Text="" Value="yes" />
+                                    <asp:ListItem Text="Scan and Tag as MEDIA" Value="no" />
+                                </asp:RadioButtonList>
+                                <asp:RadioButtonList ID="duplicateAndTagMedia" runat="server" 
+                                    AutoPostBack="True" 
+                                    onselectedindexchanged="duplicateAndTagMedia_SelectedIndexChanged" 
+                                    RepeatDirection="Horizontal">
+                                    <asp:ListItem Text="" Value="yes" />
+                                    <asp:ListItem Text="Duplicate and tag as MEDIA" Value="no" />
+                                </asp:RadioButtonList>
+                                <asp:TextBox ID="numberOfDuplicatesTextBox" runat="server" 
+                                    Text="Enter Number of Duplicates" Visible="false" />
+                                <asp:RadioButtonList ID="bateLabelAndTagMedia" runat="server" 
+                                    RepeatDirection="Horizontal">
+                                    <asp:ListItem Text="" Value="yes" />
+                                    <asp:ListItem Text="Bate Label and tag as MEDIA" Value="no" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp; </td>
+                            <td>
+                                <asp:Button ID="goToDeliverable" runat="server" onclick="goToDeliverable_Click" 
+                                    Text="Go to Deliverable" />
+                            </td>
+                        </tr>
+                    </table>   
+                </asp:View>
+                <asp:View ID="deliverable" runat="server">
+                <h1>Deliverable</h1><table style="width: 100%;">
         <tr>
+            <td class="style4" rowspan="7">
+                <asp:CheckBoxList ID="deliverables" runat="server" AutoPostBack="True" 
+                    Height="185px" onselectedindexchanged="deliverables_SelectedIndexChanged">
+                    <asp:ListItem Text="DTI Standard" Value="dtiStandard" />
+                    <asp:ListItem Text="Concordance" Value="concordance" />
+                    <asp:ListItem Text="Summation" Value="summation" />
+                    <asp:ListItem Text="IPRO" Value="ipro" />
+                    <asp:ListItem Text="Sanction/Trial Director" Value="sanction_TrialDirector" />
+                    <asp:ListItem Text="PDF" Value="pdf" />
+                    <asp:ListItem Text="Other" Value="other" />
+                </asp:CheckBoxList>
+                &nbsp; &nbsp;
+            </td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+        </tr>
+                    <tr>
+                        <td class="style13">
+                            &nbsp;</td>
+                        <td class="style14">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style13">
+                            &nbsp;</td>
+                        <td class="style14">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style13">
+                            &nbsp;</td>
+                        <td class="style14">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style13">
+                            &nbsp;
+                        </td>
+                        <td class="style14">
+                            &nbsp;
+                        </td>
+                    </tr>
+        <tr>
+            <td class="style10">
+                <asp:RadioButtonList ID="pdfPer" runat="server" RepeatDirection="Horizontal" 
+                    AutoPostBack="True" onselectedindexchanged="pdfPer_SelectedIndexChanged" 
+                    Visible="false">
+                        <asp:ListItem Value="document" Text="PDF per Document" Enabled="true" />
+                        <asp:ListItem Value="folder" Text="PDF per Folder" />
+                        <asp:ListItem Text="PDF per Other" Value="other" />
+                    </asp:RadioButtonList>
+            </td>
             <td>
-                <asp:Label ID="yesCol" runat="server" Text="Yes"/>
-                    <asp:Label ID="noCol" runat="server" Text="No"/>
+                <asp:TextBox ID="pdfPerTextBox" runat="server" Visible="false" Width="158px" />
             </td>
         </tr>
         <tr>
-            <td>
-                <asp:RadioButtonList ID="scanAndTagMedia" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Value="yes" Text="" />
-                        <asp:ListItem Value="no" Text="Scan and Tag as MEDIA" />
-                    </asp:RadioButtonList>
-                    <asp:RadioButtonList ID="duplicateAndTagMedia" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" onselectedindexchanged="duplicateAndTagMedia_SelectedIndexChanged">
-                        <asp:ListItem Value="yes" Text="" />
-                        <asp:ListItem Value="no" Text="Duplicate and tag as MEDIA" />
-                    </asp:RadioButtonList>
-                    <asp:TextBox ID="numberOfDuplicatesTextBox" runat="server" Text="Enter Number of Duplicates" Visible="false"/>
-                    <asp:RadioButtonList ID="bateLabelAndTagMedia" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Value="yes"  Text="" />
-                        <asp:ListItem Value="no" Text="Bate Label and tag as MEDIA" />
-                    </asp:RadioButtonList>
+            <td class="style15">
+                <asp:TextBox ID="deliverablesOtherTextBox" runat="server" Visible="false" 
+                    Width="202px" />
             </td>
-        </tr>
-        <tr>
-            <td>
+            <td class="style16">
                 &nbsp;
             </td>
-            <td>
-                <asp:Button ID="goToDeliverable" runat="server" Text="Go to Deliverable" onclick="goToDeliverable_Click" />
-            </td>
         </tr>
+                    <tr>
+                        <td colspan="3">
+                            Viewer:
+                            <asp:RadioButtonList ID="viewer" runat="server" RepeatDirection="Horizontal">
+                                <asp:ListItem Selected="True" Text="None" Value="no" />
+                                <asp:ListItem Text="Eddie" Value="eddie" />
+                                <asp:ListItem Text="Eddie w/Fielded Info" Value="eddieFielded" />
+                                <asp:ListItem Text="Ipublish" Value="ipublish" />
+                                <asp:ListItem Text="Searchable Ipublish" Value="searchableIpublish" />
+                            </asp:RadioButtonList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style4">
+                            &nbsp;</td>
+                        <td>
+                        </td>
+                        <td>
+                            <asp:Button ID="gotoIndexingInstructions" runat="server" 
+                                onclick="gotoIndexingInstructions_Click" Text="Go to Indexing Instructions" />
+                        </td>
+                    </tr>
     </table>
                     
 
@@ -525,9 +646,691 @@
 
                     
                 </asp:View> 
-                <asp:View ID="deliverable" runat="server">
-                <h1>Deliverable</h1>
+                <asp:View ID="indexingInstructions" runat="server">
+                <h1>Indexing Instructions</h1>
+                            <table id="indexingInsructions" style="width: 100%;">
+                                <tr>
+                                    <td class="style17">
+                                        Do Not Export
+                                    </td>
+                                    <td>
+                                        Field Description
+                                    </td>
+                                    <td colspan="3">
+                                        Default Information
+                                    </td>
+                                    <td>
+                                        Prompted
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 1
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textOneTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 2
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textTwoTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 3
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textThreeTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 4
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textFourTextBox" runat="server" Width="440px"  />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 5
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textFiveTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 6
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textSixTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Text 7
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textSevenTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                       Text 8
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:TextBox ID="textEightTextBox" runat="server" Width="440px" />
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                       Tag 1
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tagOneRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Tag 2
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tag2RadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Tag 3
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tagThreeRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Tag 4
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tagFourRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Tag Color
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tagColorRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Tag Oversize
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tagOversizeRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style17">
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Tag Media
+                                    </td>
+                                    <td colspan="3">
+                                        <asp:RadioButtonList ID="tagMediaRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Value="enter" Text="Enter" />
+                                            <asp:ListItem Value="yn" Text="Y/N" />
+                                            <asp:ListItem Value="yesno" Text="Yes/No" />
+                                            <asp:ListItem Value="fieldDescripton" Text="Field Descripton" />
+                                        </asp:RadioButtonList>
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        &nbsp;</td>
+                                    <td>
+                                        <asp:Button ID="goToEBS" runat="server" onclick="goToEBS_Click" 
+                                            Text="Go To EBS Instructions" />
+                                    </td>
+                                    <td colspan="2">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+                </asp:View>
+                <asp:View ID="ebsInstructions" runat="server">
+                <h1>EBS Instructions</h1>
 
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td rowspan="5">
+                                <asp:RadioButtonList ID="S_ebsNumberingRadioButtonList" runat="server" 
+                                    AutoPostBack="True" 
+                                    onselectedindexchanged="S_ebsNumberingRadioButtonList_SelectedIndexChanged" 
+                                    Visible="false">
+                                    <asp:ListItem Selected="True" Text="EBS Control Number" 
+                                        Value="ebsControlNumber" />
+                                    <asp:ListItem Text="EBS Other" Value="ebsOther" />
+                                </asp:RadioButtonList>
+                                <br />
+                                <asp:TextBox ID="S_ebsOtherPrefixTextBox" runat="server" AutoPostBack="True" 
+                                    ontextchanged="S_ebsOtherPrefixTextBox_TextChanged" Text="Prefix for EBS" 
+                                    Visible="false" Width="165px" />
+                                <br />
+                                <asp:TextBox ID="S_ebsOtherStartNumberTextBox" runat="server" 
+                                    AutoPostBack="True" ontextchanged="S_ebsOtherStartNumberTextBox_TextChanged" 
+                                    Text="Starting Number for EBS" Visible="false" Width="165px" />
+                                <br />
+                                <asp:TextBox ID="S_ebsOtherSuffixTextBox" runat="server" AutoPostBack="True" 
+                                    ontextchanged="S_ebsOtherSuffixTextBox_TextChanged" Text="Suffix for EBS" 
+                                    Visible="false" Width="165px" />
+                                <br />
+                                <asp:Label ID="S_ebsOtherNewControlNumberLabel" runat="server" 
+                                    Text="New Control Number for EBS:" Visible="false" />
+                                <br />
+                                <asp:TextBox ID="S_ebsOtherControlNumberTextBox" runat="server" ReadOnly="true" 
+                                    Visible="false" />
+                            </td>
+                            <td rowspan="3">
+                                <asp:Label ID="S_ebsLocationLabel" runat="server" Text="EBS Location" 
+                                    Visible="false" />
+                                <asp:RadioButtonList ID="S_ebsLocationsRadioButtonList" runat="server" 
+                                    RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Table" 
+                                    Visible="false">
+                                    <asp:ListItem Selected="True" Text="Lower Right(Default)" Value="lowerRight" />
+                                    <asp:ListItem Text="Lower Left" Value="lowerLeft" />
+                                    <asp:ListItem Text="Lower Center" Value="lowerCenter" />
+                                    <asp:ListItem Text="Upper Right" Value="upperRight" />
+                                    <asp:ListItem Text="Upper Left" Value="upperLeft" />
+                                    <asp:ListItem Text="Upper Center" Value="upperCenter" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:RadioButtonList ID="S_ebsOptionsRadioButtonList" runat="server" 
+                                    AutoPostBack="True" 
+                                    onselectedindexchanged="S_ebsOptionsRadioButtonList_SelectedIndexChanged" 
+                                    RepeatDirection="Horizontal">
+                                    <asp:ListItem Selected="True" Text="No" Value="no" />
+                                    <asp:ListItem Text="Yes" Value="yes" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td rowspan="2">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="S_ebsAdditionalLines" runat="server" Text="Addtional Lines" 
+                                    Visible="false" />
+                                <asp:RadioButtonList ID="S_ebsAddtionalLinesRadioButtonList" runat="server" 
+                                    Visible="false">
+                                    <asp:ListItem Selected="True" Text="No" Value="no" />
+                                    <asp:ListItem Text="Yes" Value="yes" />
+                                </asp:RadioButtonList>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                                <asp:Button ID="S_goToCdBurningButton" runat="server" 
+                                    onclick="S_goToCdBurningButton_Click" Text="Go To CD Burining" />
+                            </td>
+                        </tr>
+                    </table>
+
+                </asp:View>
+                <asp:View ID="cdBurning" runat="server">
+                    <h1>CD Burn</h1>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td class="style24">
+                                    DVD Disc<br />
+                                    <asp:RadioButtonList ID="S_dvdOptionRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                        <asp:ListItem Value="yes" Text="Yes" Selected="True" />
+                                        <asp:ListItem Value="no" Text="No" />
+                                    </asp:RadioButtonList>
+                                </td>
+                                <td class="style18" colspan="6">
+                                    <asp:Label ID="S_duplicateExhisitingLabel" runat="server" Text="Duplicate Existing Client Label" Visible="false" />
+                                    <asp:RadioButtonList ID="S_duplicateExhisitingClientLabelRadioButtonList" runat="server" Visible="false" RepeatDirection="Horizontal">
+                                        <asp:ListItem Value="yes" Text="Yes" Selected="True" />
+                                        <asp:ListItem Value="no" Text="No" />
+                                    </asp:RadioButtonList>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    Firm
+                                </td>
+                                <td class="style27">
+                                    # of Copies<br />
+                                    
+                                </td>
+                                <td class="style30">
+                                    Tiff
+                                </td>
+                                <td class="style21">
+                                    Multipage Tiff
+                                </td>
+                                <td class="style30">
+                                    OCR
+                                </td>
+                                <td class="style32">
+                                    PDF
+                                </td>
+                                <td class="style37">
+                                    Seachable PDF
+                                </td>
+                                <td class="style36">
+                                    PDF w/Bookmarks
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    <asp:TextBox ID="S_cdBurnInfoFirmOneTextBox" runat="server" ReadOnly="true" 
+                                        Width="238px" />
+                                </td>
+                                <td class="style27">
+                                    <asp:DropDownList ID="S_cdBurnCopiesFirmOneDropDown" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="S_cdBurnCopiesDropDown_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Text="0" Selected="True" />
+                                        <asp:ListItem Value="1" Text="1" />
+                                        <asp:ListItem Value="2" Text="2" />
+                                        <asp:ListItem Value="3" Text="3" />
+                                        <asp:ListItem Value="4" Text="4" />
+                                        <asp:ListItem Value="5" Text="5" />
+                                        <asp:ListItem Value="6" Text="6" />
+                                        <asp:ListItem Value="7" Text="7" />
+                                        <asp:ListItem Value="8" Text="8" />
+                                        <asp:ListItem Value="9" Text="9" />
+                                        <asp:ListItem Value="10" Text="10" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnTiffFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style21">
+                                    <asp:CheckBox ID="S_cdBurnMTiffFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnOCRFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style32">
+                                    <asp:CheckBox ID="S_cdBurnPDFFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style37">
+                                    <asp:CheckBox ID="S_cdBurnSeachablePDFFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style36">
+                                    <asp:CheckBox ID="S_cdBurnPDF_w_BookmarksFirmOneCheckBox" runat="server" Text=" " />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    <asp:TextBox ID="S_cdBurnInfoFirmTwoTextBox" runat="server" ReadOnly="true" 
+                                        Width="238px" />
+                                </td>
+                                <td class="style27">
+                                    <asp:DropDownList ID="S_cdBurnCopiesFirmTwoDropDown" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="S_cdBurnCopiesDropDown_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Text="0" Selected="True" />
+                                        <asp:ListItem Value="1" Text="1" />
+                                        <asp:ListItem Value="2" Text="2" />
+                                        <asp:ListItem Value="3" Text="3" />
+                                        <asp:ListItem Value="4" Text="4" />
+                                        <asp:ListItem Value="5" Text="5" />
+                                        <asp:ListItem Value="6" Text="6" />
+                                        <asp:ListItem Value="7" Text="7" />
+                                        <asp:ListItem Value="8" Text="8" />
+                                        <asp:ListItem Value="9" Text="9" />
+                                        <asp:ListItem Value="10" Text="10" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnTiffFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style21">
+                                    <asp:CheckBox ID="S_cdBurnMTiffFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnOCRFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style32">
+                                    <asp:CheckBox ID="S_cdBurnPDFFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style37">
+                                    <asp:CheckBox ID="S_cdBurnSeachablePDFFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style36">
+                                    <asp:CheckBox ID="S_cdBurnPDF_w_BookmarksFirmTwoCheckBox" runat="server" Text=" " />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style38">
+                                    <asp:TextBox ID="TextBox2" runat="server" ReadOnly="true" 
+                                        Width="238px" />
+                                </td>
+                                <td class="style27">
+                                    <asp:DropDownList ID="S_cdBurnCopiesFirmThreeDropDown" runat="server" 
+                                        AutoPostBack="True" 
+                                        onselectedindexchanged="S_cdBurnCopiesDropDown_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Text="0" Selected="True" />
+                                        <asp:ListItem Value="1" Text="1" />
+                                        <asp:ListItem Value="2" Text="2" />
+                                        <asp:ListItem Value="3" Text="3" />
+                                        <asp:ListItem Value="4" Text="4" />
+                                        <asp:ListItem Value="5" Text="5" />
+                                        <asp:ListItem Value="6" Text="6" />
+                                        <asp:ListItem Value="7" Text="7" />
+                                        <asp:ListItem Value="8" Text="8" />
+                                        <asp:ListItem Value="9" Text="9" />
+                                        <asp:ListItem Value="10" Text="10" />
+                                    </asp:DropDownList>
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnTiffFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style21">
+                                    <asp:CheckBox ID="S_cdBurnMTiffFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style30">
+                                    <asp:CheckBox ID="S_cdBurnOCRFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style32">
+                                    <asp:CheckBox ID="S_cdBurnPDFFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style37">
+                                    <asp:CheckBox ID="S_cdBurnSeachablePDFFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                                <td class="style36">
+                                    <asp:CheckBox ID="S_cdBurnPDF_w_BookmarksFirmThreeCheckBox" runat="server" Text=" " />
+                                </td>
+                            </tr>
+                        </table>
+                        <br /><br />
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td class="style3">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                   <asp:Button ID="S_goToPrinting" runat="server" Text="Go To Printing" 
+                                        onclick="S_goToPrinting_Click" />
+                                </td>
+                            </tr>
+                        </table>                    
+                    <table id="cdLabel" style="width: 100%;" runat="server" visible="false">
+                        <tr>
+                            <td>
+                                <h1>CD Label</h1>
+                            </td>
+                            <td>
+                                (will appear in this order on disk)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Firm Name
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Case
+                            </td>
+                            <td>
+                                <asp:TextBox ID="S_cdLabelCaseNameTextBox" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Volume
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Bates Range
+                            </td>
+                            <td>
+                                <asp:RadioButtonList ID="S_cdLabelBatesRangeRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                                    <asp:ListItem Value="yes" Text="Yes" Selected="True" />
+                                    <asp:ListItem Value="no" Text="No" />
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Number Of Images
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Client Matter
+                            </td>
+                            <td>
+                                <asp:TextBox ID="S_cdLabelClientMatterTextBox" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Notes
+                            </td>
+                            <td>
+                                <asp:TextBox ID="S_cdLabelNotesTextBox" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style5">
+                                Date Burned
+                            </td>
+                            <td>
+                                (Always Included)
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td class="style6">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                   <asp:Button ID="S_goToPrinting2" runat="server" Text="Go To Printing" 
+                                        Visible="false" onclick="S_goToPrinting2_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                    
                 </asp:View>
             </asp:MultiView>
         </asp:View>
