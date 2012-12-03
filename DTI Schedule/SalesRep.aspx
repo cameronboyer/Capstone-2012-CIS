@@ -101,14 +101,6 @@
             width: 352px;
             height: 108px;
         }
-        .style46
-        {
-            width: 54px;
-        }
-        .style47
-        {
-            width: 250px;
-        }
         .style48
         {
             height: 21px;
@@ -163,10 +155,22 @@
         {
             width: 88px;
         }
+        .style67
+        {
+            width: 105px;
+        }
+        .style68
+        {
+            width: 31px;
+        }
+        .style69
+        {
+            width: 244px;
+        }
     </style>
 </asp:Content>
 
-<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ContentPlaceHolderID="MainContent" runat="server" ID="mainPage">
 
     <table id="navButtonsTable" runat="server" style="width: 100%;">
         <tr>
@@ -295,9 +299,10 @@
                                <asp:Label ID="S_reincrementingLbl" runat="server" Text="Re-increment:"/>  
                             </td>
                             <td rowspan="4">
-                             <asp:CheckBox ID="S_reincrementingCheckBox" runat="server" Text='Yes at "0001"'/>
+                             <asp:CheckBox ID="S_reincrementingCheckBox" runat="server" Text='Yes at "0001"' 
+                                    AutoPostBack="True" oncheckedchanged="S_reincrementingCheckBox_CheckedChanged"/>
                                 
-                        <asp:RadioButtonList ID="S_reincrementingRadioList" runat="server">
+                        <asp:RadioButtonList ID="S_reincrementingRadioList" runat="server" Visible="False">
                             <asp:ListItem Text="Per Document" Value="document" />
                             <asp:ListItem Text="Per Exhibit" Value="exhibit" />
                             <asp:ListItem Text="Per Folder" Value="folder" />
@@ -343,6 +348,18 @@
                             <td>
                             <!-- needs input -->
                             <asp:Label ID="S_spaceInControlNumberLbl" runat="server" Text="Space In Control Number:"/>
+                            </td>
+                            <td>
+                                <asp:RadioButtonList ID="S_spaceInControlNumberRadioButtonList" runat="server" 
+                                    AutoPostBack="true" 
+                                    onselectedindexchanged="S_spaceInControlNumberRadioButtonList_SelectedIndexChanged" 
+                                    RepeatDirection="Horizontal">
+                                    <asp:ListItem Value="yes" Text="Yes" />
+                                    <asp:ListItem Value="no" Text="No" Selected="True" />
+                                </asp:RadioButtonList>
+                            </td>
+                            <td>
+                                <asp:Label ID="S_spaceInControlNumberInfoLabel" runat="server" Text="Replace # Symbol in Control Number with Space" Visible="false" />
                             </td>
                         </tr>
                          <tr>
@@ -474,7 +491,9 @@
                     <table style="width: 100%;">
                         <tr>
                             <td class="style44" colspan="2">
-                               <asp:CheckBox ID="S_pickAndChoose" Text="Pick and Choose(See Special Instructions)" runat="server"/></td>
+                               <asp:CheckBox ID="S_pickAndChoose" 
+                                    Text="Pick and Choose(See Special Instructions)" runat="server" 
+                                    AutoPostBack="True" oncheckedchanged="S_pickAndChoose_CheckedChanged"/></td>
                             <td>
                                  <asp:CheckBox ID="S_scanAllPortrait" Text="Scan All Paper Portrait" runat="server"/></td>
                         </tr>
@@ -541,9 +560,9 @@
                         </asp:RadioButtonList>&nbsp; &nbsp; &nbsp; </td>
                         </tr>
                         <tr>
-                            <td class="style46">
+                            <td class="style68">
                                 &nbsp;</td>
-                            <td class="style47">
+                            <td class="style69">
                                 <asp:RadioButtonList ID="S_postItNoteInstruction" runat="server" 
                                     RepeatDirection="Horizontal" style="margin-left: 0px" Visible="False">
                                     <asp:ListItem Text="On" Value="on" />
@@ -654,6 +673,53 @@
                                 &nbsp;</td>
                             <td>
                                 &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69">
+                                <asp:Label ID="S_specialInstructionsPickAndChooseLabel" runat="server" 
+                                    Text="Special Instructions (Pick and Choose)" Visible="False"></asp:Label>
+                            </td>
+                            <td rowspan="10">
+                                <asp:TextBox ID="S_specialInstructionsPickAndChooseTextBox" runat="server" 
+                                    Height="200px" TextMode="MultiLine" Visible="False" Width="425px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
+                        </tr>
+                        <tr>
+                            <td class="style68"></td>
+                            <td class="style69"></td>
                         </tr>
                         <tr>
                             <td class="style44" colspan="2">
@@ -1920,6 +1986,167 @@
                                 &nbsp;
                             </td>
                             <td class="style50">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Special Instrctions for Printing</td>
+                            <td>
+                                <asp:RadioButtonList ID="S_specialInstrctionsPrintRadioButtonList" 
+                                    runat="server" AutoPostBack="True" RepeatDirection="Horizontal" 
+                                    onselectedindexchanged="S_specialInstrctionsPrintRadioButtonList_SelectedIndexChanged">
+                                    <asp:ListItem Value="yes" Text="Yes" />
+                                    <asp:ListItem Value="no" Text="No" Selected="True" />
+                                </asp:RadioButtonList>
+                            </td>
+                            <td colspan="2" rowspan="5">
+                                <asp:TextBox ID="S_specialInstrctionsPrintTextBox" runat="server" Height="125px" 
+                                    TextMode="MultiLine" Width="550px" Visible="False"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <asp:Button ID="S_goToSpecialInstructions" runat="server" Text="Go to Special Instructions" />
+                            </td>
+                        </tr>
+                    </table>
+                </asp:View>
+                <asp:View ID="specialInstructions" runat="server">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td class="style67">
+                                &nbsp; Production</td>
+                            <td colspan="2" rowspan="4">
+                                &nbsp;<asp:TextBox ID="S_sepcialInstrctionsProductionTextBox" runat="server" Height="165px" TextMode="MultiLine" 
+                                    Width="675px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp; Data</td>
+                            <td colspan="2" rowspan="8">
+                                <asp:TextBox ID="S_specialInstrctionsDataTextBox" runat="server" Height="165px" TextMode="MultiLine" 
+                                    Width="675px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style67">
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
                                 &nbsp;</td>
                         </tr>
                     </table>

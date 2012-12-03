@@ -71,12 +71,27 @@ namespace DTI_Schedule
 
         protected void S_documentLevelCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (S_documentLevelCheckBoxList.SelectedValue == "Other")
+            
+            //if (S_documentLevelCheckBoxList.SelectedValue == "Smallest Physical Bindings/Lowest" || S_documentLevelCheckBoxList.SelectedValue == "Per Slip Sheets - Target Sheets" || S_documentLevelCheckBoxList.SelectedValue == "Folder Tabs Determine Doc Break/per Folder" || S_documentLevelCheckBoxList.SelectedValue == "Binder Tabs Determine Doc Break" || S_documentLevelCheckBoxList.SelectedValue == "LDD")
+            //{
+            //    if (S_otherDocumentLevelTextBox.Visible == true)
+            //    {
+            //        S_otherDocumentLevelTextBox.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        S_otherDocumentLevelTextBox.Visible = false;
+            //    }
+            //}
+            for (int i = 0; i < S_documentLevelCheckBoxList.Items.Count; i++)
             {
-                S_otherDocumentLevelTextBox.Visible = true;
+                if (S_documentLevelCheckBoxList.SelectedIndex == 5)
+                {
+                    S_otherDocumentLevelTextBox.Visible = true;
+                }
+                else
+                    S_otherDocumentLevelTextBox.Visible = false;
             }
-            else
-                S_otherDocumentLevelTextBox.Visible = false;
         }
 
         protected void S_groupingCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,7 +180,9 @@ namespace DTI_Schedule
                 S_pdfPer.Visible = true;
             }
             else
+            {
                 S_pdfPer.Visible = false;
+            }
         }
 
         protected void S_pdfPer_SelectedIndexChanged(object sender, EventArgs e)
@@ -321,6 +338,56 @@ namespace DTI_Schedule
                 S_ebsOptionAdditionalLinesLineOneTextBox.Visible = false;
                 S_ebsOptionAdditionalLinesLineTwoLabel.Visible = false;
                 S_ebsOptionAdditionalLinesLineTwoTextBox.Visible = false;
+            }
+        }
+
+        protected void S_specialInstrctionsPrintRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(S_specialInstrctionsPrintRadioButtonList.SelectedValue =="yes")
+            {
+                S_specialInstrctionsPrintTextBox.Visible = true;
+            }
+            else
+            {
+                S_specialInstrctionsPrintTextBox.Visible=false;
+            }
+        }
+
+        protected void S_pickAndChoose_CheckedChanged(object sender, EventArgs e)
+        {
+            if (S_pickAndChoose.Checked)
+            {
+                S_specialInstructionsPickAndChooseLabel.Visible = true;
+                S_specialInstructionsPickAndChooseTextBox.Visible = true;
+            }
+            else
+            {
+                S_specialInstructionsPickAndChooseLabel.Visible = false;
+                S_specialInstructionsPickAndChooseTextBox.Visible = false;
+            }
+        }
+
+        protected void S_reincrementingCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (S_reincrementingCheckBox.Checked)
+            {
+                S_reincrementingRadioList.Visible = true;
+            }
+            else
+            {
+                S_reincrementingRadioList.Visible = false;
+            }
+        }
+
+        protected void S_spaceInControlNumberRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (S_spaceInControlNumberRadioButtonList.SelectedValue == "yes")
+            {
+                S_spaceInControlNumberInfoLabel.Visible = true;
+            }
+            else
+            {
+                S_spaceInControlNumberInfoLabel.Visible = false;
             }
         }
 

@@ -14,7 +14,7 @@ body
     z-index: 1;
     top: 0px;
     position: absolute;
-    height: 180px;
+    height: 500px;
 }
 
 a:link, a:visited
@@ -107,8 +107,8 @@ first child of the left and right table columns */
     
     top: 1px;
     /*position: absolute;*/
-    min-height: 450px;
-    height: 87px;
+    min-height: 650px;
+    height: 500px;
 
     
     background-color: #fff;
@@ -118,7 +118,7 @@ first child of the left and right table columns */
     left: 4px;
     top: 1px;
     
-    height: 73px;
+    height: 500px;
 
 }
 
@@ -195,6 +195,12 @@ padding: 6px 0px;
     margin: 0px auto;
     text-align: center;
     line-height: normal;
+}
+
+.mainPage
+{
+    background: white;
+    height:auto;
 }
 
 

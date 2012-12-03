@@ -319,6 +319,24 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.Label S_spaceInControlNumberLbl;
         
         /// <summary>
+        /// S_spaceInControlNumberRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_spaceInControlNumberRadioButtonList;
+        
+        /// <summary>
+        /// S_spaceInControlNumberInfoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_spaceInControlNumberInfoLabel;
+        
+        /// <summary>
         /// S_volumeLbl control.
         /// </summary>
         /// <remarks>
@@ -749,6 +767,24 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList S_oversize;
+        
+        /// <summary>
+        /// S_specialInstructionsPickAndChooseLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label S_specialInstructionsPickAndChooseLabel;
+        
+        /// <summary>
+        /// S_specialInstructionsPickAndChooseTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_specialInstructionsPickAndChooseTextBox;
         
         /// <summary>
         /// S_goToMedia control.
@@ -1883,6 +1919,60 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList S_printStapleRadioButton;
+        
+        /// <summary>
+        /// S_specialInstrctionsPrintRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_specialInstrctionsPrintRadioButtonList;
+        
+        /// <summary>
+        /// S_specialInstrctionsPrintTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_specialInstrctionsPrintTextBox;
+        
+        /// <summary>
+        /// S_goToSpecialInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button S_goToSpecialInstructions;
+        
+        /// <summary>
+        /// specialInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View specialInstructions;
+        
+        /// <summary>
+        /// S_sepcialInstrctionsProductionTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_sepcialInstrctionsProductionTextBox;
+        
+        /// <summary>
+        /// S_specialInstrctionsDataTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_specialInstrctionsDataTextBox;
         
         /// <summary>
         /// status control.
