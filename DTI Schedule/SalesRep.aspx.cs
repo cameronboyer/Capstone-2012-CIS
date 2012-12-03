@@ -14,16 +14,15 @@ namespace DTI_Schedule
 
         }
 
-        protected void addButton_Click(object sender, EventArgs e)
+        protected void addScanJob_Click(object sender, EventArgs e)
         {
 
             //hide navbuttons
             navButtonsTable.Visible = false;
 
-
             addOrStatusMV.Visible = true;
             addOrStatusMV.SetActiveView(add);
-            scanJob.SetActiveView(clientInfo);
+            scanJob.SetActiveView(S_clientInfo);
             hideButtons();
 
 
@@ -36,7 +35,7 @@ namespace DTI_Schedule
             hideButtons();
         }
 
-        protected void addNext_Click(object sender, EventArgs e)
+        protected void S_addNext_Click(object sender, EventArgs e)
         {
             scanJob.SetActiveView(naming);
         }
@@ -59,120 +58,124 @@ namespace DTI_Schedule
             statusButton.Visible = true;
         }
 
-        protected void toDocumentLevel_Click(object sender, EventArgs e)
+        protected void S_toDocumentLevel_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(documentLevel);
+            scanJob.SetActiveView(S_documentLevel);
         }
 
 
-        protected void goToGrouping_Click(object sender, EventArgs e)
+        protected void S_goToGrouping_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(grouping);
+            scanJob.SetActiveView(S_grouping);
         }
 
-        protected void documentLevelCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_documentLevelCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (documentLevelCheckBoxList.SelectedValue == "Other")
+            if (S_documentLevelCheckBoxList.SelectedValue == "Other")
             {
-                otherDocumentLevelTextBox.Visible = true;
+                S_otherDocumentLevelTextBox.Visible = true;
             }
             else
-                otherDocumentLevelTextBox.Visible = false;
+                S_otherDocumentLevelTextBox.Visible = false;
         }
 
-        protected void groupingCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_groupingCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (groupingCheckBoxList.SelectedValue == "Other")
+            if (S_groupingCheckBoxList.SelectedValue == "Other")
             {
-                otherGroupingTextBox.Visible = true;
+                S_otherGroupingTextBox.Visible = true;
             }
             else
-                otherGroupingTextBox.Visible = false;
+                S_otherGroupingTextBox.Visible = false;
         }
 
-        protected void goToScanning_Click(object sender, EventArgs e)
+        protected void S_goToScanning_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(scanning);
+            scanJob.SetActiveView(S_scanning);
         }
 
-        protected void goToMedia_Click(object sender, EventArgs e)
+        protected void S_goToMedia_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(mediaView);
+            scanJob.SetActiveView(S_mediaView);
         }
 
-        protected void postitNotes_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_postitNotes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (postitNotes.SelectedValue == "yes")
+            if (S_postitNotes.SelectedValue == "yes")
             {
-                postItNoteInstruction.Visible = true;
+                S_postItNoteInstruction.Visible = true;
             }
             else
-                postItNoteInstruction.Visible = false;
+                S_postItNoteInstruction.Visible = false;
         }
 
-        protected void reduceToCheckBox_CheckedChanged(object sender, EventArgs e)
+        protected void S_reduceToCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (reduceToCheckBox.Checked)
+            if (S_reduceToCheckBox.Checked)
             {
-                reduceToRadioButtonList.Visible = true;
+                S_reduceToRadioButtonList.Visible = true;
+                S_reduceToRadioButtonList_SelectedIndexChanged(sender, e);
             }
             else
-                reduceToRadioButtonList.Visible = false;
+            {
+                S_reduceToRadioButtonList.Visible = false;
+                S_reduceToOtherTextBox.Visible = false;
+            }
         }
 
-        protected void reduceToRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_reduceToRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (reduceToRadioButtonList.SelectedValue == "other")
+            if (S_reduceToRadioButtonList.SelectedValue == "other")
             {
-                reduceToOtherTextBox.Visible = true;
+                S_reduceToOtherTextBox.Visible = true;
             }
             else
-                reduceToOtherTextBox.Visible = false;
+                S_reduceToOtherTextBox.Visible = false;
         }
 
-        protected void duplicateAndTagMedia_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_duplicateAndTagMedia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (duplicateAndTagMedia.SelectedValue == "yes")
+            if (S_duplicateAndTagMedia.SelectedValue == "yes")
             {
-                numberOfDuplicatesTextBox.Visible = true;
+                S_numberOfDuplicatesTextBox.Visible = true;
             }
             else
-                numberOfDuplicatesTextBox.Visible = false;
+                S_numberOfDuplicatesTextBox.Visible = false;
         }
 
-        protected void goToDeliverable_Click(object sender, EventArgs e)
+        protected void S_goToDeliverable_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(deliverable);
+            scanJob.SetActiveView(S_deliverable);
         }
 
-        protected void gotoIndexingInstructions_Click(object sender, EventArgs e)
+        protected void S_gotoIndexingInstructions_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(indexingInstructions);
+            scanJob.SetActiveView(S_indexingInstructions);
         }
 
-        protected void goToEBS_Click(object sender, EventArgs e)
+        protected void S_goToEBS_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(ebsInstructions);
+            scanJob.SetActiveView(S_ebsInstructions);
         }
 
-        protected void deliverables_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_deliverables_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (deliverables.SelectedValue == "pdf")
+            if (S_deliverables.SelectedValue == "pdf")
             {
-                pdfPer.Visible = true;
+                S_pdfPer.Visible = true;
             }
             else
-                pdfPer.Visible = false;
+                S_pdfPer.Visible = false;
         }
 
-        protected void pdfPer_SelectedIndexChanged(object sender, EventArgs e)
+        protected void S_pdfPer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (pdfPer.SelectedValue == "other")
+            if (S_pdfPer.SelectedValue == "other")
             {
-                pdfPerTextBox.Visible = true;
+                S_pdfPerTextBox.Visible = true;
             }
             else
-                pdfPerTextBox.Visible = false;
+                S_pdfPerTextBox.Visible = false;
         }
 
         protected void S_ebsOptionsRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,16 +185,26 @@ namespace DTI_Schedule
                 S_ebsNumberingRadioButtonList.Visible = true;
                 S_ebsLocationLabel.Visible = true;
                 S_ebsLocationsRadioButtonList.Visible = true;
-                //S_ebsAdditionalLines.Visible = true;
-                //S_ebsAddtionalLinesRadioButtonList.Visible = true;
+                S_ebsAdditionalLines.Visible = true;
+                S_ebsAddtionalLinesRadioButtonList.Visible = true;
+                S_ebsSizeOptionLabel.Visible = true;
+                S_ebsOptionSizeDropDownBox.Visible = true;
+                S_ebsFontOptionLabel.Visible = true;
+                S_ebsOptionFontDropDownList.Visible = true;
+                S_ebsFontOptionStyleDropDownList.Visible = true;
             }
             else
             {
                 S_ebsNumberingRadioButtonList.Visible = false;
                 S_ebsLocationLabel.Visible = false;
                 S_ebsLocationsRadioButtonList.Visible = false;
-                //S_ebsAdditionalLines.Visible = false;
-                //S_ebsAddtionalLinesRadioButtonList.Visible = false;
+                S_ebsAdditionalLines.Visible = false;
+                S_ebsAddtionalLinesRadioButtonList.Visible = false;
+                S_ebsSizeOptionLabel.Visible = false;
+                S_ebsOptionSizeDropDownBox.Visible = false;
+                S_ebsFontOptionLabel.Visible = false;
+                S_ebsOptionFontDropDownList.Visible = false;
+                S_ebsFontOptionStyleDropDownList.Visible = false;
             }
         }
 
@@ -257,6 +270,57 @@ namespace DTI_Schedule
                 cdLabel.Visible = false;
                 S_goToPrinting.Visible = true;
                 S_goToPrinting2.Visible = false;
+            }
+        }
+
+        protected void S_goToPrinting_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(printing);
+        }
+
+        protected void S_printAccoRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (S_printAccoRadioButtonList.SelectedValue == "yes")
+            {
+                S_printAccoSideRadioButtonList.Visible = true;
+            }
+            else
+            {
+                S_printAccoSideRadioButtonList.Visible = false;
+            }
+        }
+
+        protected void S_printBindersOptionRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (S_printBindersOptionRadioButtonList.SelectedValue == "yes")
+            {
+                S_printBindersSizeRadioButtonList.Visible = true;
+                S_printBinderOptionViewRadioBttonList.Visible = true;
+            }
+            else
+            {
+                S_printBindersSizeRadioButtonList.Visible = false;
+                S_printBinderOptionViewRadioBttonList.Visible = false;
+            }
+        }
+
+        protected void S_ebsAddtionalLinesRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (S_ebsAddtionalLinesRadioButtonList.SelectedValue == "yes")
+            {
+                S_ebsOptionAdditionalLinesSizeLimitLabel.Visible = true;
+                S_ebsOptionAdditionalLinesLineOneLabel.Visible = true;
+                S_ebsOptionAdditionalLinesLineOneTextBox.Visible = true;
+                S_ebsOptionAdditionalLinesLineTwoLabel.Visible = true;
+                S_ebsOptionAdditionalLinesLineTwoTextBox.Visible = true;
+            }
+            else
+            {
+                S_ebsOptionAdditionalLinesSizeLimitLabel.Visible = false;
+                S_ebsOptionAdditionalLinesLineOneLabel.Visible = false;
+                S_ebsOptionAdditionalLinesLineOneTextBox.Visible = false;
+                S_ebsOptionAdditionalLinesLineTwoLabel.Visible = false;
+                S_ebsOptionAdditionalLinesLineTwoTextBox.Visible = false;
             }
         }
 
