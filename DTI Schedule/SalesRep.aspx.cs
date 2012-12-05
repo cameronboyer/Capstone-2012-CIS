@@ -28,16 +28,27 @@ namespace DTI_Schedule
 
         }
 
+        protected void addCopyButton_Click(object sender, EventArgs e)
+        {
+            //hide navbuttons
+            navButtonsTable.Visible = false;
+
+            addOrStatusMV.Visible = true;
+            addOrStatusMV.SetActiveView(add);
+            scanJob.SetActiveView(C_clientInfo);
+            hideButtons();
+        }
+
         protected void statusButton_Click(object sender, EventArgs e)
         {
             addOrStatusMV.Visible = true;
-            addOrStatusMV.SetActiveView(status);
+            //addOrStatusMV.SetActiveView(status);
             hideButtons();
         }
 
         protected void S_addNext_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(naming);
+            scanJob.SetActiveView(S_naming);
         }
 
         private void hideButtons()
@@ -271,7 +282,7 @@ namespace DTI_Schedule
 
         protected void S_goToCdBurningButton_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(cdBurning);
+            scanJob.SetActiveView(S_cdBurning);
         }
 
         protected void S_cdBurnCopiesDropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -390,6 +401,8 @@ namespace DTI_Schedule
                 S_spaceInControlNumberInfoLabel.Visible = false;
             }
         }
+
+
 
 
     }
