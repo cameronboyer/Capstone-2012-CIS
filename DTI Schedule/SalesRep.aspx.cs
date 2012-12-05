@@ -303,7 +303,7 @@ namespace DTI_Schedule
 
         protected void S_goToPrinting_Click(object sender, EventArgs e)
         {
-            scanJob.SetActiveView(printing);
+            scanJob.SetActiveView(S_printing);
         }
 
         protected void S_printAccoRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
@@ -401,9 +401,6 @@ namespace DTI_Schedule
                 S_spaceInControlNumberInfoLabel.Visible = false;
             }
         }
-
-
-
 
     }
 }
