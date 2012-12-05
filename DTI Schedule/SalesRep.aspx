@@ -4558,10 +4558,11 @@
                                         <asp:Button ID="P_backToCD" runat="server" Text="Back" />
                                     </td>
                                     <td>
-                                        &nbsp;
+                                        &nbsp;&nbsp;
                                     </td>
                                     <td>
-                                        <asp:Button ID="P_goToSpecialInstructions" runat="server" Text="Go to Special Instructions" />
+                                        <asp:Button ID="P_goToSpecialInstructions" runat="server" 
+                                            Text="Go to Special Instructions" onclick="P_goToSpecialInstructions_Click" />
                                     </td>
                                 </tr>
                             </table>
