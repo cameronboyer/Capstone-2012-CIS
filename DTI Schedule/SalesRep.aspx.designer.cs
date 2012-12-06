@@ -31,15 +31,6 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.Button addScanButton;
         
         /// <summary>
-        /// statusButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button statusButton;
-        
-        /// <summary>
         /// addCopyButton control.
         /// </summary>
         /// <remarks>
@@ -65,24 +56,6 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button addPrintButton;
-        
-        /// <summary>
-        /// addOrStatusMV control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView addOrStatusMV;
-        
-        /// <summary>
-        /// add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View add;
         
         /// <summary>
         /// scanJob control.
@@ -2200,22 +2173,22 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox C_clientMatterTextBox;
         
         /// <summary>
-        /// C_toNamingPage control.
+        /// C_toCopying control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button C_toNamingPage;
+        protected global::System.Web.UI.WebControls.Button C_toCopying;
         
         /// <summary>
-        /// C_scanning control.
+        /// C_copyingInstrcutions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View C_scanning;
+        protected global::System.Web.UI.WebControls.View C_copyingInstrcutions;
         
         /// <summary>
         /// C_pickAndChoose control.
@@ -2560,22 +2533,22 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox C_specialInstructionsPickAndChooseTextBox;
         
         /// <summary>
-        /// C_backToGrouping control.
+        /// C_backToClientInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button C_backToGrouping;
+        protected global::System.Web.UI.WebControls.Button C_backToClientInfo;
         
         /// <summary>
-        /// C_goToMedia control.
+        /// C_goToSpecialInstructions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button C_goToMedia;
+        protected global::System.Web.UI.WebControls.Button C_goToSpecialInstructions;
         
         /// <summary>
         /// C_specialInstructions control.
@@ -2596,22 +2569,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox C_sepcialInstrctionsProductionTextBox;
         
         /// <summary>
-        /// C_specialInstrctionsDataTextBox control.
+        /// C_backToCopying control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox C_specialInstrctionsDataTextBox;
-        
-        /// <summary>
-        /// C_backToPrinting control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button C_backToPrinting;
+        protected global::System.Web.UI.WebControls.Button C_backToCopying;
         
         /// <summary>
         /// C_addToDataBase control.
@@ -2902,13 +2866,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.Button D_backToClient;
         
         /// <summary>
-        /// D_toDocumentLevel control.
+        /// D_toDeliverables control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button D_toDocumentLevel;
+        protected global::System.Web.UI.WebControls.Button D_toDeliverables;
         
         /// <summary>
         /// D_deliverable control.
@@ -2965,22 +2929,22 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.RadioButtonList D_viewer;
         
         /// <summary>
-        /// D_backToMedia control.
+        /// D_backToNaming control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button D_backToMedia;
+        protected global::System.Web.UI.WebControls.Button D_backToNaming;
         
         /// <summary>
-        /// D_gotoIndexingInstructions control.
+        /// D_gotoEBSInstructions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button D_gotoIndexingInstructions;
+        protected global::System.Web.UI.WebControls.Button D_gotoEBSInstructions;
         
         /// <summary>
         /// D_ebsInstructions control.
@@ -3181,13 +3145,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox D_ebsOptionAdditionalLinesLineTwoTextBox;
         
         /// <summary>
-        /// D_backToIndexing control.
+        /// D_backToDeliverables control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button D_backToIndexing;
+        protected global::System.Web.UI.WebControls.Button D_backToDeliverables;
         
         /// <summary>
         /// D_goToCdBurningButton control.
@@ -3784,15 +3748,6 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View D_specialInstructions;
         
         /// <summary>
-        /// D_sepcialInstrctionsProductionTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox D_sepcialInstrctionsProductionTextBox;
-        
-        /// <summary>
         /// D_specialInstrctionsDataTextBox control.
         /// </summary>
         /// <remarks>
@@ -3827,6 +3782,114 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView printJob;
+        
+        /// <summary>
+        /// P_clientInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View P_clientInfo;
+        
+        /// <summary>
+        /// P_clientNameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label P_clientNameLbl;
+        
+        /// <summary>
+        /// P_clientNameDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList P_clientNameDropDown;
+        
+        /// <summary>
+        /// P_contactNameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label P_contactNameLbl;
+        
+        /// <summary>
+        /// P_contactNameDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList P_contactNameDropDown;
+        
+        /// <summary>
+        /// P_addressLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label P_addressLbl;
+        
+        /// <summary>
+        /// P_addressTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox P_addressTextBox;
+        
+        /// <summary>
+        /// P_phoneNumberLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label P_phoneNumberLbl;
+        
+        /// <summary>
+        /// P_phoneNumberTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox P_phoneNumberTextBox;
+        
+        /// <summary>
+        /// P_clientMatterLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label P_clientMatterLbl;
+        
+        /// <summary>
+        /// P_clientMatterTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox P_clientMatterTextBox;
+        
+        /// <summary>
+        /// P_toPrinting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button P_toPrinting;
         
         /// <summary>
         /// P_printing control.
@@ -4054,15 +4117,6 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox P_specialInstrctionsPrintTextBox;
         
         /// <summary>
-        /// P_backToCD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button P_backToCD;
-        
-        /// <summary>
         /// P_goToSpecialInstructions control.
         /// </summary>
         /// <remarks>
@@ -4070,5 +4124,41 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button P_goToSpecialInstructions;
+        
+        /// <summary>
+        /// P_specialInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View P_specialInstructions;
+        
+        /// <summary>
+        /// P_specialInstrctionsDataTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox P_specialInstrctionsDataTextBox;
+        
+        /// <summary>
+        /// P_backToPrinting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button P_backToPrinting;
+        
+        /// <summary>
+        /// P_addToDataBase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button P_addToDataBase;
     }
 }
