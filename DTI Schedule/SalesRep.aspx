@@ -226,7 +226,13 @@
                         <asp:Label ID="S_clientNameLbl" runat="server" Text="Client Name:"/>
                     </td>
                     <td>
-                        <asp:DropDownList ID="S_clientNameDropDown" runat="server"/>
+                        <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
+                            AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="SqlDataSource1" 
+                            DataTextField="clientName" DataValueField="clientID"/>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                            ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
+                            SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
+                        </asp:SqlDataSource>
                     </td>
                     <td>
                         &nbsp;
@@ -237,7 +243,17 @@
                         <asp:Label ID="S_contactNameLbl" runat="server" Text="Contact Name:"/>
                     </td>
                     <td>
-                            <asp:DropDownList ID="S_contactNameDropDown" runat="server"/>
+                            <asp:DropDownList ID="S_contactNameDropDown" runat="server" 
+                                DataSourceID="SqlDataSource2" DataTextField="ContactName" 
+                                DataValueField="contactID"/>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
+                                SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="S_clientNameDropDown" Name="company" 
+                                        PropertyName="SelectedValue" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                     </td>
                     <td>
                         &nbsp;
