@@ -166,6 +166,18 @@
         {
             width: 44px;
         }
+        .style74
+        {
+            width: 243px;
+        }
+        .style75
+        {
+            width: 235px;
+        }
+        .style76
+        {
+            width: 139px;
+        }
     </style>
 </asp:Content>
 
@@ -400,14 +412,17 @@
             <table id="S_documentLevelTable" style="width: 100%;">
                 <tr>
                     <td rowspan="5" class="style61">
-                <asp:CheckBoxList ID="S_documentLevelCheckBoxList" runat="server" AutoPostBack="True" onselectedindexchanged="S_documentLevelCheckBoxList_SelectedIndexChanged">
+                <asp:RadioButtonList ID="S_documentLevelRadioButtonList" runat="server" 
+                            AutoPostBack="True" 
+                            onselectedindexchanged="S_documentLevelCheckBoxList_SelectedIndexChanged" 
+                            Width="317px">
                     <asp:ListItem Value="Smallest Physical Bindings/Lowest" Text="Smallest Physical Bindings/Lowest" />
                     <asp:ListItem Value="Per Slip Sheets - Target Sheets" Text="Per Slip Sheets - Target Sheets" />
                     <asp:ListItem Value="Folder Tabs Determine Doc Break/per Folder" Text="Folder Tabs Determine Doc Break/per Folder" />
                     <asp:ListItem Value="Binder Tabs Determine Doc Break" Text="Binder Tabs Determine Doc Break" />
                     <asp:ListItem Value="LDD" Text="LDD" />
                     <asp:ListItem Value="Other" Text="Other:" />
-                </asp:CheckBoxList>
+                </asp:RadioButtonList>
                     </td>
                     <td>
                         &nbsp;
@@ -468,13 +483,13 @@
             <table id="S_groupingTable" style="width: 100%;">
                 <tr>
                     <td rowspan="6" class="style59">
-            <asp:CheckBoxList ID="S_groupingCheckBoxList" runat="server" AutoPostBack="True" onselectedindexchanged="S_groupingCheckBoxList_SelectedIndexChanged">
+            <asp:RadioButtonList ID="S_groupingRadioButtonList" runat="server" AutoPostBack="True" onselectedindexchanged="S_groupingCheckBoxList_SelectedIndexChanged">
                     <asp:ListItem Value="Box" Text="Box" />
                     <asp:ListItem Value="Folder" Text="Folder" />
                     <asp:ListItem Value="Document" Text="Document" />
                     <asp:ListItem Value="Child" Text="Child" />
                     <asp:ListItem Value="Other" Text="Other:" />
-                </asp:CheckBoxList>
+                </asp:RadioButtonList>
                     </td>
                     <td>
                         &nbsp;
@@ -608,9 +623,10 @@
                 <tr>
                     <td>
                         &nbsp;</td>
-                    <td>
+                    <td class="style75">
                         <asp:RadioButtonList ID="S_postItNoteInstruction" runat="server" 
-                            RepeatDirection="Horizontal" style="margin-left: 27px" Visible="False">
+                            RepeatDirection="Horizontal" style="margin-left: 27px" Visible="False" 
+                            Width="250px">
                             <asp:ListItem Text="On" Value="on" />
                             <asp:ListItem Text="One On/One Off" Value="oneOnOneOff" />
                             <asp:ListItem Text="Separtely" Value="separtely" />
@@ -867,7 +883,7 @@
                 <table style="width: 100%;">
                     <tr>
                         <td class="style2" rowspan="3">
-                            <asp:CheckBoxList ID="S_deliverables" runat="server" Height="185px" 
+                            <asp:RadioButtonList ID="S_deliverables" runat="server" Height="185px" 
                                 AutoPostBack="True" onselectedindexchanged="S_deliverables_SelectedIndexChanged">
                                 <asp:ListItem Value="dtiStandard" Text="DTI Standard" />
                                 <asp:ListItem Value="concordance" Text="Concordance" />
@@ -876,7 +892,7 @@
                                 <asp:ListItem Value="sanction_TrialDirector" Text="Sanction/Trial Director" />
                                 <asp:ListItem Value="pdf" Text="PDF" />
                                 <asp:ListItem Value="other" Text="Other" />
-                            </asp:CheckBoxList>
+                            </asp:RadioButtonList>
                         </td>
                         <td class="style13">
                             &nbsp;
@@ -2394,16 +2410,38 @@
                 </table>
         </asp:View>
         <asp:View ID="C_copyingInstrcutions" runat="server">
-                <h1>Scanning</h1>
+                <h1>Copying</h1>
                 <table style="width: 100%;">
                     <tr>
-                        <td class="style44" colspan="2">
+                        <td>
+                            Size:
+                        </td>
+                        <td>
+                            Print Method
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:RadioButtonList ID="C_sizeRadioButtonList" runat="server">
+                                <asp:ListItem Value="8.5 X 11" Text="ALL 8.5 X 11" />
+                                <asp:ListItem Value="8.5 X 14" Text="ALL 8.5 X 14" />
+                                <asp:ListItem Value="11 X 17" Text="ALL 11 X 17" />
+                                <asp:ListItem Value="sizeForSize" Text="Size for Size (8.5x11 Min.)" />
+                            </asp:RadioButtonList>
+                        </td>
+                        <td>
+                            <asp:RadioButtonList ID="C_printMethodRadioButtonList" runat="server">
+                                <asp:ListItem Value = "2sidedTo2Sided" Text="2 sided to 2 sided" />
+                                <asp:ListItem Value="2sidedTo1Sided" Text="2 sided to 1 sided" />
+                                <asp:ListItem Value="1sidedTo2Sided" Text="1 sided to 2 sided" />
+                            </asp:RadioButtonList>
                             <asp:CheckBox ID="C_pickAndChoose" 
                                 Text="Pick and Choose(See Special Instructions)" runat="server" 
-                                AutoPostBack="True" oncheckedchanged="C_pickAndChoose_CheckedChanged"/></td>
-                        <td>
-                                <asp:CheckBox ID="C_scanAllPortrait" Text="Scan All Paper Portrait" runat="server"/></td>
+                                AutoPostBack="True" oncheckedchanged="C_pickAndChoose_CheckedChanged"/>
+                        </td>
                     </tr>
+                </table>
+                <table>
                     <tr>
                         <td class="style44" colspan="2">
                             <asp:Label ID="C_yesColOne" runat="server" Text="Yes" />
@@ -2469,9 +2507,10 @@
                     <tr>
                         <td>
                             &nbsp;</td>
-                        <td>
+                        <td class="style74">
                             <asp:RadioButtonList ID="C_postItNoteInstruction" runat="server" 
-                                RepeatDirection="Horizontal" style="margin-left: 27px" Visible="False">
+                                RepeatDirection="Horizontal" style="margin-left: 27px" Visible="False" 
+                                Width="255px">
                                 <asp:ListItem Text="On" Value="on" />
                                 <asp:ListItem Text="One On/One Off" Value="oneOnOneOff" />
                                 <asp:ListItem Text="Separtely" Value="separtely" />
@@ -2481,7 +2520,7 @@
                 </table>
                 <table style="width: 100%;">
                     <tr>
-                        <td class="style71">
+                        <td class="style76">
                             <asp:CheckBox ID="C_reduceToCheckBox" runat="server" AutoPostBack="True" 
                                 oncheckedchanged="C_reduceToCheckBox_CheckedChanged" Text="Reduce To:" />
                         </td>
@@ -2500,6 +2539,38 @@
                         <td>
                             <asp:CheckBox ID="C_sizeForSizeCheckBox" runat="server" Text="Size for Size" />
                         </td>
+                    </tr>
+                    <tr>
+                        <td class="style76">
+                            <asp:CheckBox ID="C_enlargeToCheckBox" runat="server" AutoPostBack="true" 
+                                Text="Enlarge To:" oncheckedchanged="C_enlargeToCheckBox_CheckedChanged" />
+                        </td>
+                        <td>
+                            <asp:RadioButtonList ID="C_enlargeToRadioButtonList" runat="server" 
+                                AutoPostBack="true" RepeatDirection="Horizontal" Visible="false" 
+                                onselectedindexchanged="C_enlargeToRadioButtonList_SelectedIndexChanged">
+                                <asp:ListItem Text="24 X 36" Value = "24 X 36" />
+                                <asp:ListItem Text="Other" Value="other" />
+                            </asp:RadioButtonList>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="C_enlargeToOtherTextBox" runat="server" Visible="false" />
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="style76">
+                            <asp:Label ID="C_oversizeDocLabel" runat="server" Text="Oversize Documents" Visible="false" />
+                        </td>
+                        <td>
+                            <asp:RadioButtonList ID="C_oversizeDocRadioButtonList" runat ="server" Visible="false" RepeatDirection="Horizontal">
+                                <asp:ListItem Value="roll" Text="Roll" />
+                                <asp:ListItem Value="fold" Text="Fold" />
+                                <asp:ListItem Value="pockets" Text="Pockets" />
+                            </asp:RadioButtonList>
+                        </td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </table>
                 <table style="width: 100%;">
@@ -2577,6 +2648,56 @@
                                 <asp:ListItem Text="Oversized(Create Tag)" Value="no" />
                             </asp:RadioButtonList>
                         </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>Miscellaneous</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><asp:Label ID="C_miscellaneous" runat="server" Text="Copy Dup" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:CheckBoxList ID="C_videoTapesCheckBoxList" runat="server" 
+                                RepeatDirection="Horizontal">
+                                <asp:ListItem Value="copy" Text="" />
+                                <asp:ListItem Value="dup" Text="Video Tapes" />
+                            </asp:CheckBoxList>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:CheckBoxList ID="C_audioTapesCheckBoxList" runat="server" 
+                                RepeatDirection="Horizontal">
+                                <asp:ListItem Value="copy" Text="" />
+                                <asp:ListItem Value="dup" Text="Audio Tapes" />
+                            </asp:CheckBoxList>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:CheckBoxList ID="C_compactDiskCheckBoxList" runat="server" 
+                                RepeatDirection="Horizontal">
+                                <asp:ListItem Value="copy" Text="" />
+                                <asp:ListItem Value="dup" Text="Compact Disk" />
+                            </asp:CheckBoxList>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:CheckBoxList ID="C_floppieDisks" runat="server" 
+                                RepeatDirection="Horizontal">
+                                <asp:ListItem Value="copy" Text="" />
+                                <asp:ListItem Value="dup" Text='3.5" Diskette' />
+                            </asp:CheckBoxList>
+                        </td>
+                        <td></td>
                     </tr>
                 </table>
                 <table style="width: 100%;">
@@ -4517,7 +4638,8 @@
                             </td>
                             <td>
                                 <asp:Button ID="P_goToSpecialInstructions" runat="server" 
-                                    Text="Go to Special Instructions"  />
+                                    Text="Go to Special Instructions" 
+                                    onclick="P_goToSpecialInstructions_Click"  />
                             </td>
                         </tr>
                     </table>

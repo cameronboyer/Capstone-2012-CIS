@@ -80,9 +80,9 @@ namespace DTI_Schedule
             //        S_otherDocumentLevelTextBox.Visible = false;
             //    }
             //}
-            for (int i = 0; i < S_documentLevelCheckBoxList.Items.Count; i++)
+            for (int i = 0; i < S_documentLevelRadioButtonList.Items.Count; i++)
             {
-                if (S_documentLevelCheckBoxList.SelectedIndex == 5)
+                if (S_documentLevelRadioButtonList.SelectedIndex == 5)
                 {
                     S_otherDocumentLevelTextBox.Visible = true;
                 }
@@ -93,7 +93,7 @@ namespace DTI_Schedule
 
         protected void S_groupingCheckBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (S_groupingCheckBoxList.SelectedValue == "Other")
+            if (S_groupingRadioButtonList.SelectedValue == "Other")
             {
                 S_otherGroupingTextBox.Visible = true;
             }
@@ -459,11 +459,18 @@ namespace DTI_Schedule
             if (C_reduceToCheckBox.Checked)
             {
                 C_reduceToRadioButtonList.Visible = true;
+                C_oversizeDocLabel.Visible = true;
+                C_oversizeDocRadioButtonList.Visible = true;
+            }
+            else if (C_enlargeToCheckBox.Checked)
+            {
             }
             else
             {
                 C_reduceToRadioButtonList.Visible = false;
                 C_reduceToOtherTextBox.Visible = false;
+                C_oversizeDocLabel.Visible = false;
+                C_oversizeDocRadioButtonList.Visible = false;
             }
         }
 
@@ -736,6 +743,43 @@ namespace DTI_Schedule
         protected void P_toPrinting_Click(object sender, EventArgs e)
         {
             printJob.SetActiveView(P_printing);
+        }
+
+        protected void P_goToSpecialInstructions_Click(object sender, EventArgs e)
+        {
+            printJob.SetActiveView(P_specialInstructions);
+        }
+
+        protected void C_enlargeToCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (C_enlargeToCheckBox.Checked)
+            {
+                C_enlargeToRadioButtonList.Visible = true;
+                C_oversizeDocLabel.Visible = true;
+                C_oversizeDocRadioButtonList.Visible = true;
+            }
+            else if (C_reduceToCheckBox.Checked)
+            {
+            }
+            else
+            {
+                C_enlargeToRadioButtonList.Visible = false;
+                C_enlargeToOtherTextBox.Visible = false;
+                C_oversizeDocLabel.Visible = false;
+                C_oversizeDocRadioButtonList.Visible = false;
+            }
+        }
+
+        protected void C_enlargeToRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (C_enlargeToRadioButtonList.SelectedValue == "other")
+            {
+                C_enlargeToOtherTextBox.Visible = true;
+            }
+            else
+            {
+                C_enlargeToOtherTextBox.Visible=false;
+            }
         }
     }
 }

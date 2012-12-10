@@ -355,13 +355,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View S_documentLevel;
         
         /// <summary>
-        /// S_documentLevelCheckBoxList control.
+        /// S_documentLevelRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList S_documentLevelCheckBoxList;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_documentLevelRadioButtonList;
         
         /// <summary>
         /// S_otherDocumentLevelTextBox control.
@@ -400,13 +400,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View S_grouping;
         
         /// <summary>
-        /// S_groupingCheckBoxList control.
+        /// S_groupingRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList S_groupingCheckBoxList;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_groupingRadioButtonList;
         
         /// <summary>
         /// S_otherGroupingTextBox control.
@@ -901,7 +901,7 @@ namespace DTI_Schedule {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList S_deliverables;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_deliverables;
         
         /// <summary>
         /// S_pdfPer control.
@@ -2191,6 +2191,24 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View C_copyingInstrcutions;
         
         /// <summary>
+        /// C_sizeRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList C_sizeRadioButtonList;
+        
+        /// <summary>
+        /// C_printMethodRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList C_printMethodRadioButtonList;
+        
+        /// <summary>
         /// C_pickAndChoose control.
         /// </summary>
         /// <remarks>
@@ -2198,15 +2216,6 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox C_pickAndChoose;
-        
-        /// <summary>
-        /// C_scanAllPortrait control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox C_scanAllPortrait;
         
         /// <summary>
         /// C_yesColOne control.
@@ -2380,6 +2389,51 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.CheckBox C_sizeForSizeCheckBox;
         
         /// <summary>
+        /// C_enlargeToCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox C_enlargeToCheckBox;
+        
+        /// <summary>
+        /// C_enlargeToRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList C_enlargeToRadioButtonList;
+        
+        /// <summary>
+        /// C_enlargeToOtherTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox C_enlargeToOtherTextBox;
+        
+        /// <summary>
+        /// C_oversizeDocLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label C_oversizeDocLabel;
+        
+        /// <summary>
+        /// C_oversizeDocRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList C_oversizeDocRadioButtonList;
+        
+        /// <summary>
         /// C_colorLbl control.
         /// </summary>
         /// <remarks>
@@ -2513,6 +2567,51 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList C_oversize;
+        
+        /// <summary>
+        /// C_miscellaneous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label C_miscellaneous;
+        
+        /// <summary>
+        /// C_videoTapesCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList C_videoTapesCheckBoxList;
+        
+        /// <summary>
+        /// C_audioTapesCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList C_audioTapesCheckBoxList;
+        
+        /// <summary>
+        /// C_compactDiskCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList C_compactDiskCheckBoxList;
+        
+        /// <summary>
+        /// C_floppieDisks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList C_floppieDisks;
         
         /// <summary>
         /// C_specialInstructionsPickAndChooseLabel control.
