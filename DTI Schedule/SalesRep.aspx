@@ -240,7 +240,7 @@
                     <td>
                         <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
                             AppendDataBoundItems="True" DataSourceID="SqlDataSource1" 
-                            DataTextField="clientName" DataValueField="clientID"/>
+                            DataTextField="clientName" DataValueField="clientID" AutoPostBack="True"/>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                             SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">

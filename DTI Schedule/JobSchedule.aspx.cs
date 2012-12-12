@@ -161,6 +161,7 @@ namespace WorkScheduler
            
             shiftRBL2.Visible = true;
             shiftLabel.Visible = true;
+            shiftRBL2.ClearSelection();
         }
 
         protected void shiftRBL2_SelectedIndexChanged(object sender, EventArgs e)
