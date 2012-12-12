@@ -239,7 +239,7 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
-                            AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="SqlDataSource1" 
+                            AppendDataBoundItems="True" DataSourceID="SqlDataSource1" 
                             DataTextField="clientName" DataValueField="clientID"/>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
