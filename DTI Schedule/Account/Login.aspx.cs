@@ -30,7 +30,7 @@ namespace DTI_Schedule.Account
 
             string queryLevel = "SELECT level FROM Users WHERE userName = @userName and password = @password";
 
-            using (SqlConnection con = new SqlConnection(CS))
+            using (SqlConnection con = new SqlConnection())
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(queryLevel, con))
