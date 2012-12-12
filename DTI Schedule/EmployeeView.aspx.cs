@@ -20,7 +20,7 @@ namespace WorkScheduler
             {
                 if((string)(Session["level"]) != "1")
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("/Account/Login.aspx");
                 }
 
 
