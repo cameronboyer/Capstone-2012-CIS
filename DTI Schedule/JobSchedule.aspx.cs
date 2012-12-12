@@ -18,6 +18,12 @@ namespace WorkScheduler
         {
             if (!IsPostBack)
             {
+                if((string)(Session["level"]) != ("Scheduler") || (string)(Session["level"]) != "4")
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+
+
                 BindGrid();
                 buildShiftList();
             }
