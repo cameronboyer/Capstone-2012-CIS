@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace DTI_Schedule.Account
@@ -28,9 +29,9 @@ namespace DTI_Schedule.Account
             //no encryption ... who cares...
             string password = txtPassword.Text.Trim();
 
-            string queryLevel = "SELECT level FROM Users WHERE userName = @userName and password = @password";
+            string queryLevel = "SELECT userLevel FROM Users WHERE userName = @userName and password = @password";
 
-            using (SqlConnection con = new SqlConnection())
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chuckDB"].ConnectionString))
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(queryLevel, con))
@@ -55,13 +56,13 @@ namespace DTI_Schedule.Account
                         switch (level)
                         {
                             case "Employee":
-                                Response.Redirect("EMPLOYEEPAGE");
+                                Response.Redirect("EmployeeView.aspx");
                                 break;
                             case "Scheduler":
-                                Response.Redirect("SCHEDULE");
+                                Response.Redirect("JobSchedule.aspx");
                                 break;
                             case "Sales":
-                                Response.Redirect("SALES");
+                                Response.Redirect("JobStatus.aspx");
                                 break;
                         }
 

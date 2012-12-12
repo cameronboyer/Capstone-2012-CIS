@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="EmployeeView.aspx.cs">
       <DependentUpon>EmployeeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EmployeeView.aspx.designer.cs">
       <DependentUpon>EmployeeView.aspx</DependentUpon>
@@ -128,12 +129,14 @@
     </Compile>
     <Compile Include="JobSchedule.aspx.cs">
       <DependentUpon>JobSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="JobSchedule.aspx.designer.cs">
       <DependentUpon>JobSchedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="JobStatus.aspx.cs">
       <DependentUpon>JobStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="JobStatus.aspx.designer.cs">
       <DependentUpon>JobStatus.aspx</DependentUpon>
