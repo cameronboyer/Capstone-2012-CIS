@@ -137,6 +137,7 @@ namespace WorkScheduler
             {
                 conn.Close();
             }
+            //this ensures that the details will be visible
             openJobsDetails.Visible = true;
         }
 
