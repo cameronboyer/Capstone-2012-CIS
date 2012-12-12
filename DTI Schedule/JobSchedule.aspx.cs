@@ -137,6 +137,7 @@ namespace WorkScheduler
             {
                 conn.Close();
             }
+            openJobsDetails.Visible = true;
         }
 
         protected void openJobsDetails_SelectedIndexChanged(object sender, EventArgs e)
