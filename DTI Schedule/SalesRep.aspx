@@ -240,10 +240,11 @@
                     <td>
                         <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
                             AppendDataBoundItems="True" DataSourceID="SqlDataSource1" 
-                            DataTextField="clientName" DataValueField="clientID" AutoPostBack="True"/>
+                            DataTextField="clientName" DataValueField="clientID" AutoPostBack="True" 
+                            onselectedindexchanged="S_clientNameDropDown_SelectedIndexChanged" SelectedValue='<%#  Eval("clientID") %>'/>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
-                            SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
+                            SelectCommand="SELECT [clientName], [clientID], [phonNumber],[address] FROM [Clients] ORDER BY [clientName]">
                         </asp:SqlDataSource>
                     </td>
                     <td>
@@ -257,7 +258,8 @@
                     <td>
                             <asp:DropDownList ID="S_contactNameDropDown" runat="server" 
                                 DataSourceID="SqlDataSource2" DataTextField="ContactName" 
-                                DataValueField="contactID"/>
+                                DataValueField="contactID" 
+                                onselectedindexchanged="S_contactNameDropDown_SelectedIndexChanged"/>
                             <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                                 SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
@@ -276,7 +278,7 @@
                         <asp:Label ID="S_addressLbl" runat="server" Text="Address:"/>
                     </td>
                     <td>
-                        <asp:TextBox ID="S_addressTextBox" runat="server"/>
+                        <asp:TextBox ID="S_addressTextBox" runat="server" Text='<%#  Eval("clientID") %>'/>
                     </td>
                     <td>
                         &nbsp;

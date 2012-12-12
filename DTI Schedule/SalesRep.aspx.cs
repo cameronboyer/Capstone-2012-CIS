@@ -794,5 +794,17 @@ namespace DTI_Schedule
                 C_enlargeToOtherTextBox.Visible=false;
             }
         }
+
+        protected void S_contactNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void S_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //used to query the db to get the address
+            string contactName = S_contactNameDropDown.SelectedValue;
+
+        }
     }
 }
