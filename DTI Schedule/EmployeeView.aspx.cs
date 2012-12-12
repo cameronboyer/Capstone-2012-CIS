@@ -18,7 +18,7 @@ namespace WorkScheduler
         {
             if (!IsPostBack)
             {
-                if((string)(Session["level"]) != "1")
+                if((string)(Session["level"]) != "Employee")
                 {
                     Response.Redirect("/Account/Login.aspx");
                 }
@@ -34,7 +34,7 @@ namespace WorkScheduler
         {
             string connString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             SqlConnection conn = new SqlConnection(connString);
-            string sql = "SELECT JobNumber FROM chucksDB WHERE Shift = CAST(1 AS VARCHAR(1))";
+            string sql = "SELECT JobNumber FROM JobList WHERE Shift = CAST(1 AS VARCHAR(1))";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             try
@@ -63,7 +63,7 @@ namespace WorkScheduler
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT JobNumber FROM chucksDB WHERE Shift = CAST(2 AS VARCHAR(1))", con);
+                SqlCommand cmd = new SqlCommand("SELECT JobNumber FROM JobList WHERE Shift = CAST(2 AS VARCHAR(1))", con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 shift2ListBox.DataSource = reader;
                 shift2ListBox.DataTextField = "JobNumber";
@@ -76,7 +76,7 @@ namespace WorkScheduler
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT JobNumber FROM chucksDB WHERE Shift = CAST(3 AS VARCHAR(1))", con);
+                SqlCommand cmd = new SqlCommand("SELECT JobNumber FROM JobList WHERE Shift = CAST(3 AS VARCHAR(1))", con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 shift3ListBox.DataSource = reader;
                 shift3ListBox.DataTextField = "JobNumber";
@@ -93,7 +93,7 @@ namespace WorkScheduler
             SqlDataReader reader;
             string connectionString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             conn = new SqlConnection(connectionString);
-            comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, Employee FROM chucksDB WHERE JobNumber=@JobNumber", conn);
+            comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, Employee FROM JobList WHERE JobNumber=@JobNumber", conn);
             comm.Parameters.Add("@JobNumber", SqlDbType.Int);
             comm.Parameters["@JobNumber"].Value = chucksDB;
             shift2ListBox.SelectedIndex = -1;
@@ -122,7 +122,7 @@ namespace WorkScheduler
             SqlDataReader reader;
             string connectionString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             conn = new SqlConnection(connectionString);
-            comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, Employee FROM chucksDB WHERE JobNumber=@JobNumber", conn);
+            comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, Employee FROM JobList WHERE JobNumber=@JobNumber", conn);
             comm.Parameters.Add("@JobNumber", SqlDbType.Int);
             comm.Parameters["@JobNumber"].Value = chucksDB;
             shift1ListBox.SelectedIndex = -1;
@@ -152,7 +152,7 @@ namespace WorkScheduler
             SqlDataReader reader;
             string connectionString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             conn = new SqlConnection(connectionString);
-            comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, Employee FROM chucksDB WHERE JobNumber=@JobNumber", conn);
+            comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, Employee FROM JobList WHERE JobNumber=@JobNumber", conn);
             comm.Parameters.Add("@JobNumber", SqlDbType.Int);
             comm.Parameters["@JobNumber"].Value = chucksDB;
             shift1ListBox.SelectedIndex = -1;

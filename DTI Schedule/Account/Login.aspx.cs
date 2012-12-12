@@ -56,13 +56,13 @@ namespace DTI_Schedule.Account
                         switch (level)
                         {
                             case "Employee":
-                                Response.Redirect("EmployeeView.aspx");
+                                Response.Redirect("/EmployeeView.aspx");
                                 break;
                             case "Scheduler":
-                                Response.Redirect("JobSchedule.aspx");
+                                Response.Redirect("../JobSchedule.aspx");
                                 break;
                             case "Sales":
-                                Response.Redirect("JobStatus.aspx");
+                                Response.Redirect("../JobStatus.aspx");
                                 break;
                         }
 
