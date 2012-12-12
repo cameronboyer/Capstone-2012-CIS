@@ -58,7 +58,7 @@
             </asp:GridView>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:JobList %>" 
+                ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                 
                 SelectCommand="SELECT [JobNumber], [Client], [JobType], [DeliveryTime], [JobLocation], [Employee], [JobStatus], [Shift] FROM [JobList]">
             </asp:SqlDataSource>

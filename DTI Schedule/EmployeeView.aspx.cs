@@ -17,8 +17,15 @@ namespace WorkScheduler
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                if((string)(Session["level"]) != ("Employee") || (string)(Session["level"]) != "4")
+            { 
+
+                //String.IsNullOrEmpty((string)(Session["level"]));
+                string level = (string)(Session["level"]);
+                if (String.IsNullOrEmpty(level))
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+                if (!level.Equals("Employee") && !level.Equals("4"))
                 {
                     Response.Redirect("/Account/Login.aspx");
                 }

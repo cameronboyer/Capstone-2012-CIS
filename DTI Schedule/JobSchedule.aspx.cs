@@ -18,7 +18,16 @@ namespace WorkScheduler
         {
             if (!IsPostBack)
             {
-                if((string)(Session["level"]) != ("Scheduler") || (string)(Session["level"]) != "4")
+                //correct syntax for checking if scheduler or admin aka 4
+
+                string level = (string)(Session["level"]);
+
+                if (String.IsNullOrEmpty(level))
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+
+                if(!level.Equals("Scheduler") && !level.Equals("4"))
                 {
                     Response.Redirect("/Account/Login.aspx");
                 }

@@ -8,7 +8,8 @@
         Log In
     </h2>
     <p>
-        Please enter your username and password.<table style="width:100%;">
+        Please enter your username and password.</p>
+        <table style="width:100%;">
             <tr>
                 <td>
                     Username:</td>
@@ -31,7 +32,8 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    &nbsp;</td>
+                    <asp:Label ID="errorLabel" runat="server" Text="Wrong Password"></asp:Label>
+                </td>
                 <td>
                     <asp:Button ID="btnSubmit" runat="server" Text="Login" 
                         onclick="btnSubmit_Click" />

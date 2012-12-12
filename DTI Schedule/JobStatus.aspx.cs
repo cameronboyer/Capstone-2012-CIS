@@ -18,7 +18,14 @@ namespace WorkScheduler
         {
             if (!IsPostBack)
             {
-                if((string)(Session["level"]) != ("SalesRep") || (string)(Session["level"]) != "4")
+                string level = (string)(Session["level"]);
+
+                if (String.IsNullOrEmpty(level))
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+
+                if (!level.Equals("SalesRep") && !level.Equals("4"))
                 {
                     Response.Redirect("/Account/Login.aspx");
                 }

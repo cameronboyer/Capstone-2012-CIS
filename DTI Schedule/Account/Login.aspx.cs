@@ -15,7 +15,10 @@ namespace DTI_Schedule.Account
         string CS = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack)
+            {
+                errorLabel.Visible = false;
+            }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -47,8 +50,9 @@ namespace DTI_Schedule.Account
 
                     if (String.IsNullOrEmpty(level))
                     {
+                        errorLabel.Visible = true;
                         //redirectes on error
-                        Response.Redirect("ERRORPAGE");
+                        //Response.Redirect("ERRORPAGE");
                     }
                     else
                     {   //looks at level and directs accordingly, The redirects need to be actual pages
@@ -56,16 +60,16 @@ namespace DTI_Schedule.Account
                         switch (level)
                         {
                             case "Employee":
-                                Response.Redirect("/EmployeeView.aspx");
+                                Response.Redirect("../EmployeeView.aspx");
                                 break;
                             case "Scheduler":
-                                Response.Redirect("/JobSchedule.aspx");
+                                Response.Redirect("../JobSchedule.aspx");
                                 break;
                             case "Sales":
-                                Response.Redirect("/JobStatus.aspx");
+                                Response.Redirect("../JobStatus.aspx");
                                 break;
                             case "4":
-                                Response.Redirect("/admin.aspx");
+                                Response.Redirect("../admin.aspx");
                                 break;
                         }
 
