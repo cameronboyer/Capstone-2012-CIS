@@ -24,7 +24,7 @@ namespace WorkScheduler
 
         private void BindGrid()
         {
-            string connString = ConfigurationManager.ConnectionStrings["JobList"].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             string sql = "SELECT JobNumber FROM JobList";
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -63,7 +63,7 @@ namespace WorkScheduler
             SqlConnection conn;
             SqlCommand comm;
             SqlDataReader reader;
-            string connectionString = ConfigurationManager.ConnectionStrings["JobList"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             conn = new SqlConnection(connectionString);
             comm = new SqlCommand("SELECT JobNumber, Client, DeliveryTime, JobType, JobLocation, Shift, Employee FROM JobList WHERE JobNumber=@JobNumber", conn);
             comm.Parameters.Add("@JobNumber", SqlDbType.Int);

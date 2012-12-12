@@ -26,7 +26,7 @@ namespace WorkScheduler
         private void BindGrid()
         {
             unschedJobListBox.Items.Clear();
-            string connString = ConfigurationManager.ConnectionStrings["JobList"].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             string sql = "SELECT JobNumber FROM JobList WHERE JobStatus = 'Unscheduled'";
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -67,7 +67,7 @@ namespace WorkScheduler
             SqlConnection conn;
             SqlCommand comm;
             SqlDataReader reader;
-            string connectionString = ConfigurationManager.ConnectionStrings["JobList"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             conn = new SqlConnection(connectionString);
             comm = new SqlCommand("SELECT JobNumber, Client, JobType, JobLocation, JobStatus, Shift FROM JobList WHERE JobNumber=@JobNumber", conn);
             comm.Parameters.Add("@JobNumber", SqlDbType.Int);
@@ -91,7 +91,7 @@ namespace WorkScheduler
         //binds the Open job number + the shift to the list box
         public void buildShiftList()
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JobList"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT JobNumber, CAST(JobNumber AS VARCHAR(50)) + ', Shift ' + CAST(Shift AS VARCHAR) AS LIST FROM JobList WHERE JobStatus = 'Open'", con);
@@ -116,7 +116,7 @@ namespace WorkScheduler
             SqlConnection conn;
             SqlCommand comm;
             SqlDataReader reader;
-            string connectionString = ConfigurationManager.ConnectionStrings["JobList"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString;
             conn = new SqlConnection(connectionString);
             comm = new SqlCommand("SELECT JobNumber, Client, DeliveryTime, JobType, JobLocation, JobStatus, Shift, Employee FROM JobList WHERE JobNumber=@JobNumber", conn);
             //comm.Parameters.Add("@JobNumber", SqlDbType.Int);
@@ -151,7 +151,7 @@ namespace WorkScheduler
 
             int jobNumber = Convert.ToInt32(openJobsListBox.SelectedValue); 
 
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JobList"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
                 SqlCommand comm;
@@ -178,7 +178,7 @@ namespace WorkScheduler
         {
             int jobNumber = Convert.ToInt32(unschedJobListBox.SelectedValue); 
 
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JobList"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
                 SqlCommand comm;
