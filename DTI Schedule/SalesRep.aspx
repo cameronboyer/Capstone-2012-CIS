@@ -1650,7 +1650,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="S_backToEBS" runat="server" Text="Back" 
-                                onclick="S_backToEBS_Click" Visible="False" />
+                                onclick="S_backToEBS_Click" />
                         </td>
                         <td class="style41">
                             &nbsp;
@@ -1771,7 +1771,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="S_backToEBS2" runat="server" Text="Back" 
-                                onclick="S_backToEBS2_Click" />
+                                onclick="S_backToEBS2_Click" Visible="False" />
                         </td>
                         <td>
                             &nbsp;
@@ -3492,7 +3492,7 @@
                         <tr>
                             <td>
                                 <asp:Button ID="D_backToEBS" runat="server" Text="Back" 
-                                    onclick="D_backToEBS_Click" Visible="False" />
+                                    onclick="D_backToEBS_Click" />
                             </td>
                             <td class="style41">
                                 &nbsp;
@@ -3613,7 +3613,7 @@
                         <tr>
                             <td>
                                 <asp:Button ID="D_backToEBS2" runat="server" Text="Back" 
-                                    onclick="D_backToEBS2_Click" />
+                                    onclick="D_backToEBS2_Click" Visible="False" />
                             </td>
                             <td>
                                 &nbsp;

@@ -676,6 +676,7 @@ namespace DTI_Schedule
                 D_goToPrinting.Visible = false;
                 D_goToPrinting2.Visible = true;
                 D_backToEBS.Visible = false;
+                D_backToEBS2.Visible = true;
             }
             else
             {
@@ -683,6 +684,8 @@ namespace DTI_Schedule
                 D_goToPrinting.Visible = true;
                 D_goToPrinting2.Visible = false;
                 D_backToEBS.Visible = true;
+                D_backToEBS2.Visible = false;
+                D_goToPrinting2.Visible = false;
             }
         }
 
