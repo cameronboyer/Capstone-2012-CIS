@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DTI_Schedule
 {
@@ -24,6 +26,10 @@ namespace DTI_Schedule
                 {
                     Response.Redirect("/Account/Login.aspx");
                 }
+
+                loadClientsContacts();
+                getClientAddressPhonenumber();
+                loadContactNames();
             }
         }
 
@@ -807,7 +813,7 @@ namespace DTI_Schedule
             }
         }
 
-<<<<<<< HEAD
+
         protected void S_goToSpecialInstructions_Click(object sender, EventArgs e)
         {
             scanJob.SetActiveView(S_specialInstructions);
@@ -922,18 +928,76 @@ namespace DTI_Schedule
 	        {
 	            scanJob.SetActiveView(P_printing);
 	        }
-=======
+
         protected void S_contactNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
+
+
+        }
+
+
+        protected void getClientAddressPhonenumber()
+        {
+            string contactID = S_clientNameDropDown.SelectedValue;
+            if (!String.IsNullOrEmpty(contactID))
+            {
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT address, phoneNumber FROM Clients WHERE clientID = @clientID", con);
+                    cmd.Parameters.AddWithValue("@clientID", contactID);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    S_addressTextBox.Text = reader.GetValue(0).ToString();
+                    S_phoneNumberTextBox.Text = reader["phoneNumber"].ToString();
+
+                }
+            }
         }
 
         protected void S_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             //used to query the db to get the address
-            string contactName = S_contactNameDropDown.SelectedValue;
+            //string contactName = S_contactNameDropDown.SelectedValue;
 
+
+            getClientAddressPhonenumber();
+            loadContactNames();
         }
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
+
+
+        protected void loadClientsContacts()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
+            {
+                con.Open();
+                //handles Client Name
+                SqlCommand cmd = new SqlCommand("SELECT clientName, clientID FROM Clients", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                S_clientNameDropDown.DataSource = reader;
+                S_clientNameDropDown.DataValueField = "clientID";
+                S_clientNameDropDown.DataTextField = "clientName";
+                S_clientNameDropDown.DataBind();
+            }
+        }
+
+        protected void loadContactNames()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
+            {
+                con.Open();
+                //handles Contact Name
+                SqlCommand cmd = new SqlCommand("SELECT ContactName FROM Contacts where company = @companyID", con);
+                cmd.Parameters.AddWithValue("@companyID", S_clientNameDropDown.SelectedValue);
+                SqlDataReader reader = cmd.ExecuteReader();
+                S_contactNameDropDown.DataSource = reader;
+                S_contactNameDropDown.DataTextField = "ContactName";
+                S_contactNameDropDown.DataBind();
+            }
+        }
+
     }
 }

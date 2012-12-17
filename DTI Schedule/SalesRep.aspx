@@ -239,16 +239,11 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
-<<<<<<< HEAD
-                            AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="S_clientNameSqlDataSource" 
-                            DataTextField="clientName" DataValueField="clientID"/>
+
+                            AppendDataBoundItems="True" AutoPostBack="True" 
+                            onselectedindexchanged="S_clientNameDropDown_SelectedIndexChanged"/>
                         <asp:SqlDataSource ID="S_clientNameSqlDataSource" runat="server" 
-=======
-                            AppendDataBoundItems="True" DataSourceID="SqlDataSource1" 
-                            DataTextField="clientName" DataValueField="clientID" AutoPostBack="True" 
-                            onselectedindexchanged="S_clientNameDropDown_SelectedIndexChanged" SelectedValue='<%#  Eval("clientID") %>'/>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
+
                             ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                             SelectCommand="SELECT [clientName], [clientID], [phonNumber],[address] FROM [Clients] ORDER BY [clientName]">
                         </asp:SqlDataSource>
@@ -262,17 +257,10 @@
                         <asp:Label ID="S_contactNameLbl" runat="server" Text="Contact Name:"/>
                     </td>
                     <td>
-                            <asp:DropDownList ID="S_contactNameDropDown" runat="server" 
-<<<<<<< HEAD
-                                DataSourceID="S_clientContactSqlDataSource" DataTextField="ContactName" 
-                                DataValueField="contactID"/>
+                            <asp:DropDownList ID="S_contactNameDropDown" runat="server"/>
                             <asp:SqlDataSource ID="S_clientContactSqlDataSource" runat="server" 
-=======
-                                DataSourceID="SqlDataSource2" DataTextField="ContactName" 
-                                DataValueField="contactID" 
-                                onselectedindexchanged="S_contactNameDropDown_SelectedIndexChanged"/>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
+
+
                                 ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                                 SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
                                 <SelectParameters>
@@ -290,11 +278,9 @@
                         <asp:Label ID="S_addressLbl" runat="server" Text="Address:"/>
                     </td>
                     <td>
-<<<<<<< HEAD
+
                         <asp:TextBox ID="S_addressTextBox" runat="server" Width="250px"/>
-=======
-                        <asp:TextBox ID="S_addressTextBox" runat="server" Text='<%#  Eval("clientID") %>'/>
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
+
                     </td>
                     <td>
                         &nbsp;
