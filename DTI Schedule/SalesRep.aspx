@@ -239,9 +239,9 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
-                            AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="SqlDataSource1" 
+                            AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="S_clientNameSqlDataSource" 
                             DataTextField="clientName" DataValueField="clientID"/>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                        <asp:SqlDataSource ID="S_clientNameSqlDataSource" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                             SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
                         </asp:SqlDataSource>
@@ -256,9 +256,9 @@
                     </td>
                     <td>
                             <asp:DropDownList ID="S_contactNameDropDown" runat="server" 
-                                DataSourceID="SqlDataSource2" DataTextField="ContactName" 
+                                DataSourceID="S_clientContactSqlDataSource" DataTextField="ContactName" 
                                 DataValueField="contactID"/>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                            <asp:SqlDataSource ID="S_clientContactSqlDataSource" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
                                 SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
                                 <SelectParameters>
@@ -276,7 +276,7 @@
                         <asp:Label ID="S_addressLbl" runat="server" Text="Address:"/>
                     </td>
                     <td>
-                        <asp:TextBox ID="S_addressTextBox" runat="server"/>
+                        <asp:TextBox ID="S_addressTextBox" runat="server" Width="250px"/>
                     </td>
                     <td>
                         &nbsp;
@@ -373,7 +373,7 @@
                         <asp:Label ID="S_controlNumberLbl0" runat="server" Text="Control Number:" />
                     </td>
                     <td>
-                        <asp:TextBox ID="S_controlNumberTxt" runat="server" />
+                        <asp:TextBox ID="S_controlNumberTxt" runat="server" ReadOnly="True" />
                     </td>
                     <td>
                         &nbsp;
@@ -382,7 +382,8 @@
                 <tr>
                     <td>
                     <!-- needs input -->
-                    <asp:Label ID="S_spaceInControlNumberLbl" runat="server" Text="Space In Control Number:"/>
+                    <asp:Label ID="S_spaceInControlNumberLbl" runat="server" 
+                            Text="Space In Control Number or Volume Name:"/>
                     </td>
                     <td>
                         <asp:RadioButtonList ID="S_spaceInControlNumberRadioButtonList" runat="server" 
@@ -394,7 +395,9 @@
                         </asp:RadioButtonList>
                     </td>
                     <td>
-                        <asp:Label ID="S_spaceInControlNumberInfoLabel" runat="server" Text="Replace # Symbol in Control Number with Space" Visible="false" />
+                        <asp:Label ID="S_spaceInControlNumberInfoLabel" runat="server" 
+                            Text="Replace # Symbol in Control Number or Volume Name with Space" 
+                            Visible="False" />
                     </td>
                 </tr>
                     <tr>
@@ -412,7 +415,8 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToClient" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToClient" runat="server" Text="Back" 
+                            onclick="S_backToClient_Click" />
                     </td>
                     <td>
                                 
@@ -483,7 +487,8 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToNaming" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToNaming" runat="server" Text="Back" 
+                            onclick="S_backToNaming_Click" />
                     </td>
                     <td>
                                 
@@ -552,7 +557,8 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToDocLevel" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToDocLevel" runat="server" Text="Back" 
+                            onclick="S_backToDocLevel_Click" />
                     </td>
                     <td>
                                 
@@ -828,7 +834,8 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToGrouping" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToGrouping" runat="server" Text="Back" 
+                            onclick="S_backToGrouping_Click" />
                     </td>
                     <td>
                                 
@@ -882,7 +889,8 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToScanning" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToScanning" runat="server" Text="Back" 
+                            onclick="S_backToScanning_Click" />
                     </td>
                     <td>
                                 
@@ -964,7 +972,8 @@
                 <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToMedia" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToMedia" runat="server" Text="Back" 
+                            onclick="S_backToMedia_Click" />
                     </td>
                     <td>
                                 
@@ -1279,7 +1288,8 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:Button ID="S_backToDeliverables" runat="server" Text="Back" />
+                                <asp:Button ID="S_backToDeliverables" runat="server" Text="Back" 
+                                    onclick="S_backToDeliverables_Click" />
                             </td>
                             <td>
                                 
@@ -1463,7 +1473,8 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="S_backToIndexing" runat="server" Text="Back" />
+                        <asp:Button ID="S_backToIndexing" runat="server" Text="Back" 
+                            onclick="S_backToIndexing_Click" />
                     </td>
                     <td>
                                 
@@ -1649,7 +1660,8 @@
                 <table style="width: 100%;">
                     <tr>
                         <td>
-                            <asp:Button ID="S_backToEBS" runat="server" Text="Back" />
+                            <asp:Button ID="S_backToEBS" runat="server" Text="Back" 
+                                onclick="S_backToEBS_Click" />
                         </td>
                         <td class="style41">
                             &nbsp;
@@ -1769,7 +1781,8 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Button ID="S_backToEBS2" runat="server" Text="Back" />
+                            <asp:Button ID="S_backToEBS2" runat="server" Text="Back" 
+                                onclick="S_backToEBS2_Click" />
                         </td>
                         <td>
                             &nbsp;
@@ -2074,7 +2087,7 @@
                     <td class="style50">
                         <asp:RadioButtonList ID="S_printDrillingOptionRadioButton" runat="server" Visible="false" RepeatDirection="Horizontal">
                             <asp:ListItem Value="2Hole" Text="2 Hole" />
-                            <asp:ListItem Value="3Hole" Text="3 Hole" />
+                            <asp:ListItem Value="3Hole" Text="3 Hole" Selected="True" />
                         </asp:RadioButtonList>
                     </td>
                     <td class="style50">
@@ -2210,13 +2223,15 @@
             <table>
                     <tr>
                         <td>
-                            <asp:Button ID="S_backToCD" runat="server" Text="Back" />
+                            <asp:Button ID="S_backToCD" runat="server" Text="Back" 
+                                onclick="S_backToCD_Click" />
                         </td>
                         <td>
                             &nbsp;
                         </td>
                         <td>
-                            <asp:Button ID="S_goToSpecialInstructions" runat="server" Text="Go to Special Instructions" />
+                            <asp:Button ID="S_goToSpecialInstructions" runat="server" 
+                                Text="Go to Special Instructions" onclick="S_goToSpecialInstructions_Click" />
                         </td>
                     </tr>
                 </table>
@@ -2339,7 +2354,8 @@
             <table>
                     <tr>
                         <td>
-                            <asp:Button ID="S_backToPrinting" runat="server" Text="Back" />
+                            <asp:Button ID="S_backToPrinting" runat="server" Text="Back" 
+                                onclick="S_backToPrinting_Click" />
                         </td>
                         <td>
                             &nbsp;
@@ -2361,7 +2377,9 @@
                             <asp:Label ID="C_clientNameLbl" runat="server" Text="Client Name:"/>
                         </td>
                         <td>
-                            <asp:DropDownList ID="C_clientNameDropDown" runat="server"/>
+                            <asp:DropDownList ID="C_clientNameDropDown" runat="server"  DataSourceID="C_clientNameSqlDataSource" DataTextField="clientName" DataValueField="clientID"/>
+                            <asp:SqlDataSource ID="C_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
+                        </asp:SqlDataSource>
                         </td>
                         <td>
                             &nbsp;
@@ -2372,7 +2390,12 @@
                             <asp:Label ID="C_contactNameLbl" runat="server" Text="Contact Name:"/>
                         </td>
                         <td>
-                                <asp:DropDownList ID="C_contactNameDropDown" runat="server"/>
+                                <asp:DropDownList ID="C_contactNameDropDown" runat="server" DataSourceID="C_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
+                            <asp:SqlDataSource ID="C_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="C_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                         </td>
                         <td>
                             &nbsp;
@@ -2383,7 +2406,7 @@
                             <asp:Label ID="C_addressLbl" runat="server" Text="Address:"/>
                         </td>
                         <td>
-                            <asp:TextBox ID="C_addressTextBox" runat="server"/>
+                            <asp:TextBox ID="C_addressTextBox" runat="server" Width="250px"/>
                         </td>
                         <td>
                             &nbsp;
@@ -2794,7 +2817,8 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Button ID="C_backToClientInfo" runat="server" Text="Back" />
+                            <asp:Button ID="C_backToClientInfo" runat="server" Text="Back" 
+                                onclick="C_backToClientInfo_Click" />
                         </td>
                         <td>
                                 
@@ -2843,7 +2867,8 @@
             <table>
                     <tr>
                         <td>
-                            <asp:Button ID="C_backToCopying" runat="server" Text="Back" />
+                            <asp:Button ID="C_backToCopying" runat="server" Text="Back" 
+                                onclick="C_backToCopying_Click" />
                         </td>
                         <td>
                             &nbsp;
@@ -2865,7 +2890,9 @@
                             <asp:Label ID="D_clientNameLbl" runat="server" Text="Client Name:"/>
                         </td>
                         <td>
-                            <asp:DropDownList ID="D_clientNameDropDown" runat="server"/>
+                            <asp:DropDownList ID="D_clientNameDropDown" runat="server" DataSourceID="D_clientNameSqlDataSource" DataTextField="clientName" DataValueField="clientID"/>
+                            <asp:SqlDataSource ID="D_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
+                        </asp:SqlDataSource>
                         </td>
                         <td>
                             &nbsp;
@@ -2876,7 +2903,12 @@
                             <asp:Label ID="D_contactNameLbl" runat="server" Text="Contact Name:"/>
                         </td>
                         <td>
-                                <asp:DropDownList ID="D_contactNameDropDown" runat="server"/>
+                                <asp:DropDownList ID="D_contactNameDropDown" runat="server" DataSourceID="D_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
+                            <asp:SqlDataSource ID="D_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="D_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                         </td>
                         <td>
                             &nbsp;
@@ -2887,7 +2919,8 @@
                             <asp:Label ID="D_addressLbl" runat="server" Text="Address:"/>
                         </td>
                         <td>
-                            <asp:TextBox ID="D_addressTextBox" runat="server"/>
+                            <asp:TextBox ID="D_addressTextBox" runat="server" ReadOnly="True" 
+                                Width="250px"/>
                         </td>
                         <td>
                             &nbsp;
@@ -2898,7 +2931,7 @@
                             <asp:Label ID="D_phoneNumberLbl" runat="server" Text="Phone Number:"/>
                         </td>
                         <td>
-                            <asp:TextBox ID="D_phoneNumberTextBox" runat="server"/>
+                            <asp:TextBox ID="D_phoneNumberTextBox" runat="server" ReadOnly="True"/>
                         </td>
                         <td>
                             &nbsp;
@@ -2984,7 +3017,7 @@
                             <asp:Label ID="D_controlNumberLbl0" runat="server" Text="Control Number:" />
                         </td>
                         <td>
-                            <asp:TextBox ID="D_controlNumberTxt" runat="server" />
+                            <asp:TextBox ID="D_controlNumberTxt" runat="server" ReadOnly="True" />
                         </td>
                         <td>
                             &nbsp;
@@ -2993,7 +3026,8 @@
                     <tr>
                         <td>
                         <!-- needs input -->
-                        <asp:Label ID="D_spaceInControlNumberLbl" runat="server" Text="Space In Control Number:"/>
+                        <asp:Label ID="D_spaceInControlNumberLbl" runat="server" 
+                                Text="Space In Control Number or Volume Name:"/>
                         </td>
                         <td>
                             <asp:RadioButtonList ID="D_spaceInControlNumberRadioButtonList" runat="server" 
@@ -3005,7 +3039,9 @@
                             </asp:RadioButtonList>
                         </td>
                         <td>
-                            <asp:Label ID="D_spaceInControlNumberInfoLabel" runat="server" Text="Replace # Symbol in Control Number with Space" Visible="false" />
+                            <asp:Label ID="D_spaceInControlNumberInfoLabel" runat="server" 
+                                Text="Replace # Symbol in Control Number or Volume Name with Space" 
+                                Visible="False" />
                         </td>
                     </tr>
                         <tr>
@@ -3023,7 +3059,8 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Button ID="D_backToClient" runat="server" Text="Back" />
+                            <asp:Button ID="D_backToClient" runat="server" Text="Back" 
+                                onclick="D_backToClient_Click" />
                         </td>
                         <td>
                                 
@@ -3040,7 +3077,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td class="style2" rowspan="3">
-                                <asp:CheckBoxList ID="D_deliverables" runat="server" Height="185px" 
+                                <asp:RadioButtonList ID="D_deliverables" runat="server" Height="185px" 
                                     AutoPostBack="True" onselectedindexchanged="D_deliverables_SelectedIndexChanged">
                                     <asp:ListItem Value="dtiStandard" Text="DTI Standard" />
                                     <asp:ListItem Value="concordance" Text="Concordance" />
@@ -3049,7 +3086,7 @@
                                     <asp:ListItem Value="sanction_TrialDirector" Text="Sanction/Trial Director" />
                                     <asp:ListItem Value="pdf" Text="PDF" />
                                     <asp:ListItem Value="other" Text="Other" />
-                                </asp:CheckBoxList>
+                                </asp:RadioButtonList>
                             </td>
                             <td class="style13">
                                 &nbsp;
@@ -3105,7 +3142,8 @@
                     <table>
                     <tr>
                         <td>
-                            <asp:Button ID="D_backToNaming" runat="server" Text="Back" />
+                            <asp:Button ID="D_backToNaming" runat="server" Text="Back" 
+                                onclick="D_backToNaming_Click" />
                         </td>
                         <td>
                                 
@@ -3289,7 +3327,8 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Button ID="D_backToDeliverables" runat="server" Text="Back" />
+                            <asp:Button ID="D_backToDeliverables" runat="server" Text="Back" 
+                                onclick="D_backToDeliverables_Click" />
                         </td>
                         <td>
                                 
@@ -3475,7 +3514,8 @@
                     <table style="width: 100%;">
                         <tr>
                             <td>
-                                <asp:Button ID="D_backToEBS" runat="server" Text="Back" />
+                                <asp:Button ID="D_backToEBS" runat="server" Text="Back" 
+                                    onclick="D_backToEBS_Click" />
                             </td>
                             <td class="style41">
                                 &nbsp;
@@ -3595,7 +3635,8 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:Button ID="D_backToEBS2" runat="server" Text="Back" />
+                                <asp:Button ID="D_backToEBS2" runat="server" Text="Back" 
+                                    onclick="D_backToEBS2_Click" />
                             </td>
                             <td>
                                 &nbsp;
@@ -3900,7 +3941,7 @@
                         <td class="style50">
                             <asp:RadioButtonList ID="D_printDrillingOptionRadioButton" runat="server" Visible="false" RepeatDirection="Horizontal">
                                 <asp:ListItem Value="2Hole" Text="2 Hole" />
-                                <asp:ListItem Value="3Hole" Text="3 Hole" />
+                                <asp:ListItem Value="3Hole" Text="3 Hole" Selected="True" />
                             </asp:RadioButtonList>
                         </td>
                         <td class="style50">
@@ -4036,7 +4077,8 @@
                 <table>
                         <tr>
                             <td>
-                                <asp:Button ID="D_backToCD" runat="server" Text="Back" />
+                                <asp:Button ID="D_backToCD" runat="server" Text="Back" 
+                                    onclick="S_backToCD_Click" />
                             </td>
                             <td>
                                 &nbsp;
@@ -4132,7 +4174,8 @@
                 <table>
                         <tr>
                             <td>
-                                <asp:Button ID="D_backToPrinting" runat="server" Text="Back" />
+                                <asp:Button ID="D_backToPrinting" runat="server" Text="Back" 
+                                    onclick="D_backToPrinting_Click" />
                             </td>
                             <td>
                                 &nbsp;
@@ -4154,7 +4197,9 @@
                         <asp:Label ID="P_clientNameLbl" runat="server" Text="Client Name:"/>
                     </td>
                     <td>
-                        <asp:DropDownList ID="P_clientNameDropDown" runat="server"/>
+                        <asp:DropDownList ID="P_clientNameDropDown" runat="server"  DataSourceID="P_clientNameSqlDataSource" DataTextField="clientName" DataValueField="clientID"/>
+                            <asp:SqlDataSource ID="P_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
+                        </asp:SqlDataSource>
                     </td>
                     <td>
                         &nbsp;
@@ -4165,7 +4210,12 @@
                         <asp:Label ID="P_contactNameLbl" runat="server" Text="Contact Name:"/>
                     </td>
                     <td>
-                            <asp:DropDownList ID="P_contactNameDropDown" runat="server"/>
+                            <asp:DropDownList ID="P_contactNameDropDown" runat="server" DataSourceID="P_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
+                            <asp:SqlDataSource ID="P_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="P_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                     </td>
                     <td>
                         &nbsp;
@@ -4176,7 +4226,7 @@
                         <asp:Label ID="P_addressLbl" runat="server" Text="Address:"/>
                     </td>
                     <td>
-                        <asp:TextBox ID="P_addressTextBox" runat="server"/>
+                        <asp:TextBox ID="P_addressTextBox" runat="server" Width="250px"/>
                     </td>
                     <td>
                         &nbsp;
@@ -4511,7 +4561,7 @@
                         <td class="style50">
                             <asp:RadioButtonList ID="P_printDrillingOptionRadioButton" runat="server" Visible="false" RepeatDirection="Horizontal">
                                 <asp:ListItem Value="2Hole" Text="2 Hole" />
-                                <asp:ListItem Value="3Hole" Text="3 Hole" />
+                                <asp:ListItem Value="3Hole" Text="3 Hole" Selected="True" />
                             </asp:RadioButtonList>
                         </td>
                         <td class="style50">
@@ -4647,7 +4697,7 @@
                 <table>
                         <tr>
                             <td>
-                                &nbsp;
+                                <asp:Button ID="P_backToClient" runat="server" Text="Back" />
                             </td>
                             <td>
                                 &nbsp;
@@ -4744,7 +4794,8 @@
             <table>
                     <tr>
                         <td>
-                            <asp:Button ID="P_backToPrinting" runat="server" Text="Back" />
+                            <asp:Button ID="P_backToPrinting" runat="server" Text="Back" 
+                                onclick="P_backToPrinting_Click" />
                         </td>
                         <td>
                             &nbsp;

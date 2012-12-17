@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -297,10 +297,14 @@ namespace DTI_Schedule
             if (S_printAccoRadioButtonList.SelectedValue == "yes")
             {
                 S_printAccoSideRadioButtonList.Visible = true;
+                S_printDrillingRadioButtonList.SelectedValue = "yes";
+                S_printDrillingOptionRadioButton.SelectedValue = "2Hole";
             }
             else
             {
                 S_printAccoSideRadioButtonList.Visible = false;
+                S_printDrillingRadioButtonList.SelectedValue = "no";
+                S_printDrillingOptionRadioButton.SelectedValue = "3Hole";
             }
         }
 
@@ -657,10 +661,14 @@ namespace DTI_Schedule
             if (D_printAccoRadioButtonList.SelectedValue == "yes")
             {
                 D_printAccoSideRadioButtonList.Visible = true;
+                D_printDrillingRadioButtonList.SelectedValue = "yes";
+                D_printDrillingOptionRadioButton.SelectedValue = "2Hole";
             }
             else
             {
                 D_printAccoSideRadioButtonList.Visible = false;
+                D_printDrillingRadioButtonList.SelectedValue = "no";
+                D_printDrillingOptionRadioButton.SelectedValue = "3Hole";
             }
         }
 
@@ -695,10 +703,14 @@ namespace DTI_Schedule
             if (P_printAccoRadioButtonList.SelectedValue == "yes")
             {
                 P_printAccoSideRadioButtonList.Visible = true;
+                P_printDrillingRadioButtonList.SelectedValue = "yes";
+                P_printDrillingOptionRadioButton.SelectedValue = "2Hole";
             }
             else
             {
                 P_printAccoSideRadioButtonList.Visible = false;
+                P_printDrillingRadioButtonList.SelectedValue = "no";
+                P_printDrillingOptionRadioButton.SelectedValue = "3Hole";
             }
         }
 
@@ -781,5 +793,120 @@ namespace DTI_Schedule
                 C_enlargeToOtherTextBox.Visible=false;
             }
         }
+
+        protected void S_goToSpecialInstructions_Click(object sender, EventArgs e)
+        {
+            scanJob.SetActiveView(S_specialInstructions);
+        }
+        
+        protected void S_backToClient_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_clientInfo);
+	        }
+	
+	        protected void S_backToNaming_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_naming);
+	        }
+	
+	        protected void S_backToDocLevel_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_documentLevel);
+	        }
+	
+	        protected void S_backToGrouping_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_grouping);
+	        }
+	
+	        protected void S_backToScanning_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_scanning);
+	        }
+	
+	        protected void S_backToMedia_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_mediaView);
+	        }
+	
+	        protected void S_backToDeliverables_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_deliverable);
+	        }
+	
+	        protected void S_backToIndexing_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_indexingInstructions);
+	        }
+	
+	        protected void S_backToEBS_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_ebsInstructions);
+	        }
+	
+	        protected void S_backToEBS2_Click(object sender, EventArgs e)
+	        {
+	            
+	        }
+	
+	        protected void S_backToCD_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_cdBurning);
+	        }
+	
+	        protected void S_backToPrinting_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(S_printing);
+	        }
+	
+	        protected void C_backToClientInfo_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(C_clientInfo);
+	        }
+	
+	        protected void C_backToCopying_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(C_copyingInstrcutions);
+	        }
+	
+	        protected void D_backToClient_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(D_clientInfo);
+	        }
+	
+	        protected void D_backToNaming_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(D_naming);
+	        }
+	
+	        protected void D_backToDeliverables_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(D_deliverable);
+	        }
+	
+	        protected void D_backToEBS_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(D_ebsInstructions);
+	        }
+	
+	        protected void D_backToEBS2_Click(object sender, EventArgs e)
+	        {
+	
+	        }
+	
+	        protected void D_backToCD_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(D_cdBurning);
+	        }
+	
+	        protected void D_backToPrinting_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(D_printing);
+	        }
+	
+	        protected void P_backToPrinting_Click(object sender, EventArgs e)
+	        {
+	            scanJob.SetActiveView(P_printing);
+	        }
     }
 }
