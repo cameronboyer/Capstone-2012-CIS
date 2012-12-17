@@ -242,11 +242,6 @@
 
                             AppendDataBoundItems="True" AutoPostBack="True" 
                             onselectedindexchanged="S_clientNameDropDown_SelectedIndexChanged"/>
-                        <asp:SqlDataSource ID="S_clientNameSqlDataSource" runat="server" 
-
-                            ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
-                            SelectCommand="SELECT [clientName], [clientID], [phonNumber],[address] FROM [Clients] ORDER BY [clientName]">
-                        </asp:SqlDataSource>
                     </td>
                     <td>
                         &nbsp;
@@ -258,16 +253,6 @@
                     </td>
                     <td>
                             <asp:DropDownList ID="S_contactNameDropDown" runat="server"/>
-                            <asp:SqlDataSource ID="S_clientContactSqlDataSource" runat="server" 
-
-
-                                ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
-                                SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
-                                <SelectParameters>
-                                    <asp:ControlParameter ControlID="S_clientNameDropDown" Name="company" 
-                                        PropertyName="SelectedValue" Type="Int32" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
                     </td>
                     <td>
                         &nbsp;
@@ -2381,9 +2366,8 @@
                             <asp:Label ID="C_clientNameLbl" runat="server" Text="Client Name:"/>
                         </td>
                         <td>
-                            <asp:DropDownList ID="C_clientNameDropDown" runat="server"  DataSourceID="C_clientNameSqlDataSource" DataTextField="clientName" DataValueField="clientID"/>
-                            <asp:SqlDataSource ID="C_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
-                        </asp:SqlDataSource>
+                            <asp:DropDownList ID="C_clientNameDropDown" runat="server" AutoPostBack="True" 
+                                onselectedindexchanged="C_clientNameDropDown_SelectedIndexChanged"/>
                         </td>
                         <td>
                             &nbsp;
@@ -2394,12 +2378,7 @@
                             <asp:Label ID="C_contactNameLbl" runat="server" Text="Contact Name:"/>
                         </td>
                         <td>
-                                <asp:DropDownList ID="C_contactNameDropDown" runat="server" DataSourceID="C_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
-                            <asp:SqlDataSource ID="C_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
-                                <SelectParameters>
-                                    <asp:ControlParameter ControlID="C_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
+                                <asp:DropDownList ID="C_contactNameDropDown" runat="server"/>
                         </td>
                         <td>
                             &nbsp;
@@ -2894,9 +2873,8 @@
                             <asp:Label ID="D_clientNameLbl" runat="server" Text="Client Name:"/>
                         </td>
                         <td>
-                            <asp:DropDownList ID="D_clientNameDropDown" runat="server" DataSourceID="D_clientNameSqlDataSource" DataTextField="clientName" DataValueField="clientID"/>
-                            <asp:SqlDataSource ID="D_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
-                        </asp:SqlDataSource>
+                            <asp:DropDownList ID="D_clientNameDropDown" runat="server" AutoPostBack="True" 
+                                onselectedindexchanged="D_clientNameDropDown_SelectedIndexChanged"/>
                         </td>
                         <td>
                             &nbsp;
@@ -2907,12 +2885,7 @@
                             <asp:Label ID="D_contactNameLbl" runat="server" Text="Contact Name:"/>
                         </td>
                         <td>
-                                <asp:DropDownList ID="D_contactNameDropDown" runat="server" DataSourceID="D_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
-                            <asp:SqlDataSource ID="D_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
-                                <SelectParameters>
-                                    <asp:ControlParameter ControlID="D_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
+                                <asp:DropDownList ID="D_contactNameDropDown" runat="server"/>
                         </td>
                         <td>
                             &nbsp;
@@ -4201,9 +4174,8 @@
                         <asp:Label ID="P_clientNameLbl" runat="server" Text="Client Name:"/>
                     </td>
                     <td>
-                        <asp:DropDownList ID="P_clientNameDropDown" runat="server"  DataSourceID="P_clientNameSqlDataSource" DataTextField="clientName" DataValueField="clientID"/>
-                            <asp:SqlDataSource ID="P_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID] FROM [Clients] ORDER BY [clientName]">
-                        </asp:SqlDataSource>
+                        <asp:DropDownList ID="P_clientNameDropDown" runat="server" AutoPostBack="True" 
+                            onselectedindexchanged="P_clientNameDropDown_SelectedIndexChanged"/>
                     </td>
                     <td>
                         &nbsp;
@@ -4214,12 +4186,7 @@
                         <asp:Label ID="P_contactNameLbl" runat="server" Text="Contact Name:"/>
                     </td>
                     <td>
-                            <asp:DropDownList ID="P_contactNameDropDown" runat="server" DataSourceID="P_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
-                            <asp:SqlDataSource ID="P_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
-                                <SelectParameters>
-                                    <asp:ControlParameter ControlID="P_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
+                            <asp:DropDownList ID="P_contactNameDropDown" runat="server"/>
                     </td>
                     <td>
                         &nbsp;

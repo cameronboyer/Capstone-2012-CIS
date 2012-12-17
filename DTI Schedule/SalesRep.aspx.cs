@@ -28,8 +28,12 @@ namespace DTI_Schedule
                 }
 
                 loadClientsContacts();
-                getClientAddressPhonenumber();
-                loadContactNames();
+                //initial loads dont matteer whats passed in
+                getClientAddressPhonenumber(S_clientNameDropDown, S_addressTextBox,S_phoneNumberTextBox);
+                getClientAddressPhonenumber(D_clientNameDropDown, D_addressTextBox, D_phoneNumberTextBox);
+                getClientAddressPhonenumber(C_clientNameDropDown, C_addressTextBox, C_phoneNumberTextBox);
+                getClientAddressPhonenumber(P_clientNameDropDown, P_addressTextBox,P_phoneNumberTextBox);
+                loadContactNames(C_clientNameDropDown);
             }
         }
 
@@ -51,6 +55,7 @@ namespace DTI_Schedule
             navButtonsTable.Visible = false;
 
             copyJob.SetActiveView(C_clientInfo);
+            loadClientsContacts();
             hideButtons();
         }
 
@@ -938,9 +943,9 @@ namespace DTI_Schedule
         }
 
 
-        protected void getClientAddressPhonenumber()
+        protected void getClientAddressPhonenumber(DropDownList ddl,TextBox address,TextBox phoneNumber)
         {
-            string contactID = S_clientNameDropDown.SelectedValue;
+            string contactID = ddl.SelectedValue;
             if (!String.IsNullOrEmpty(contactID))
             {
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
@@ -951,8 +956,19 @@ namespace DTI_Schedule
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
-                    S_addressTextBox.Text = reader.GetValue(0).ToString();
-                    S_phoneNumberTextBox.Text = reader["phoneNumber"].ToString();
+                    address.Text = reader.GetValue(0).ToString();
+                    phoneNumber.Text = reader["phoneNumber"].ToString();
+
+                    //C_addressTextBox.Text = reader.GetValue(0).ToString();
+                    //C_phoneNumberTextBox.Text = reader["phoneNumber"].ToString();
+
+                    //P_addressTextBox.Text = reader.GetValue(0).ToString();
+                    //P_phoneNumberTextBox.Text = reader["phoneNumber"].ToString();
+
+                    
+
+
+
 
                 }
             }
@@ -964,8 +980,8 @@ namespace DTI_Schedule
             //string contactName = S_contactNameDropDown.SelectedValue;
 
 
-            getClientAddressPhonenumber();
-            loadContactNames();
+            getClientAddressPhonenumber(S_clientNameDropDown, S_addressTextBox, S_phoneNumberTextBox);
+            loadContactNames(S_clientNameDropDown);
         }
 
 
@@ -977,26 +993,94 @@ namespace DTI_Schedule
                 //handles Client Name
                 SqlCommand cmd = new SqlCommand("SELECT clientName, clientID FROM Clients", con);
                 SqlDataReader reader = cmd.ExecuteReader();
-                S_clientNameDropDown.DataSource = reader;
+
+                C_clientNameDropDown.DataSource = reader;
+                C_clientNameDropDown.DataValueField = "clientID";
+                C_clientNameDropDown.DataTextField = "clientName";
+                C_clientNameDropDown.DataBind();
+                reader.Close();
+
+                SqlDataReader reader2 = cmd.ExecuteReader();
+                S_clientNameDropDown.DataSource = reader2;
                 S_clientNameDropDown.DataValueField = "clientID";
                 S_clientNameDropDown.DataTextField = "clientName";
                 S_clientNameDropDown.DataBind();
+                reader2.Close();
+
+                SqlDataReader reader3 = cmd.ExecuteReader();
+                D_clientNameDropDown.DataSource = reader3;
+                D_clientNameDropDown.DataValueField = "clientID";
+                D_clientNameDropDown.DataTextField = "clientName";
+                D_clientNameDropDown.DataBind();
+                reader3.Close();
+
+                SqlDataReader reader4 = cmd.ExecuteReader();
+                P_clientNameDropDown.DataSource = reader4;
+                P_clientNameDropDown.DataValueField = "clientID";
+                P_clientNameDropDown.DataTextField = "clientName";
+                P_clientNameDropDown.DataBind();
+
+                
+                
+
+
+
             }
         }
 
-        protected void loadContactNames()
+        protected void loadContactNames(DropDownList ddl)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
                 //handles Contact Name
                 SqlCommand cmd = new SqlCommand("SELECT ContactName FROM Contacts where company = @companyID", con);
-                cmd.Parameters.AddWithValue("@companyID", S_clientNameDropDown.SelectedValue);
+                cmd.Parameters.AddWithValue("@companyID", ddl.SelectedValue);
                 SqlDataReader reader = cmd.ExecuteReader();
                 S_contactNameDropDown.DataSource = reader;
                 S_contactNameDropDown.DataTextField = "ContactName";
                 S_contactNameDropDown.DataBind();
+                reader.Close();
+
+
+                SqlDataReader reader2 = cmd.ExecuteReader();
+                C_contactNameDropDown.DataSource = reader2;
+                C_contactNameDropDown.DataTextField = "ContactName";
+                C_contactNameDropDown.DataBind();
+                reader2.Close();
+
+                SqlDataReader reader3 = cmd.ExecuteReader();
+                D_contactNameDropDown.DataSource = reader3;
+                D_contactNameDropDown.DataTextField = "ContactName";
+                D_contactNameDropDown.DataBind();
+                reader3.Close();
+
+                SqlDataReader reader4 = cmd.ExecuteReader();
+                P_contactNameDropDown.DataSource = reader4;
+                P_contactNameDropDown.DataTextField = "ContactName";
+                P_contactNameDropDown.DataBind();
+
+                
             }
+        }
+
+        protected void C_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            getClientAddressPhonenumber(C_clientNameDropDown, C_addressTextBox, C_phoneNumberTextBox);
+            loadContactNames(C_clientNameDropDown);
+        }
+
+        protected void D_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getClientAddressPhonenumber(D_clientNameDropDown, D_addressTextBox, D_phoneNumberTextBox);
+            loadContactNames(D_clientNameDropDown);
+        }
+
+        protected void P_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getClientAddressPhonenumber(P_clientNameDropDown,P_addressTextBox,P_phoneNumberTextBox);
+            loadContactNames(P_clientNameDropDown);
         }
 
     }
