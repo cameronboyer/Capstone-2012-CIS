@@ -11,7 +11,20 @@ namespace DTI_Schedule
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                string level = (string)(Session["level"]);
 
+                if (String.IsNullOrEmpty(level))
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+
+                if (!level.Equals("SalesRep") && !level.Equals("4"))
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+            }
         }
 
         protected void addScanJob_Click(object sender, EventArgs e)
@@ -794,6 +807,7 @@ namespace DTI_Schedule
             }
         }
 
+<<<<<<< HEAD
         protected void S_goToSpecialInstructions_Click(object sender, EventArgs e)
         {
             scanJob.SetActiveView(S_specialInstructions);
@@ -908,5 +922,18 @@ namespace DTI_Schedule
 	        {
 	            scanJob.SetActiveView(P_printing);
 	        }
+=======
+        protected void S_contactNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void S_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //used to query the db to get the address
+            string contactName = S_contactNameDropDown.SelectedValue;
+
+        }
+>>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
     }
 }

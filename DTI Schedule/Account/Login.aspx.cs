@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace DTI_Schedule.Account
@@ -14,7 +15,10 @@ namespace DTI_Schedule.Account
         string CS = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack)
+            {
+                errorLabel.Visible = false;
+            }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -28,9 +32,9 @@ namespace DTI_Schedule.Account
             //no encryption ... who cares...
             string password = txtPassword.Text.Trim();
 
-            string queryLevel = "SELECT level FROM Users WHERE userName = @userName and password = @password";
+            string queryLevel = "SELECT userLevel FROM Users WHERE userName = @userName and password = @password";
 
-            using (SqlConnection con = new SqlConnection(CS))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(queryLevel, con))
@@ -46,8 +50,9 @@ namespace DTI_Schedule.Account
 
                     if (String.IsNullOrEmpty(level))
                     {
+                        errorLabel.Visible = true;
                         //redirectes on error
-                        Response.Redirect("ERRORPAGE");
+                        //Response.Redirect("ERRORPAGE");
                     }
                     else
                     {   //looks at level and directs accordingly, The redirects need to be actual pages
@@ -55,13 +60,16 @@ namespace DTI_Schedule.Account
                         switch (level)
                         {
                             case "Employee":
-                                Response.Redirect("EMPLOYEEPAGE");
+                                Response.Redirect("../EmployeeView.aspx");
                                 break;
                             case "Scheduler":
-                                Response.Redirect("SCHEDULE");
+                                Response.Redirect("../JobSchedule.aspx");
                                 break;
                             case "Sales":
-                                Response.Redirect("SALES");
+                                Response.Redirect("../JobStatus.aspx");
+                                break;
+                            case "4":
+                                Response.Redirect("../admin.aspx");
                                 break;
                         }
 
