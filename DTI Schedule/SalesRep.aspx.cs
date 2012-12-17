@@ -302,12 +302,14 @@ namespace DTI_Schedule
                 cdLabel.Visible = true;
                 S_goToPrinting.Visible = false;
                 S_goToPrinting2.Visible = true;
+                S_backToEBS.Visible = false;
             }
             else
             {
                 cdLabel.Visible = false;
                 S_goToPrinting.Visible = true;
                 S_goToPrinting2.Visible = false;
+                S_backToEBS.Visible = true;
             }
         }
 
@@ -668,15 +670,17 @@ namespace DTI_Schedule
         {
             if (D_cdBurnCopiesFirmOneDropDown.SelectedIndex > 0 || D_cdBurnCopiesFirmTwoDropDown.SelectedIndex > 0 || D_cdBurnCopiesFirmThreeDropDown.SelectedIndex > 0)
             {
-                cdLabel.Visible = true;
+                D_CDTable.Visible = true;
                 D_goToPrinting.Visible = false;
                 D_goToPrinting2.Visible = true;
+                D_backToEBS.Visible = false;
             }
             else
             {
-                cdLabel.Visible = false;
+                D_CDTable.Visible = false;
                 D_goToPrinting.Visible = true;
                 D_goToPrinting2.Visible = false;
+                D_backToEBS.Visible = true;
             }
         }
 
@@ -1034,11 +1038,12 @@ namespace DTI_Schedule
             {
                 con.Open();
                 //handles Contact Name
-                SqlCommand cmd = new SqlCommand("SELECT ContactName FROM Contacts where company = @companyID", con);
+                SqlCommand cmd = new SqlCommand("SELECT ContactName,contactID FROM Contacts where company = @companyID", con);
                 cmd.Parameters.AddWithValue("@companyID", ddl.SelectedValue);
                 SqlDataReader reader = cmd.ExecuteReader();
                 S_contactNameDropDown.DataSource = reader;
                 S_contactNameDropDown.DataTextField = "ContactName";
+                S_contactNameDropDown.DataValueField = "contactID";
                 S_contactNameDropDown.DataBind();
                 reader.Close();
 
@@ -1046,18 +1051,21 @@ namespace DTI_Schedule
                 SqlDataReader reader2 = cmd.ExecuteReader();
                 C_contactNameDropDown.DataSource = reader2;
                 C_contactNameDropDown.DataTextField = "ContactName";
+                C_contactNameDropDown.DataValueField = "contactID";
                 C_contactNameDropDown.DataBind();
                 reader2.Close();
 
                 SqlDataReader reader3 = cmd.ExecuteReader();
                 D_contactNameDropDown.DataSource = reader3;
                 D_contactNameDropDown.DataTextField = "ContactName";
+                D_contactNameDropDown.DataValueField = "contactID";
                 D_contactNameDropDown.DataBind();
                 reader3.Close();
 
                 SqlDataReader reader4 = cmd.ExecuteReader();
                 P_contactNameDropDown.DataSource = reader4;
                 P_contactNameDropDown.DataTextField = "ContactName";
+                P_contactNameDropDown.DataValueField = "contactID";
                 P_contactNameDropDown.DataBind();
 
                 

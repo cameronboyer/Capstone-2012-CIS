@@ -3532,13 +3532,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.Button D_goToPrinting;
         
         /// <summary>
-        /// Table1 control.
+        /// D_CDTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable Table1;
+        protected global::System.Web.UI.HtmlControls.HtmlTable D_CDTable;
         
         /// <summary>
         /// D_cdLabelCaseNameTextBox control.

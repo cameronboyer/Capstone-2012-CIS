@@ -1650,7 +1650,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="S_backToEBS" runat="server" Text="Back" 
-                                onclick="S_backToEBS_Click" />
+                                onclick="S_backToEBS_Click" Visible="False" />
                         </td>
                         <td class="style41">
                             &nbsp;
@@ -3492,7 +3492,7 @@
                         <tr>
                             <td>
                                 <asp:Button ID="D_backToEBS" runat="server" Text="Back" 
-                                    onclick="D_backToEBS_Click" />
+                                    onclick="D_backToEBS_Click" Visible="False" />
                             </td>
                             <td class="style41">
                                 &nbsp;
@@ -3503,7 +3503,7 @@
                             </td>
                         </tr>
                     </table>                    
-                <table id="Table1" style="width: 100%;" runat="server" visible="false">
+                <table id="D_CDTable" style="width: 100%;" runat="server" visible="false">
                     <tr>
                         <td colspan="2">
                             <h1>CD Label</h1>
