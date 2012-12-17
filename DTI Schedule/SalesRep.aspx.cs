@@ -310,6 +310,8 @@ namespace DTI_Schedule
                 S_goToPrinting.Visible = true;
                 S_goToPrinting2.Visible = false;
                 S_backToEBS.Visible = true;
+                S_backToEBS2.Visible = false;
+                S_goToPrinting2.Visible = false;
             }
         }
 
