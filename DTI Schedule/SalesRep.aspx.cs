@@ -955,6 +955,7 @@ namespace DTI_Schedule
         protected void getClientAddressPhonenumber(DropDownList ddl,TextBox address,TextBox phoneNumber)
         {
             string contactID = ddl.SelectedValue;
+            //checks if client id has something
             if (!String.IsNullOrEmpty(contactID))
             {
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
@@ -967,28 +968,12 @@ namespace DTI_Schedule
                     reader.Read();
                     address.Text = reader.GetValue(0).ToString();
                     phoneNumber.Text = reader["phoneNumber"].ToString();
-
-                    //C_addressTextBox.Text = reader.GetValue(0).ToString();
-                    //C_phoneNumberTextBox.Text = reader["phoneNumber"].ToString();
-
-                    //P_addressTextBox.Text = reader.GetValue(0).ToString();
-                    //P_phoneNumberTextBox.Text = reader["phoneNumber"].ToString();
-
-                    
-
-
-
-
                 }
             }
         }
 
         protected void S_clientNameDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //used to query the db to get the address
-            //string contactName = S_contactNameDropDown.SelectedValue;
-
-
             getClientAddressPhonenumber(S_clientNameDropDown, S_addressTextBox, S_phoneNumberTextBox);
             loadContactNames(S_clientNameDropDown);
         }
@@ -1037,6 +1022,7 @@ namespace DTI_Schedule
             }
         }
 
+        /*multiple readers have to be used in this situation*/
         protected void loadContactNames(DropDownList ddl)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
@@ -1051,7 +1037,6 @@ namespace DTI_Schedule
                 S_contactNameDropDown.DataValueField = "contactID";
                 S_contactNameDropDown.DataBind();
                 reader.Close();
-
 
                 SqlDataReader reader2 = cmd.ExecuteReader();
                 C_contactNameDropDown.DataSource = reader2;
