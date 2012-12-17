@@ -17,6 +17,7 @@ namespace DTI_Schedule.Account
         {
             if(!IsPostBack)
             {
+                txtUsername.Focus();
                 errorLabel.Visible = false;
             }
         }
@@ -51,6 +52,7 @@ namespace DTI_Schedule.Account
                     if (String.IsNullOrEmpty(level))
                     {
                         errorLabel.Visible = true;
+                        txtPassword.Focus();
                         //redirectes on error
                         //Response.Redirect("ERRORPAGE");
                     }
