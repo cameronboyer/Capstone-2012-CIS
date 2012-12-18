@@ -24,7 +24,7 @@
                 <td class="style2">
                     Username:</td>
                 <td class="style1">
-                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server" TabIndex="1"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -33,7 +33,7 @@
                 <td class="style2">
                     Password</td>
                 <td class="style1">
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" TabIndex="2"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -46,7 +46,7 @@
                 </td>
                 <td>
                     <asp:Button ID="btnSubmit" runat="server" Text="Login" 
-                        onclick="btnSubmit_Click" />
+                        onclick="btnSubmit_Click" TabIndex="3" />
                 </td>
             </tr>
         </table>
