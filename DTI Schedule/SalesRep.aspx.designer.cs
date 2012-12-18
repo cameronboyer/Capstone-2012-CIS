@@ -877,13 +877,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox S_numberOfDuplicatesTextBox;
         
         /// <summary>
-        /// bateLabelAndTagMedia control.
+        /// S_bateLabelAndTagMedia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList bateLabelAndTagMedia;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_bateLabelAndTagMedia;
         
         /// <summary>
         /// S_backToScanning control.
@@ -985,6 +985,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.View S_indexingInstructions;
         
         /// <summary>
+        /// S_indexingTextOneDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextOneDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_textOneFieldTextBox control.
         /// </summary>
         /// <remarks>
@@ -1001,6 +1010,24 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox S_textOneTextBox;
+        
+        /// <summary>
+        /// S_textOnePromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textOnePromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextTwoDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextTwoDonNotExpotCheckBox;
         
         /// <summary>
         /// S_textTwoFieldTextBox control.
@@ -1021,6 +1048,24 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox S_textTwoTextBox;
         
         /// <summary>
+        /// S_textTwoPromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textTwoPromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextThreeDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextThreeDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_textThreeFieldTextBox control.
         /// </summary>
         /// <remarks>
@@ -1037,6 +1082,24 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox S_textThreeTextBox;
+        
+        /// <summary>
+        /// S_textThreePromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textThreePromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextFourDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextFourDonNotExpotCheckBox;
         
         /// <summary>
         /// S_textFourFieldTextBox control.
@@ -1057,6 +1120,24 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox S_textFourTextBox;
         
         /// <summary>
+        /// S_textFourPromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textFourPromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextFiveDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextFiveDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_textFiveFieldTextBox control.
         /// </summary>
         /// <remarks>
@@ -1073,6 +1154,24 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox S_textFiveTextBox;
+        
+        /// <summary>
+        /// S_textFivePromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textFivePromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextSixDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextSixDonNotExpotCheckBox;
         
         /// <summary>
         /// S_textSixFieldTextBox control.
@@ -1093,6 +1192,24 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox S_textSixTextBox;
         
         /// <summary>
+        /// S_textSixPromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textSixPromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextSevenDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextSevenDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_textSevenFieldTextBox control.
         /// </summary>
         /// <remarks>
@@ -1111,13 +1228,31 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox S_textSevenTextBox;
         
         /// <summary>
-        /// S_testEightFieldTextBox control.
+        /// S_textSevenPromoptedTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox S_testEightFieldTextBox;
+        protected global::System.Web.UI.WebControls.TextBox S_textSevenPromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTextEightDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTextEightDonNotExpotCheckBox;
+        
+        /// <summary>
+        /// S_textEightFieldTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textEightFieldTextBox;
         
         /// <summary>
         /// S_textEightTextBox control.
@@ -1127,6 +1262,24 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox S_textEightTextBox;
+        
+        /// <summary>
+        /// S_textEightPromoptedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox S_textEightPromoptedTextBox;
+        
+        /// <summary>
+        /// S_indexingTagOneDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagOneDonNotExpotCheckBox;
         
         /// <summary>
         /// S_tagOneFieldTextBox control.
@@ -1147,6 +1300,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.RadioButtonList S_tagOneRadioButtonList;
         
         /// <summary>
+        /// S_indexingTagTwoDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagTwoDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_tagTwoFieldTextBox control.
         /// </summary>
         /// <remarks>
@@ -1156,13 +1318,22 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.TextBox S_tagTwoFieldTextBox;
         
         /// <summary>
-        /// S_tag2RadioButtonList control.
+        /// S_tagTwoRadioButtonList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList S_tag2RadioButtonList;
+        protected global::System.Web.UI.WebControls.RadioButtonList S_tagTwoRadioButtonList;
+        
+        /// <summary>
+        /// S_indexingTagThreeDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagThreeDonNotExpotCheckBox;
         
         /// <summary>
         /// S_tagThreeFieldTextBox control.
@@ -1183,6 +1354,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.RadioButtonList S_tagThreeRadioButtonList;
         
         /// <summary>
+        /// S_indexingTagFourDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagFourDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_tagFourFieldTextBox control.
         /// </summary>
         /// <remarks>
@@ -1201,6 +1381,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.RadioButtonList S_tagFourRadioButtonList;
         
         /// <summary>
+        /// S_indexingTagColorDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagColorDonNotExpotCheckBox;
+        
+        /// <summary>
         /// S_tagColorRadioButtonList control.
         /// </summary>
         /// <remarks>
@@ -1210,13 +1399,31 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.RadioButtonList S_tagColorRadioButtonList;
         
         /// <summary>
-        /// S_tagOversizeRadioButtonList control.
+        /// S_indexingTagOversizedDonNotExpotCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList S_tagOversizeRadioButtonList;
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagOversizedDonNotExpotCheckBox;
+        
+        /// <summary>
+        /// S_tagOversizedRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList S_tagOversizedRadioButtonList;
+        
+        /// <summary>
+        /// S_indexingTagMediaDonNotExpotCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox S_indexingTagMediaDonNotExpotCheckBox;
         
         /// <summary>
         /// S_tagMediaRadioButtonList control.
@@ -1642,13 +1849,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.CheckBox S_cdBurnPDF_w_BookmarksFirmTwoCheckBox;
         
         /// <summary>
-        /// TextBox2 control.
+        /// S_cdBurnInfoFirmThreeTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox S_cdBurnInfoFirmThreeTextBox;
         
         /// <summary>
         /// S_cdBurnCopiesFirmThreeDropDown control.

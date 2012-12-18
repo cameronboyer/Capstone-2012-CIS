@@ -178,6 +178,15 @@
         {
             width: 139px;
         }
+        .style77
+        {
+            width: 48px;
+            text-align: center;
+        }
+        .style78
+        {
+            width: 63px;
+        }
     </style>
 </asp:Content>
 
@@ -238,20 +247,14 @@
                         <asp:Label ID="S_clientNameLbl" runat="server" Text="Client Name:"/>
                     </td>
                     <td>
-                        <asp:DropDownList ID="S_clientNameDropDown" runat="server" 
-<<<<<<< HEAD
-                            AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="S_clientNameSqlDataSource" 
-                            DataTextField="clientName" DataValueField="clientID"/>
-                        <asp:SqlDataSource ID="S_clientNameSqlDataSource" runat="server" 
-=======
-                            AppendDataBoundItems="True" DataSourceID="SqlDataSource1" 
-                            DataTextField="clientName" DataValueField="clientID" AutoPostBack="True" 
-                            onselectedindexchanged="S_clientNameDropDown_SelectedIndexChanged" SelectedValue='<%#  Eval("clientID") %>'/>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
-                            ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
-                            SelectCommand="SELECT [clientName], [clientID], [phonNumber],[address] FROM [Clients] ORDER BY [clientName]">
-                        </asp:SqlDataSource>
+                        <asp:DropDownList ID="S_clientNameDropDown" runat="server" AutoPostBack="True" 
+                            DataSourceID="S_clientNameSqlDataSource" DataTextField="clientName" 
+                            DataValueField="clientID" 
+                            onselectedindexchanged="S_clientNameDropDown_SelectedIndexChanged" >
+                            <asp:ListItem>Select Client</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="S_clientNameSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [clientName], [clientID],[address],[phoneNumber] FROM [Clients] ORDER BY [clientName]" />
+                       
                     </td>
                     <td>
                         &nbsp;
@@ -262,22 +265,10 @@
                         <asp:Label ID="S_contactNameLbl" runat="server" Text="Contact Name:"/>
                     </td>
                     <td>
-                            <asp:DropDownList ID="S_contactNameDropDown" runat="server" 
-<<<<<<< HEAD
-                                DataSourceID="S_clientContactSqlDataSource" DataTextField="ContactName" 
-                                DataValueField="contactID"/>
-                            <asp:SqlDataSource ID="S_clientContactSqlDataSource" runat="server" 
-=======
-                                DataSourceID="SqlDataSource2" DataTextField="ContactName" 
-                                DataValueField="contactID" 
-                                onselectedindexchanged="S_contactNameDropDown_SelectedIndexChanged"/>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
-                                ConnectionString="<%$ ConnectionStrings:chucksDB %>" 
-                                SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
+                            <asp:DropDownList ID="S_contactNameDropDown" runat="server" DataSourceID="S_clientContactSqlDataSource" DataTextField="ContactName" DataValueField="contactID"/>
+                            <asp:SqlDataSource ID="S_clientContactSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:chucksDB %>" SelectCommand="SELECT [ContactName], [contactID], [company] FROM [Contacts] WHERE ([company] = @company)">
                                 <SelectParameters>
-                                    <asp:ControlParameter ControlID="S_clientNameDropDown" Name="company" 
-                                        PropertyName="SelectedValue" Type="Int32" />
+                                    <asp:ControlParameter ControlID="S_clientNameDropDown" Name="company" PropertyName="SelectedValue" Type="Int32" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
                     </td>
@@ -290,11 +281,7 @@
                         <asp:Label ID="S_addressLbl" runat="server" Text="Address:"/>
                     </td>
                     <td>
-<<<<<<< HEAD
                         <asp:TextBox ID="S_addressTextBox" runat="server" Width="250px"/>
-=======
-                        <asp:TextBox ID="S_addressTextBox" runat="server" Text='<%#  Eval("clientID") %>'/>
->>>>>>> 51c3ca1957752e89e5cc6c0f8cb351e2f4d12f97
                     </td>
                     <td>
                         &nbsp;
@@ -889,7 +876,7 @@
                         </asp:RadioButtonList>
                         <asp:TextBox ID="S_numberOfDuplicatesTextBox" runat="server"
                             Text="Enter Number of Duplicates" Visible="false" Width="180px" />
-                        <asp:RadioButtonList ID="bateLabelAndTagMedia" runat="server"
+                        <asp:RadioButtonList ID="S_bateLabelAndTagMedia" runat="server"
                             RepeatDirection="Horizontal">
                             <asp:ListItem Text="" Value="yes" />
                             <asp:ListItem Text="Bate Label and tag as MEDIA" Value="no" />
@@ -1012,7 +999,7 @@
                             <td colspan="2">
                                 Field Description
                             </td>
-                            <td>
+                            <td class="style78">
                                 Default Information
                             </td>
                             <td>
@@ -1020,144 +1007,155 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                
+                                <asp:CheckBox ID="S_indexingTextOneDonNotExpotCheckBox" runat="server" 
+                                    Text=" " style="text-align: center" />
                             </td>
                             <td class="style65">
                                 Text 1
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textOneFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textOneTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textOnePromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                               <asp:CheckBox ID="S_indexingTextTwoDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 2
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textTwoFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textTwoTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textTwoPromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTextThreeDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 3
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textThreeFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textThreeTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textThreePromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTextFourDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 4
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textFourFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textFourTextBox" runat="server" Width="440px"  />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textFourPromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTextFiveDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 5
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textFiveFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textFiveTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textFivePromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTextSixDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 6
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textSixFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textSixTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textSixPromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTextSevenDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 7
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_textSevenFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textSevenTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textSevenPromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTextEightDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Text 8
                             </td>
                             <td class="style66">
-                                <asp:TextBox ID="S_testEightFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
+                                <asp:TextBox ID="S_textEightFieldTextBox" runat="server" Width="95px" /></td>
+                            <td class="style78">
                                 <asp:TextBox ID="S_textEightTextBox" runat="server" Width="440px" />
                             </td>
                             <td>
-                                &nbsp;
+                                <asp:TextBox ID="S_textEightPromoptedTextBox" runat="server" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagOneDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag 1
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_tagOneFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tagOneRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagOneRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1169,16 +1167,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagTwoDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag 2
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_tagTwoFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tag2RadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagTwoRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1190,16 +1190,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagThreeDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag 3
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_tagThreeFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tagThreeRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagThreeRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1211,16 +1213,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagFourDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag 4
                             </td>
                             <td class="style66">
                                 <asp:TextBox ID="S_tagFourFieldTextBox" runat="server" Width="95px" /></td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tagFourRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagFourRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1232,8 +1236,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagColorDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag
@@ -1241,8 +1246,9 @@
                             <td class="style66">
                                 Color
                             </td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tagColorRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagColorRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1254,8 +1260,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagOversizedDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag
@@ -1263,8 +1270,9 @@
                             <td class="style66">
                                 Oversize
                             </td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tagOversizeRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagOversizedRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1276,16 +1284,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style17">
-                                &nbsp;
+                            <td class="style77">
+                                <asp:CheckBox ID="S_indexingTagMediaDonNotExpotCheckBox" runat="server" 
+                                    Text=" " />
                             </td>
                             <td class="style65">
                                 Tag&nbsp;
                             </td>
                             <td class="style66">
                                 Media</td>
-                            <td>
-                                <asp:RadioButtonList ID="S_tagMediaRadioButtonList" runat="server" RepeatDirection="Horizontal">
+                            <td class="style78">
+                                <asp:RadioButtonList ID="S_tagMediaRadioButtonList" runat="server" 
+                                    RepeatDirection="Horizontal" Width="295px">
                                     <asp:ListItem Value="enter" Text="Enter" />
                                     <asp:ListItem Value="yn" Text="Y/N" />
                                     <asp:ListItem Value="yesno" Text="Yes/No" />
@@ -1593,7 +1603,7 @@
                     </tr>
                     <tr>
                         <td class="style38">
-                            <asp:TextBox ID="S_cdBurnInfoFirmTwoTextBox" runat="server" ReadOnly="true" 
+                            <asp:TextBox ID="S_cdBurnInfoFirmTwoTextBox" runat="server" 
                                 Width="238px" />
                         </td>
                         <td class="style27">
@@ -1634,7 +1644,7 @@
                     </tr>
                     <tr>
                         <td class="style38">
-                            <asp:TextBox ID="TextBox2" runat="server" ReadOnly="true" 
+                            <asp:TextBox ID="S_cdBurnInfoFirmThreeTextBox" runat="server" 
                                 Width="238px" />
                         </td>
                         <td class="style27">
@@ -1800,7 +1810,7 @@
                     <tr>
                         <td>
                             <asp:Button ID="S_backToEBS2" runat="server" Text="Back" 
-                                onclick="S_backToEBS2_Click" />
+                                onclick="S_backToEBS_Click" Visible="False" />
                         </td>
                         <td>
                             &nbsp;
@@ -2379,7 +2389,8 @@
                             &nbsp;
                         </td>
                         <td>
-                            <asp:Button ID="S_addToDataBase" runat="server" Text="Add Job" />
+                            <asp:Button ID="S_addToDataBase" runat="server" Text="Add Job" 
+                                onclick="S_addToDataBase_Click" />
                         </td>
                     </tr>
                 </table>
@@ -3654,7 +3665,7 @@
                         <tr>
                             <td>
                                 <asp:Button ID="D_backToEBS2" runat="server" Text="Back" 
-                                    onclick="D_backToEBS2_Click" />
+                                    onclick="D_backToEBS_Click" />
                             </td>
                             <td>
                                 &nbsp;
