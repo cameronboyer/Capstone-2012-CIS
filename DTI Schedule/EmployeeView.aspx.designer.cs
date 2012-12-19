@@ -13,6 +13,15 @@ namespace WorkScheduler {
     public partial class EmployeeView {
         
         /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -31,33 +40,6 @@ namespace WorkScheduler {
         protected global::System.Web.UI.WebControls.Label shiftLabel;
         
         /// <summary>
-        /// shift2Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label shift2Label;
-        
-        /// <summary>
-        /// shift3Label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label shift3Label;
-        
-        /// <summary>
-        /// jobDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView jobDetails;
-        
-        /// <summary>
         /// shift1ListBox control.
         /// </summary>
         /// <remarks>
@@ -65,6 +47,15 @@ namespace WorkScheduler {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox shift1ListBox;
+        
+        /// <summary>
+        /// shift2Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label shift2Label;
         
         /// <summary>
         /// shift2ListBox control.
@@ -76,6 +67,15 @@ namespace WorkScheduler {
         protected global::System.Web.UI.WebControls.ListBox shift2ListBox;
         
         /// <summary>
+        /// shift3Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label shift3Label;
+        
+        /// <summary>
         /// shift3ListBox control.
         /// </summary>
         /// <remarks>
@@ -83,6 +83,15 @@ namespace WorkScheduler {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox shift3ListBox;
+        
+        /// <summary>
+        /// jobDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView jobDetails;
         
         /// <summary>
         /// SqlDataSource1 control.

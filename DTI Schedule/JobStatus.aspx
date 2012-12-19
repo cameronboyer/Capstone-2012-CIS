@@ -64,7 +64,7 @@
             </asp:SqlDataSource>
 
             <asp:Button ID="addJobButton" runat="server" Text="Add Job" style="z-index: 113; left: 252px; position: absolute; top: 438px" 
-                Font-Size="Large" />
+                Font-Size="Large" onclick="addJobButton_Click" />
         </p>
     </div>
     </form>

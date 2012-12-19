@@ -6,15 +6,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace DTI_Schedule
 {
-    public partial class SalesRep : System.Web.UI.Page
+    public partial class JobTicket : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                
                 string level = (string)(Session["level"]);
 
                 if (String.IsNullOrEmpty(level))
@@ -22,13 +24,21 @@ namespace DTI_Schedule
                     Response.Redirect("/Account/Login.aspx");
                 }
 
-                if (!level.Equals("SalesRep") && !level.Equals("4"))
+                if (!level.Equals("Employee") && !level.Equals("4"))
                 {
                     Response.Redirect("/Account/Login.aspx");
                 }
+
+               
+                
+               
             }
             
         }
+
+
+      
+
 
         protected void addScanJob_Click(object sender, EventArgs e)
         {

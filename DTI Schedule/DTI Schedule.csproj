@@ -57,6 +57,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="JobTicket.aspx" />
     <Content Include="EmployeeView.aspx" />
     <Content Include="JobSchedule.aspx" />
     <Content Include="JobStatus.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobTicket.aspx.cs">
+      <DependentUpon>JobTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobTicket.aspx.designer.cs">
+      <DependentUpon>JobTicket.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -180,7 +188,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>11809</DevelopmentServerPort>
+          <DevelopmentServerPort>1168</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

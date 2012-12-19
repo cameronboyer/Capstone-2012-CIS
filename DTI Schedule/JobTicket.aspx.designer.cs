@@ -10,7 +10,7 @@
 namespace DTI_Schedule {
     
     
-    public partial class SalesRep {
+    public partial class JobTicket {
         
         /// <summary>
         /// navButtonsTable control.

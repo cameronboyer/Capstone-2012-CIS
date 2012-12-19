@@ -100,5 +100,10 @@ namespace WorkScheduler
         {
             BindDetails();
         }
+
+        protected void addJobButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SalesRep.aspx");
+        }
     }
 }

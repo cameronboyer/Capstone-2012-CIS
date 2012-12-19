@@ -1,0 +1,387 @@
+//select statement that gets everything into the job lists FOR SCANNING and some Copy(at end)
+        protected void populateEverythingScanningANDsomeCopy()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["chucksDB"].ConnectionString))
+            {
+                con.Open();
+                //table needs to be defined and jobId needs to be defined
+                SqlCommand cmd = new SqlCommand("SELECT * FROM JobList WHERE JobId = @JobID", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    D_clientNameDropDown.SelectedValue = reader["contactName"].ToString();
+                    D_clientMatterTextBox.Text = reader["clientmatter"].ToString();
+                    D_controlNumberPrefixTxt.Text = reader["namingPrefix"].ToString();
+                    D_controlNumberBoxTxt.Text = reader["namingBox"].ToString();
+                    D_conrolNumberIncrementingNumberTxt.Text = reader["namingIncrementing"].ToString();
+
+                    //might not need this but if its not checked and we try to pass all these nulls there might be a problem
+                    var namingCheckbox = reader["namingReincrementing"].ToString();
+                    if(namingCheckbox != null)
+                    {
+                        D_reincrementingCheckBox.Checked = true;
+                        D_reincrementingRadioList.SelectedValue = namingCheckbox;
+                    }
+                    
+                    D_spaceInControlNumberRadioButtonList.SelectedValue = reader["namingSpace"].ToString();
+                    D_volumeTextBox.Text = reader["volumeName"].ToString();
+                    D_documentLevelRadioButtonList.SelectedValue= reader["documentLevel"].ToString();
+                    //documentLevel needs OTHER text field
+                    D_groupingRadioButtonList.SelectedValue= reader["groupingLevel"].ToString();
+                    //grouping needs OTHER text field
+
+                    var pickAndChooseCheck = reader["pickAndChoose"].ToString(); 
+                    if(pickAndChooseCheck != null)
+                    {
+                        D_pickAndChoose.Checked = true;
+                        D_specialInstructionsPickAndChooseTextBox.Text = pickAndChooseCheck.ToString();
+                    }
+
+                    var scanAllPortraitCheck = reader["scanAllPortrait"].ToString();
+                    if(scanAllPortraitCheck != null)
+                        D_scanAllPortrait.Checked = true;
+
+                    
+                    D_coversRadioButtonList.SelectedValue = reader["covers"].ToString();
+                    D_redweldFolderCovers.SelectedValue = reader["redweldCovers"].ToString();
+                    D_redweldFolderTabs.SelectedValue = reader["redweldTabs"].ToString();
+                    D_dividerTabs.SelectedValue = reader["dividerTabs"].ToString();
+                    D_postitNotes.SelectedValue = reader["postItNotes"].ToString();
+                    D_coloredSheets.SelectedValue = reader["coloredSheets"].ToString();
+                    D_binderSpines.SelectedValue = reader["binderSpines"].ToString();
+                    D_envelopes.SelectedValue = reader["envelopes"].ToString();
+                    D_standardLang.SelectedValue = reader["standardLang"].ToString();
+                    D_carbon.SelectedValue = reader["carbon"].ToString();
+
+                    //puts the value into reducetocheckcheck
+                    var reduceToCheckCheck = reader["reduceTo"].ToString(); 
+
+                    //checks if its not empty
+                    if(reduceToCheckCheck != null)
+                    {
+                        //if it has something make the check box checked
+                        D_reduceToCheckBox.Checked = true;
+
+                        //if the value is "other" aka not "11 x 17"
+                        if(reduceToCheckCheck != "11 X 17")
+                        {
+                            //set the other box text to the returned colums information
+                            D_reduceToOtherTextBox.Text = reduceToCheckCheck.ToString();
+                            //set the radio button to other
+                            D_reduceToRadioButtonList.SelectedValue = "other";
+                        }
+                        else//other wise set the selected radio to 11 x 17
+                        D_reduceToRadioButtonList.SelectedValue = reduceToCheckCheck.ToString();
+                    }
+                    var sizeForSizeCheck = reader["sizeForSize"].ToString();
+                    if(sizeForSizeCheck != null)
+                        D_sizeForSizeCheckBox.Checked = true;
+
+                    D_any_allColor.SelectedValue = reader["anyAllColor"].ToString();
+                    D_highlights.SelectedValue = reader["highlights"].ToString();
+                    D_photosFront.SelectedValue = reader["photosFront"].ToString();
+                    D_photosBack.SelectedValue = reader["photosBack"].ToString();
+                    D_colorCopies.SelectedValue = reader["colorCopies"].ToString();
+                    D_handwrittenColor.SelectedValue = reader["handwrittenColor"].ToString();
+                    D_printingPressColor.SelectedValue = reader["printingPressColor"].ToString();
+                    D_chartsGraphsColor.SelectedValue= reader["chartsGraphs"].ToString();
+                    D_colorHandStamps.SelectedValue = reader["colorHandStamp"].ToString();
+                    D_oversize.SelectedValue = reader["oversized"].ToString();
+                    D_scanAndTagMedia.SelectedValue = reader["scanAndTag"].ToString();
+                    
+                    var duplicateAndTagMedia_Radio = reader["dupeAndTag"].ToString();
+                    if(duplicateAndTagMedia_Radio != null)
+                    {
+                        D_duplicateAndTagMedia.SelectedValue = "yes";
+                        D_numberOfDuplicatesTextBox.Text = duplicateAndTagMedia_Radio.ToString();
+                    }
+                    else
+                        D_duplicateAndTagMedia.SelectedValue = "no";
+                    
+                    D_bateLabelAndTagMedia.SelectedValue= reader["bateLabelAndTag"].ToString();
+
+                    //sets the main radios slected value
+                    D_deliverables.SelectedValue = reader["deliverableMainRadio"].ToString();
+
+                    //if its pdf start doing this
+                    if(D_deliverables.SelectedValue == "pdf")
+                    {//set the selected radio inside PDF
+                        D_pdfPer.SelectedValue = reader["deliverablePDFRadio"].ToString();
+                        //set the other text if other is selected in PDF
+                        if(D_pdfPer.SelectedValue == "other")
+                            D_pdfPerTextBox.Text = reader["deliverable"].ToString();
+                        //if Other was the main selection
+                    }else if(D_deliverables.SelectedValue == "other")
+                            D_deliverablesOtherTextBox.Text = reader["deliverable"].ToString();
+                        
+                    D_viewer.SelectedValue = reader["viewer"].ToString();
+                    D_textOneFieldTextBox.Text= reader["indexingTextOne"].ToString();
+                    D_textOneTextBox.Text= reader["indexingTextOneDegault"].ToString();
+
+                    //this is build off saying yes so if its not null its checked
+                    var chk1 = reader["indexingTextOneDoNotExport"].ToString();
+                    if(chk1 != null)
+                        D_indexingTextOneDonNotExpotCheckBox.Checked = true;
+
+                    D_textOnePromoptedTextBox.Text = reader["indexingTextOnePrompted"].ToString();
+                    D_textTwoFieldTextBox.Text = reader["indexingTextTwo"].ToString();
+                    D_textTwoTextBox.Text = reader["indexingTextTwoDegault"].ToString();
+
+                    var chk2 = reader["indexingTextTwoDoNotExport"].ToString();
+                    if(chk2 != null)
+                        D_indexingTextTwoDonNotExpotCheckBox.Checked = true;
+
+                    D_textTwoPromoptedTextBox.Text = reader["indexingTextTwoPrompted"].ToString();
+                    D_textThreeFieldTextBox.Text = reader["indexingTextThree"].ToString();
+                    D_textThreeTextBox.Text = reader["indexingTextThreeDegault"].ToString();
+
+                    var chk3 =  reader["indexingTextThreeDoNotExport"].ToString();
+                    if(chk3 != null)
+                        D_indexingTextThreeDonNotExpotCheckBox.Checked = true;
+
+                    D_textThreePromoptedTextBox.Text= reader["indexingTextThreePrompted"].ToString();
+                    D_textFourFieldTextBox.Text= reader["indexingTextFour"].ToString();
+                    D_textFourTextBox.Text= reader["indexingTextFourDegault"].ToString();
+
+                    var chk4 = reader["indexingTextFourDoNotExport"].ToString();
+                    if(chk4 != null)
+                        D_indexingTextFourDonNotExpotCheckBox.Checked = true;
+                    
+                    D_textFourPromoptedTextBox.Text = reader["indexingTextFourPrompted"].ToString();
+                    D_textFiveFieldTextBox.Text = reader["indexingTextFive"].ToString();
+                    D_textFiveTextBox.Text= reader["indexingTextFiveDegault"].ToString();
+                    //start
+                    var chk5 = reader["indexingTextFiveDoNotExport"].ToString();
+                    if(chk5 != null)
+                        D_indexingTextFiveDonNotExpotCheckBox.Checked = true;
+                    
+                    D_textFivePromoptedTextBox.Text = reader["indexingTextFivePrompted"].ToString();
+                    D_textSixFieldTextBox.Text = reader["indexingTextSix"].ToString();
+                    D_textSixTextBox.Text= reader["indexingTextSixDegault"].ToString();
+
+                    var chk6 = reader["indexingTextSixDoNotExport"].ToString();
+                    if(chk6 != null)
+                        D_indexingTextSixDonNotExpotCheckBox.Checked = true;
+                    
+                    D_textSixPromoptedTextBox.Text = reader["indexingTextSixPrompted"].ToString();
+                    D_textSevenFieldTextBox.Text = reader["indexingTextSeven"].ToString();
+                    D_textSevenTextBox.Text= reader["indexingTextSevenDegault"].ToString();
+
+                    //
+                    var chk7 = reader["indexingTextSevenDoNotExport"].ToString();
+                    if(chk7 != null)
+                        D_indexingTextSevenDonNotExpotCheckBox.Checked = true;
+                    
+                    D_textSevenPromoptedTextBox.Text = reader["indexingTextSevenPrompted"].ToString();
+                    D_textEightFieldTextBox.Text = reader["indexingTextEight"].ToString();
+                    D_textEightTextBox.Text= reader["indexingTextEightDegault"].ToString();
+
+                    D_tagOneRadioButtonList.SelectedValue = reader["indexingTagOneDefautl"].ToString();
+                    var chk8 = reader["indexingTagOneDoNotExport"].ToString();
+                    if(chk8 != null)
+                        D_indexingTagOneDonNotExpotCheckBox.Checked = true;
+                    
+                    D_tagTwoRadioButtonList.SelectedValue = reader["indexingTagTwoDefautl"].ToString();
+                    D_tagThreeRadioButtonList.SelectedValue =reader["indexingTagThreeDefautl"].ToString();
+                    D_tagFourRadioButtonList.SelectedValue =reader["indexingTagFourDefautl"].ToString();
+                    D_tagColorRadioButtonList.SelectedValue =reader["indexingTagColorDefautl"].ToString();
+                    D_tagOversizedRadioButtonList.SelectedValue =reader["indexingTagOversizedDefautl"].ToString();
+                    D_tagMediaRadioButtonList.SelectedValue =reader["indexingTagMediaDefautl"].ToString();
+
+                    //start checkboxes
+                    var chk_8 = reader["indexingTagTwoDoNotExport"].ToString();
+                    if(chk_8 != null)
+                        D_indexingTagTwoDonNotExpotCheckBox.Checked = true;
+
+                    var chk9 = reader["indexingTagThreeDoNotExport"].ToString();
+                    if(chk9 != null)
+                        D_indexingTagThreeDonNotExpotCheckBox.Checked = true;
+
+                    var chk10 = reader["indexingTagFourDoNotExport"].ToString();
+                    if(chk10 != null)
+                        D_indexingTagFourDonNotExpotCheckBox.Checked = true;
+
+                    var chk11 = reader["indexingTagColorDoNotExport"].ToString();
+                    if(chk11 != null)
+                        D_indexingTagColorDonNotExpotCheckBox.Checked = true;
+
+                    var chk12 = reader["indexingTagOversizedDoNotExport"].ToString();
+                    if(chk12 != null)
+                        D_indexingTagOversizedDonNotExpotCheckBox.Checked = true;
+
+                    var chk13 = reader["indexingTagMediaDoNotExport"].ToString();
+                    if(chk13 != null)
+                        D_indexingTagMediaDonNotExpotCheckBox.Checked = true;
+                    
+                    D_ebsOptionsRadioButtonList.SelectedValue = reader["ebs"].ToString();
+                    D_ebsNumberingRadioButtonList.SelectedValue = reader["ebsSelectionNumbering"].ToString(); 
+                    
+                    D_ebsOtherPrefixTextBox.Text= reader["ebsControlNumberPrefix"].ToString();
+                    D_ebsOtherStartNumberTextBox.Text= reader["ebsControlNumberStarting"].ToString();
+                    D_ebsOtherSuffixTextBox.Text= reader["ebsControlNumberSuffix"].ToString();
+                    D_ebsLocationsRadioButtonList.SelectedValue= reader["ebsLocation"].ToString();
+                    D_ebsOptionSizeDropDownBox.SelectedValue= reader["ebsSize"].ToString();
+                    D_ebsOptionFontDropDownList.SelectedValue= reader["ebsFont"].ToString();
+                    D_ebsFontOptionStyleDropDownList.SelectedValue= reader["ebsFontStyle"].ToString();
+
+
+                    //grabs the first additional lines if ther eare any
+                    var additionalLines = reader["ebsAdditionalLinesOne"].ToString();
+                    if(additionalLines != null)
+                    {
+                        D_ebsAddtionalLinesRadioButtonList.SelectedValue = "yes";
+                        D_ebsOptionAdditionalLinesLineOneTextBox.Text= additionalLines.ToString();
+                        D_ebsOptionAdditionalLinesLineTwoTextBox.Text = reader["ebsAdditionalLinesTwo"].ToString(); 
+                    }
+
+                    D_dvdOptionRadioButtonList.SelectedValue= reader["dvd"].ToString();
+                    D_duplicateExhisitingClientLabelRadioButtonList.SelectedValue= reader["duplicateClientLabel"].ToString();
+
+                    D_cdBurnInfoFirmOneTextBox.Text= reader["firmOne"].ToString();
+                    D_cdBurnCopiesFirmOneDropDown.SelectedValue = reader["firmOneNumberOfCopies"].ToString();
+
+                    var cdCheck1  = reader["firmOneTiff"].ToString();
+                    if(cdCheck1 != null)
+                        D_cdBurnTiffFirmOneCheckBox.Checked = true;
+
+                    var cdCheck2  = reader["firmOneMTiff"].ToString();
+                    if(cdCheck2 != null)
+                        D_cdBurnMTiffFirmOneCheckBox.Checked = true;
+
+                    var cdCheck3  = reader["firmOneOCR"].ToString();
+                    if(cdCheck3 != null)
+                        D_cdBurnOCRFirmOneCheckBox.Checked = true;
+
+                    var cdCheck4  = reader["firmOnePDF"].ToString();
+                    if(cdCheck4 != null)
+                        D_cdBurnPDFFirmOneCheckBox.Checked = true;
+
+                    var cdCheck5  = reader["firmOneSearchablePDF"].ToString();
+                    if(cdCheck5 != null)
+                        D_cdBurnSeachablePDFFirmOneCheckBox.Checked = true;
+
+                    var cdCheck6  = reader["firmOnePDFwBookmarks"].ToString();
+                    if(cdCheck6 != null)
+                        D_cdBurnPDF_w_BookmarksFirmOneCheckBox.Checked = true;
+
+                    D_cdBurnInfoFirmTwoTextBox.Text= reader["firmTwo"].ToString();
+                    D_cdBurnCopiesFirmTwoDropDown.SelectedValue= reader["firmTwoNumberOfCopies"].ToString();
+
+                    var cd2Check1  = reader["firmTwoTiff"].ToString();
+                    if(cd2Check1 != null)
+                        D_cdBurnTiffFirmTwoCheckBox.Checked = true;
+
+                    var cd2Check2  = reader["firmTwoMTiff"].ToString();
+                    if(cd2Check2 != null)
+                        D_cdBurnMTiffFirmTwoCheckBox.Checked = true;
+
+                    var cd2Check3  = reader["firmTwoOCR"].ToString();
+                    if(cd2Check3 != null)
+                        D_cdBurnOCRFirmTwoCheckBox.Checked = true;
+
+                    var cd2Check4  = reader["firmTwoPDF"].ToString();
+                    if(cd2Check4 != null)
+                        D_cdBurnPDFFirmTwoCheckBox.Checked = true;
+
+                    var cd2Check5  = reader["firmTwoSearchablePDF"].ToString();
+                    if(cd2Check5 != null)
+                        D_cdBurnSeachablePDFFirmTwoCheckBox.Checked = true;
+
+                    var cd2Check6  = reader["firmTwoPDFwBookmarks"].ToString();
+                    if(cd2Check6 != null)
+                        D_cdBurnPDF_w_BookmarksFirmTwoCheckBox.Checked = true;
+
+                    D_cdBurnInfoFirmThreeTextBox.Text= reader["firmThree"].ToString();
+                    D_cdBurnCopiesFirmThreeDropDown.SelectedValue= reader["firmThreeNumberOfCopies"].ToString();
+
+
+                    var cd3Check1  = reader["firmThreeTiff"].ToString();
+                    if(cd3Check1 != null)
+                        D_cdBurnTiffFirmThreeCheckBox.Checked = true;
+
+                    var cd3Check2  = reader["firmThreeMTiff"].ToString();
+                    if(cd3Check2 != null)
+                        D_cdBurnMTiffFirmThreeCheckBox.Checked = true;
+
+                    var cd3Check3  = reader["firmThreeOCR"].ToString();
+                    if(cd3Check3 != null)
+                        D_cdBurnOCRFirmThreeCheckBox.Checked = true;
+
+                    var cd3Check4  = reader["firmThreePDF"].ToString();
+                    if(cd3Check4 != null)
+                        D_cdBurnPDFFirmThreeCheckBox.Checked = true;
+
+                    var cd3Check5  = reader["firmThreeSearchablePDF"].ToString();
+                    if(cd3Check5 != null)
+                        D_cdBurnSeachablePDFFirmThreeCheckBox.Checked = true;
+
+                    var cd3Check6  = reader["firmThreePDFwBookmarks"].ToString();
+                    if(cd3Check6 != null)
+                        D_cdBurnPDF_w_BookmarksFirmThreeCheckBox.Checked = true;
+                    D_cdLabelCaseNameTextBox.Text= reader["case"].ToString();
+                    D_cdLabelBatesRangeRadioButtonList.SelectedValue= reader["batesRange"].ToString();
+                    D_cdLabelClientMatterTextBox.Text= reader["cdClientMatter"].ToString();
+                    D_cdLabelNotesTextBox.Text= reader["notes"].ToString();
+                    //could have issues with convert to int when INSERTING the value
+                    D_printQuantityCleanDropDown.SelectedValue= reader["printCleanSet"].ToString();
+                    D_printQuantityEBSedDropDown.SelectedValue= reader["printEBSEDSet"].ToString();
+                    D_printQuantityBarCodedDropDown.SelectedValue= reader["printBarCodeSet"].ToString();
+                    D_printBindersSizeRadioButtonList.SelectedValue= reader["binder"].ToString();
+                    D_printBinderOptionViewRadioBttonList.SelectedValue= reader["binderView"].ToString();
+                    D_printAccoSideRadioButtonList.SelectedValue= reader["twoHole"].ToString();
+                    D_printCombOptionsRadioBttonList.SelectedValue= reader["gpcBind"].ToString();
+                    D_printVeloOptionRadioButtonList.SelectedValue= reader["veloBind"].ToString();
+                    D_printSpiralOptionsRadioButtonList.SelectedValue= reader["spiralBind"].ToString();
+                    D_printMatchOriginalsRadioButtonList.SelectedValue= reader["matchOriginals"].ToString();
+                    D_printDrillingRadioButtonList.SelectedValue= reader["drilling"].ToString();
+                    D_printingTwoSidedRadioButtonList.SelectedValue= reader["twoSided"].ToString();
+                    D_printColor4ColorRadioButtonList.SelectedValue= reader["colorForColor"].ToString();
+                    D_printSize4SizeRadioButtonList.SelectedValue= reader["printSizeForSize"].ToString();
+                    D_printSlipSheetsRadioButtonList.SelectedValue= reader["slipsheets"].ToString();
+                    D_printStapleRadioButton.SelectedValue= reader["staplePerDoc"].ToString();
+
+                    var specialInstructionsRadio1 = reader["printSpecialInstructions"].ToString();
+                    if(specialInstructionsRadio1 != null)
+                    {
+                        D_specialInstrctionsPrintTextBox.Text = specialInstructionsRadio1.ToString();
+                        D_specialInstrctionsPrintRadioButtonList.SelectedValue = "yes";
+                    }
+
+                    D_sepcialInstrctionsProductionTextBox.Text= reader["spcialInstructionsProduction"].ToString();
+                    D_specialInstrctionsDataTextBox.Text= reader["spcialInstructionsData"].ToString();
+
+
+                    //new parameters for copy
+                    D_sizeRadioButtonList.SelectedValue = reader["copySize"].ToString();
+                    D_printMethodRadioButtonList.SelectedValue = reader["copyPrintMethod"].ToString();
+
+                    var D_chk1 = reader["copyEnlargeTo"].ToString();
+                    if (D_chk1 != null)
+                    {
+                        D_enlargeToCheckBox.Checked = true;
+                        D_oversizeDocRadioButtonList.SelectedValue = reader["copyOversizeDocuments"].ToString();
+                        D_enlargeToRadioButtonList.SelectedValue = reader["copyOversizeDocuments"].ToString();
+                        if (D_enlargeToRadioButtonList.SelectedValue != "other")
+                        {
+                            D_enlargeToRadioButtonList.SelectedValue = reader["copyEnlargeTo"].ToString();
+                        }else
+                            D_enlargeToOtherTextBox.Text = reader["copyEnlargeTo"].ToString();
+                                
+                    }
+
+                    D_videoTapesCheckBoxList.SelectedValue = reader["copyVideoTapesCopy"].ToString();
+                    D_videoTapesCheckBoxList.SelectedValue = reader["copyVideoTapesDup"].ToString();
+
+                    D_audioTapesCheckBoxList.SelectedValue = reader["copyAudioTapesCopy"].ToString();
+                    D_audioTapesCheckBoxList.SelectedValue = reader["copyAudioTapesDup"].ToString();
+
+                    D_compactDiskCheckBoxList.SelectedValue = reader["copyCompactDiskCopy"].ToString();
+                    D_compactDiskCheckBoxList.SelectedValue = reader["copyCompactDiskDup"].ToString();
+
+                    D_floppieDisks.SelectedValue = reader["copy35DisketteCopy"].ToString();
+                    D_floppieDisks.SelectedValue = reader["copy35DisketteDup"].ToString();
+                }
+            }
+
+        }

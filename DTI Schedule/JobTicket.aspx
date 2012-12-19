@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="SalesRep.aspx.cs" Inherits="DTI_Schedule.SalesRep" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="JobTicket.aspx.cs" Inherits="DTI_Schedule.JobTicket" %>
 
 <asp:Content ContentPlaceHolderID="HeadContent" runat="server" >
     <style type="text/css"> 
