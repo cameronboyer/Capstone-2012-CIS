@@ -2713,7 +2713,7 @@
                             <asp:RadioButtonList ID="C_oversize" runat="server" 
                                 RepeatDirection="Horizontal">
                                 <asp:ListItem Text="" Value="yes" />
-                                <asp:ListItem Text="Oversized(Create Tag)" Value="no" />
+                                <asp:ListItem Text="Oversized" Value="no" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
@@ -2903,7 +2903,8 @@
                             &nbsp;
                         </td>
                         <td>
-                            <asp:Button ID="C_addToDataBase" runat="server" Text="Add Job" />
+                            <asp:Button ID="C_addToDataBase" runat="server" Text="Add Job" 
+                                onclick="C_addToDataBase_Click" />
                         </td>
                     </tr>
                 </table>
@@ -3499,7 +3500,7 @@
                         </tr>
                         <tr>
                             <td class="style38">
-                                <asp:TextBox ID="TextBox1" runat="server" ReadOnly="true" 
+                                <asp:TextBox ID="D_cdBurnInfoFirmThreeTextBox" runat="server" ReadOnly="true" 
                                     Width="238px" />
                             </td>
                             <td class="style27">
@@ -4210,7 +4211,8 @@
                                 &nbsp;
                             </td>
                             <td>
-                                <asp:Button ID="D_addToDataBase" runat="server" Text="Add Job" />
+                                <asp:Button ID="D_addToDataBase" runat="server" Text="Add Job" 
+                                    onclick="D_addToDataBase_Click" />
                             </td>
                         </tr>
                     </table>
@@ -4830,7 +4832,8 @@
                             &nbsp;
                         </td>
                         <td>
-                            <asp:Button ID="P_addToDataBase" runat="server" Text="Add Job" />
+                            <asp:Button ID="P_addToDataBase" runat="server" Text="Add Job" 
+                                onclick="P_addToDataBase_Click" />
                         </td>
                     </tr>
                 </table>

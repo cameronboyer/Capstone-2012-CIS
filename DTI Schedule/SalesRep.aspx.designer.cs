@@ -94,6 +94,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.DropDownList S_clientNameDropDown;
         
         /// <summary>
+        /// S_clientNameSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource S_clientNameSqlDataSource;
+        
+        /// <summary>
         /// S_contactNameLbl control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList S_contactNameDropDown;
+        
+        /// <summary>
+        /// S_clientContactSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource S_clientContactSqlDataSource;
         
         /// <summary>
         /// S_addressLbl control.
@@ -2308,6 +2326,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.DropDownList C_clientNameDropDown;
         
         /// <summary>
+        /// C_clientNameSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource C_clientNameSqlDataSource;
+        
+        /// <summary>
         /// C_contactNameLbl control.
         /// </summary>
         /// <remarks>
@@ -2324,6 +2351,15 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList C_contactNameDropDown;
+        
+        /// <summary>
+        /// C_clientContactSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource C_clientContactSqlDataSource;
         
         /// <summary>
         /// C_addressLbl control.
@@ -2929,6 +2965,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.DropDownList D_clientNameDropDown;
         
         /// <summary>
+        /// D_clientNameSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource D_clientNameSqlDataSource;
+        
+        /// <summary>
         /// D_contactNameLbl control.
         /// </summary>
         /// <remarks>
@@ -2945,6 +2990,15 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList D_contactNameDropDown;
+        
+        /// <summary>
+        /// D_clientContactSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource D_clientContactSqlDataSource;
         
         /// <summary>
         /// D_addressLbl control.
@@ -3649,13 +3703,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.CheckBox D_cdBurnPDF_w_BookmarksFirmTwoCheckBox;
         
         /// <summary>
-        /// TextBox1 control.
+        /// D_cdBurnInfoFirmThreeTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox D_cdBurnInfoFirmThreeTextBox;
         
         /// <summary>
         /// D_cdBurnCopiesFirmThreeDropDown control.
@@ -3739,13 +3793,13 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.Button D_goToPrinting;
         
         /// <summary>
-        /// D_CDTable control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable D_CDTable;
+        protected global::System.Web.UI.HtmlControls.HtmlTable Table1;
         
         /// <summary>
         /// D_cdLabelCaseNameTextBox control.
@@ -4117,6 +4171,15 @@ namespace DTI_Schedule {
         protected global::System.Web.UI.WebControls.DropDownList P_clientNameDropDown;
         
         /// <summary>
+        /// P_clientNameSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource P_clientNameSqlDataSource;
+        
+        /// <summary>
         /// P_contactNameLbl control.
         /// </summary>
         /// <remarks>
@@ -4133,6 +4196,15 @@ namespace DTI_Schedule {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList P_contactNameDropDown;
+        
+        /// <summary>
+        /// P_clientContactSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource P_clientContactSqlDataSource;
         
         /// <summary>
         /// P_addressLbl control.
